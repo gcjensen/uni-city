@@ -56,7 +56,15 @@ angular.module('open-data').controller('RankingController', function ($scope) {
 
   $scope.userPreferences = Object.keys($scope.data[0]).filter((key) => key !== "name");
 
-  // not sure of the angular function convention
+  /*
+   * Simple algorithm for location ranking.
+   * Each location has a relative score for each property
+   * (between 1 and 10), which is then multiplied by a number
+   * according to how the user has ranked their preferences,
+   * i.e. if there are 3 preferences, the top one will multiply
+   * by 3, the second one by 2 and the third one by 1. The
+   * locations are then ordered according to their overall score.
+   */
   const determineRanking = (data, userPreferences) => {
     for (let datum of data) {
       total = 0.0;
@@ -65,12 +73,11 @@ angular.module('open-data').controller('RankingController', function ($scope) {
       }
       datum.ranking = total;
     }
-    return data;
+    return data.sort((a, b) => a.ranking < b.ranking);
   }
 
   $scope.$watch('userPreferences', function () {
     $scope.data = determineRanking($scope.data, $scope.userPreferences);
-    $scope.data.sort((a, b) => a.ranking < b.ranking);
   }, true);
 
 });
