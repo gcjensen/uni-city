@@ -1,0 +1,32 @@
+body {
+  background-color: white;
+}
+
+.preferences {
+  flex: 0 0 350px;
+}
+
+.ordering {
+  background-color: #4c6e95;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  cursor: move;
+  text-align: center;
+}
+
+.ranking {
+  margin-left: 30px;
+  margin-top: 15px;
+  flex-grow: 1;
+}
+
+.table-title {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.column-heading {
+  color: #4c6e95 !important;
+}

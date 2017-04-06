@@ -1,0 +1,40 @@
+<div layout="row">
+  <div class="preferences" layout="column">
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">What's important to you?</span>
+          <span class="md-subhead">Rank how important these factors are to you (most important at the top).</span>
+        </md-card-title-text>
+      </md-card-title>
+      <div psi-sortable="" ng-model="userPreferences">
+        <div class="ordering" ng-repeat="userPreference in userPreferences track by $index"> {{userPreference}} </div>
+      </div>
+    </md-card>
+  </div>
+  <div class="ranking" layout="column">
+    <md-toolbar class="md-table-toolbar md-default">
+      <div class="md-toolbar-tools">
+        <span class="table-title">Location Ranking per your Preferences</span>
+      </div>
+    </md-toolbar>
+    <md-table-container>
+    <table md-table ng-model="data" md-progress="promise">
+      <thead md-head>
+        <tr md-row>
+          <th md-column class="column-heading">Name</th>
+          <th ng-repeat="preference in userPreferences" class="column-heading" md-column>{{preference}}</th>
+        </tr>
+      </thead>
+      <tbody md-body>
+        <tr md-row md-select="data" md-select-id="name" md-auto-select ng-repeat="location in data">
+          <td md-cell>{{location.name}}</td>
+          <td md-cell>{{location.Population.actual}}</td>
+          <td md-cell>{{location['Cost of Living'].actual}}</td>
+          <td md-cell>{{location.Nightlife.actual}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </md-table-container>
+  </div>
+</div>

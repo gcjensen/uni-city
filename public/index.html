@@ -1,38 +1,45 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en" ng-app="open-data">
-<head>
-    
-    <meta charset="utf-8">
-    <title>Open Data Innovation</title>
-    
-    <!-- Libraries -->
+  <head>
+      <meta charset="utf-8">
+      <title>Open Data Innovation</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-    
-    <!-- AngularJS -->
-    
-    <script src="javascript/app.js"></script>
-    <script src="javascript/components/homepage/homepage.js"></script>
-    <script src="javascript/components/map/map.js"></script>
-    
-    <!-- Styling -->
-    
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo:100,200,300,400,500,600,700,800,900" />
+      <!-- Styling -->
 
-</head>
-<body>
-    
-    <homepage></homepage>
-    
-</body>
+      <link rel="stylesheet" href="javascript/components/ranking/ranking.css">
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material-data-table/0.10.10/md-data-table.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo:100,200,300,400,500,600,700,800,900" />
+
+      <!-- Libraries -->
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/md-data-table/1.8.0/md-data-table-templates.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-data-table/0.10.10/md-data-table.min.js"></script>
+      <script src="javascript/libs/sortable.js"></script>
+
+      <!-- Application Code -->
+
+      <script src="javascript/app.js"></script>
+      <script src="javascript/components/homepage/homepage.js"></script>
+      <script src="javascript/components/map/map.js"></script>
+      <script src="javascript/components/ranking/ranking.js"></script>
+  </head>
+
+  <body>
+      <ranking></ranking>
+  </body>
+
 </html>
