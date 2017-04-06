@@ -29,9 +29,7 @@
       <tbody md-body>
         <tr md-row md-select="data" md-select-id="name" md-auto-select ng-repeat="location in data">
           <td md-cell>{{location.name}}</td>
-          <td md-cell>{{location.Population.actual}}</td>
-          <td md-cell>{{location['Cost of Living'].actual}}</td>
-          <td md-cell>{{location.Nightlife.actual}}</td>
+          <td md-cell ng-repeat="preference in userPreferences">{{location[preference].actual}}</td>
         </tr>
       </tbody>
     </table>
