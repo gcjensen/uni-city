@@ -1,0 +1,18 @@
+.borders { 
+	fill: pink;
+}
+
+.borders.IRL { 
+  display: none; 
+}
+
+.borders-boundary {
+  fill: none;
+  stroke: #aaa;
+}
+
+.city-label {
+  fill-opacity: .5;
+  font-size: 12px;
+  text-anchor: middle;
+}
