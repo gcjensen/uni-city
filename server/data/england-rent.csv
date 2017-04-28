@@ -1,0 +1,301 @@
+area,count of rents,mean,lower quartile,median,upper quartile
+England,"29,946",367,303,347,400
+North East,679,296,256,290,347
+Durham,97,330,300,364,368
+Darlington,72,298,286,303,303
+Middlesbrough,243,301,256,260,364
+Northumberland,13,363,347,347,390
+Redcar and Cleveland,13,309,290,325,330
+Tyne and Wear,235,270,238,260,310
+Gateshead,33,297,270,290,315
+Newcastle upon Tyne,70,285,247,293,325
+Newcastle,70,285,247,293,325
+South Tyneside,35,311,303,347,347
+Sunderland,97,235,217,238,250
+North West,"5,003",321,282,325,350
+Blackburn with Darwen,24,255,238,238,297
+Blackpool,135,350,325,347,390
+Cheshire East,335,301,260,282,347
+Chester,463,338,301,325,375
+Warrington,100,325,250,303,395
+Cumbria,398,323,282,325,350
+Allerdale,28,340,282,350,390
+Barrow-in-Furness,27,353,282,368,433
+Carlisle,227,306,282,303,334
+Eden,38,372,338,368,390
+South Lakeland,74,332,293,325,360
+Greater Manchester,"1,031",333,300,325,368
+Bolton,285,292,260,300,325
+Bury,56,331,320,325,350
+Manchester,346,364,325,347,401
+Oldham,27,323,282,325,347
+Rochdale,15,311,282,303,347
+Salford,50,356,303,347,412
+Stockport,23,385,330,380,450
+Tameside,22,309,300,300,347
+Trafford,53,358,325,350,400
+Wigan,154,324,303,325,347
+Lancashire,"1,187",317,282,312,358
+Burnley,62,362,368,368,368
+Chorley,11,318,260,303,325
+Hyndburn,26,271,238,282,282
+Lancaster,633,313,282,303,347
+Preston,265,297,260,303,338
+South Ribble,15,363,260,325,450
+West Lancashire,157,360,321,325,368
+Wyre,16,279,217,293,343
+Merseyside,"1,322",312,293,313,325
+Liverpool,"1,187",312,293,313,325
+Sefton,55,297,282,299,325
+St. Helens,41,314,280,325,350
+Wirral,33,319,256,325,390
+Yorkshire,"3,718",322,290,325,349
+East Riding of Yorkshire,90,292,255,303,303
+"Kingston upon Hull, City of","1,287",329,324,336,349
+North East Lincolnshire,266,319,282,325,347
+North Lincolnshire,82,304,282,303,347
+York,371,350,298,347,381
+North Yorkshire,467,346,325,347,381
+Craven,11,430,412,415,460
+Harrogate,50,377,325,365,450
+Ryedale,12,382,336,368,404
+Scarborough,392,339,325,347,368
+South Yorkshire,495,290,260,282,302
+Barnsley,32,302,295,296,314
+Doncaster,55,287,260,260,325
+Rotherham,29,309,303,303,325
+Sheffield,379,288,269,282,295
+West Yorkshire,660,308,282,303,336
+Bradford,191,312,282,303,325
+Calderdale,71,337,303,347,347
+Kirklees,204,293,247,300,325
+Leeds,160,322,282,336,336
+Wakefield,34,242,200,238,290
+East Midlands,"4,263",327,282,325,368
+Derby,444,290,260,282,321
+Leicester,499,290,260,282,303
+Nottingham,667,308,273,312,358
+Derbyshire,323,366,325,368,425
+Chesterfield,43,296,282,282,312
+Erewash,12,367,347,368,390
+High Peak,268,377,340,368,425
+Leicestershire,338,322,295,324,325
+Blaby,-,-,-,-,-
+Charnwood,272,316,295,316,325
+Harborough,19,370,380,380,390
+Hinckley and Bosworth,23,314,303,303,325
+Melton,20,374,358,379,379
+Lincolnshire,614,350,304,347,373
+Boston,62,365,325,347,392
+East Lindsey,110,346,325,347,368
+Lincoln,296,338,303,345,368
+South Holland,109,372,303,368,433
+South Kesteven,32,374,303,370,433
+Northamptonshire,849,350,303,350,386
+Corby,91,312,260,303,368
+Kettering,94,305,240,310,346
+Northampton,592,364,325,368,394
+Wellingborough,62,348,300,350,375
+Nottinghamshire,529,327,293,312,345
+Bassetlaw,22,359,282,325,334
+Broxtowe,119,315,260,325,350
+Mansfield,34,320,303,325,334
+Newark and Sherwood,169,301,282,303,325
+Rushcliffe,177,355,312,312,347
+West Midlands,"3,395",336,303,325,368
+Herefordshire,71,326,303,325,342
+Shropshire,26,378,350,380,390
+Stoke-on-Trent,178,250,217,238,282
+Telford and Wrekin,179,377,300,350,455
+Staffordshire,505,333,282,325,374
+East Staffordshire,43,340,303,340,368
+Lichfield,12,411,372,433,450
+Newcastle-under-Lyme,225,281,238,282,303
+Stafford,195,384,325,380,433
+Tamworth,26,357,334,368,368
+Warwickshire,937,355,325,347,373
+Nuneaton and Bedworth,96,301,286,290,304
+Rugby,179,376,325,381,412
+Warwick,657,357,329,347,368
+West Midlands,"1,216",320,300,316,334
+Birmingham,229,324,275,303,375
+Coventry,675,319,308,316,325
+Dudley,39,286,260,260,303
+Sandwell,63,348,325,325,410
+Solihull,28,435,368,420,495
+Walsall,59,275,282,282,303
+Wolverhampton,123,312,275,303,365
+Worcestershire,283,368,325,368,412
+Bromsgrove,22,323,260,345,347
+Malvern Hills,16,391,320,348,475
+Redditch,80,352,325,347,368
+Worcester,135,389,345,390,433
+Wychavon,17,386,325,400,425
+Wyre Forest,13,266,260,260,307
+EAST,"1,614",392,325,375,450
+Bedford,69,332,315,350,350
+Luton,26,413,375,425,464
+Peterborough,390,336,299,325,365
+Southend-on-Sea,72,364,330,360,398
+Cambridgeshire,307,476,390,475,565
+Cambridge,225,513,433,520,600
+Fenland,42,317,260,325,368
+Huntingdonshire,28,399,363,410,430
+South Cambridgeshire,12,498,423,525,550
+Essex,384,378,325,368,433
+Basildon,10,396,340,395,455
+Braintree,26,342,300,300,368
+Chelmsford,47,444,375,455,500
+Colchester,133,375,325,368,412
+Epping Forest,15,480,433,450,500
+Harlow,69,349,260,347,395
+Rochford,13,387,350,395,400
+Tendring,42,349,325,336,380
+Uttlesford,16,358,272,400,442
+Hertfordshire,240,428,375,433,475
+Dacorum,92,413,355,418,470
+East Hertfordshire,51,427,390,433,475
+Hertsmere,19,483,400,475,542
+St Albans,10,402,390,390,450
+Three Rivers,23,489,455,500,550
+Welwyn Hatfield,12,394,325,399,435
+Norfolk,26,315,295,320,347
+Suffolk,87,386,347,380,433
+Forest Heath,29,408,350,464,464
+Ipswich,14,368,350,360,400
+St Edmundsbury,35,388,347,390,412
+London,"2,651",558,450,525,625
+Inner London,"1,250",618,500,576,714
+Camden,28,837,667,800,932
+City of London,13,"1,004",802,953,"1,200"
+Hackney,89,632,550,576,700
+Hammersmith and Fulham,54,728,607,700,823
+Haringey,174,547,480,560,600
+Islington,49,734,607,704,867
+Kensington and Chelsea,34,909,750,843,"1,080"
+Lambeth,182,547,444,550,650
+Lewisham,197,512,450,500,575
+Newham,61,496,450,477,550
+Southwark,131,628,500,585,715
+Tower Hamlets,85,629,550,607,715
+Wandsworth,79,550,450,542,645
+Westminster,74,925,780,858,997
+Outer London,"1,401",504,430,500,560
+Barking and Dagenham,10,522,470,490,550
+Barnet,101,552,477,542,600
+Bexley,44,436,375,445,473
+Brent,101,560,498,550,650
+Bromley,60,516,450,519,562
+Croydon,85,461,400,450,500
+Ealing,166,512,423,500,600
+Enfield,71,483,425,498,550
+Greenwich,91,470,400,450,520
+Harrow,66,487,400,477,550
+Havering,22,402,312,417,450
+Hillingdon,99,479,412,477,550
+Hounslow,67,534,433,520,600
+Kingston upon Thames,170,509,434,500,550
+Merton,51,568,495,550,650
+Redbridge,71,496,420,477,550
+Richmond upon Thames,27,553,477,585,650
+Sutton,54,480,410,474,542
+Waltham Forest,45,483,410,500,550
+South East,"4,321",404,350,390,450
+Bracknell Forest,17,426,375,375,495
+Brighton and Hove,345,442,400,433,495
+Isle of Wight,89,371,347,368,400
+Medway,105,351,322,350,390
+Milton Keynes,39,379,320,369,433
+Portsmouth,549,373,325,368,390
+Reading,234,438,400,450,469
+Slough,107,409,350,400,433
+Southampton,57,368,320,355,450
+West Berkshire,63,410,368,409,433
+Windsor and Maidenhead,77,471,420,475,525
+Wokingham,41,479,400,450,550
+Buckinghamshire,135,407,347,368,450
+Aylesbury Vale,20,377,346,370,433
+Chiltern,21,479,380,465,542
+South Bucks,15,410,325,420,500
+Wycombe,79,395,347,360,450
+East Sussex,222,380,325,368,430
+Eastbourne,85,348,325,347,368
+Hastings,110,406,350,430,460
+Rother,15,332,325,347,347
+Hampshire,529,411,350,390,450
+Basingstoke and Deane,136,365,347,355,390
+East Hampshire,23,391,358,412,412
+Eastleigh,23,377,350,350,410
+Hart,25,539,475,550,600
+Havant,18,420,390,412,477
+New Forest,11,427,350,399,490
+Rushmoor,208,425,390,428,475
+Test Valley,16,367,299,332,443
+Winchester,57,444,370,433,477
+Kent,661,367,338,375,390
+Ashford,71,379,347,375,412
+Canterbury,218,373,360,375,390
+Dartford,24,401,350,412,418
+Dover,32,332,303,325,348
+Gravesham,36,372,325,385,420
+Maidstone,66,376,330,375,405
+Shepway,24,302,256,303,338
+Swale,18,342,300,347,390
+Thanet,86,329,282,345,360
+Tonbridge and Malling,14,381,350,385,400
+Tunbridge Wells,63,398,368,390,393
+Oxfordshire,286,463,400,450,500
+Cherwell,76,423,374,412,433
+Oxford,116,492,450,486,525
+South Oxfordshire,16,409,390,415,429
+Vale of White Horse,51,487,390,450,568
+West Oxfordshire,27,441,398,410,465
+Surrey,335,445,390,425,500
+Elmbridge,12,560,500,575,600
+Epsom and Ewell,12,480,431,460,469
+Guildford,36,470,400,445,520
+Reigate and Banstead,13,469,425,450,525
+Runnymede,61,422,365,420,450
+Spelthorne,16,548,498,585,625
+Tandridge,15,471,412,500,500
+Waverley,152,418,377,390,433
+Woking,10,488,425,513,525
+West Sussex,430,385,349,390,425
+Arun,133,346,320,347,368
+Chichester,110,375,350,378,395
+Crawley,40,440,413,430,478
+Mid Sussex,36,445,418,450,476
+Worthing,93,401,375,410,425
+South West,"4,302",371,330,368,400
+Bath,134,377,336,370,400
+Bournemouth,249,377,303,368,412
+Bristol,450,373,340,368,400
+Cornwall,318,330,303,325,350
+North Somerset,59,378,347,350,451
+Plymouth,816,383,357,386,412
+Poole,102,390,347,388,433
+South Gloucestershire,162,378,350,368,395
+Swindon,153,375,350,375,395
+Torbay,163,342,303,325,368
+Wiltshire,196,396,347,380,450
+Devon,510,379,345,368,412
+East Devon,47,392,347,368,400
+Exeter,293,393,350,390,433
+Mid Devon,21,362,347,368,390
+North Devon,90,339,303,347,350
+South Hams,14,354,303,369,395
+Teignbridge,31,389,325,350,463
+Dorset,139,410,347,390,412
+North Dorset,12,385,353,368,433
+West Dorset,20,443,303,333,350
+Weymouth and Portland,96,408,367,390,411
+Gloucestershire,485,358,335,368,385
+Cheltenham,277,356,325,360,390
+Gloucester,189,360,352,368,381
+Stroud,10,359,320,370,395
+Somerset,366,349,325,347,375
+Mendip,32,343,325,349,368
+Sedgemoor,25,370,325,368,390
+South Somerset,211,340,314,341,368
+Taunton Deane,84,374,335,368,422
+West Somerset,14,326,325,325,338
