@@ -10,7 +10,7 @@ parseRents();
 const getRentForCity = (city) => {
   const rent = citiesWithRent.find((c) => c.area === city);
   const { median, mean } = rent;
-  const rating = rateRentAmount(median);
+  const rating = compareRentAmount(median);
   return { median, mean, rating };
 };
 
@@ -19,7 +19,7 @@ module.exports.getRentForCity = getRentForCity;
 /**************** Private Implementation ****************/
 
 function parseRents() {
-  const csvFilePath = './server/data/england-rent.csv';
+  const csvFilePath = './server/data/rent.csv';
   let cities = [];
   csv()
     .fromFile(csvFilePath)
@@ -32,13 +32,17 @@ function parseRents() {
 }
 
 // Simple rent 'rating' function - needs to be improved
-function rateRentAmount(rent) {
-  let allRent = citiesWithRent.map((c) => c.median);
-  allRent = allRent.filter((r) => !isNaN(r));
-  let totalRent = allRent.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-  let averageRent = totalRent / allRent.length;
+function compareRentAmount(rent) {
 
-  averageRent = citiesWithRent.find((c) => c.area === 'England').median;
+  /* takes the average of all rent - unused as 'England' appears in the data
+   *
+   * let allRent = citiesWithRent.map((c) => c.median);
+   * allRent = allRent.filter((r) => !isNaN(r));
+   * let totalRent = allRent.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+   * let averageRent = totalRent / allRent.length;
+   */
+
+  const averageRent = citiesWithRent.find((c) => c.area === 'England').median;
   if (rent < averageRent) return 'Below Average';
   if (rent > averageRent) return 'Above Average';
   if (rent === averageRent) return 'Average';

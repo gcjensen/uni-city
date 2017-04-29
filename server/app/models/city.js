@@ -2,7 +2,6 @@
 
 const fs  = require('fs');
 const csv = require('csvtojson');
-const Rent = require('../models/rent');
 
 let cities;
 parseCityList();
@@ -16,18 +15,10 @@ const doesCityExist = (city) => {
   return cities.includes(city);
 }
 
-const getAllCitiesWithAllData = () => {
-  const response = []
-  for (let city of cities) {
-    const rent = Rent.getRentForCity(city);
-    response.push({ city, rent});
-  }
-  return response;
-}
-
 module.exports.getCityList = getCityList;
 module.exports.doesCityExist = doesCityExist;
-module.exports.getAllCitiesWithAllData = getAllCitiesWithAllData;
+// module.exports.getCityWithAllData = getCityWithAllData;
+// module.exports.getAllCitiesWithAllData = getAllCitiesWithAllData;
 
 
 /**************** Private Implementation ****************/
