@@ -8,16 +8,20 @@
    "basePath":"/api",
    "tags":[
       {
+         "name":"Cities",
+         "description":"The route for retrieving the available cities"
+      },
+      {
          "name":"All Data",
-         "description":"The route for retrieving all the available data for cities"
+         "description":"The routes for retrieving all the available data for cities"
       },
       {
          "name":"Rent",
-         "description":"The route for retrieving the rent data for cities"
+         "description":"The routes for retrieving the rent data for cities"
       },
       {
          "name":"Broadband Speed",
-         "description":"The route for retrieving the average download speed (Mbps) for cities"
+         "description":"The routes for retrieving the average download speed (Mbps) for cities"
       }
    ],
    "schemes":[
@@ -30,6 +34,29 @@
       "application/json"
    ],
    "paths":{
+      "/cities":{
+         "get":{
+            "tags":[
+               "Cities"
+            ],
+            "description":"Returns the available cities",
+            "operationId":"",
+            "produces":[
+               "application/json"
+            ],
+            "responses":{
+               "200":{
+                  "description":"The success response for the cities request",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                  }
+               }
+            }
+         }
+      },
       "/all-data/{city}":{
          "get":{
             "tags":[
@@ -252,6 +279,10 @@
       }
    },
    "definitions":{
+      "cities-success-response":{
+         "type":"array",
+         "items": "Southampton"
+      },
       "all-data-success-response":{
          "properties":{
             "city":{
