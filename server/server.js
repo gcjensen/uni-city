@@ -16,7 +16,8 @@ app.use('../server/resources', express.static(__dirname + '../server/resources')
  *
  * ------------------------------------------------
  */
-app.use(bodyParser());
+ app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 var swagger = require('swagger-node-express').createNew(subpath);
 app.use(express.static('server/dist'));
 
@@ -34,6 +35,8 @@ app.use('/api', require('./app/controllers/cities'));
 app.use('/api', require('./app/controllers/rent'));
 app.use('/api', require('./app/controllers/nightlife'));
 app.use('/api', require('./app/controllers/broadband'));
+app.use('/api', require('./app/controllers/crimes'));
+
 
 app.get('/api/status', (req, res, next) => {
   res.json({ message: 'API is up and available.' });

@@ -9,7 +9,7 @@
    "tags":[
       {
          "name":"Cities",
-         "description":"The route for retrieving the available cities"
+         "description":"The route for retrieving the available cities and their descriptions"
       },
       {
          "name":"All Data",
@@ -22,6 +22,10 @@
       {
          "name":"Broadband Speed",
          "description":"The routes for retrieving the average download speed (Mbps) for cities"
+      },
+      {
+         "name":"Crime",
+         "description":"The routes for retrieving the crime data (per 1000 people) for cities"
       }
    ],
    "schemes":[
@@ -47,11 +51,8 @@
             "responses":{
                "200":{
                   "description":"The success response for the cities request",
-                  "schema": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                  "schema":{
+                     "$ref":"#/definitions/cities-success-response"
                   }
                }
             }
@@ -276,12 +277,80 @@
                }
             }
          }
+      },
+      "/crime/{city}":{
+         "get":{
+            "tags":[
+               "Crime"
+            ],
+            "description":"Returns the crime data (per 1000 people) for the city",
+            "operationId":"",
+            "produces":[
+               "application/json"
+            ],
+            "parameters":[
+               {
+                  "name":"city",
+                  "in":"path",
+                  "description":"City to fetch the crime data for",
+                  "required":true,
+                  "type":"string"
+               }
+            ],
+            "responses":{
+               "200":{
+                  "description":"The success response for a crime data request",
+                  "schema":{
+                     "$ref":"#/definitions/crime-success-response"
+                  }
+               },
+               "404":{
+                  "description":"The failure response for a crime data request",
+                  "schema":{
+                     "$ref":"#/definitions/failure-response"
+                  }
+               }
+            }
+         }
+      },
+      "/crime/all-cities":{
+         "get":{
+            "tags":[
+               "Crime"
+            ],
+            "description":"Returns the crime data (per 1000 people) for all the available cities",
+            "operationId":"",
+            "produces":[
+               "application/json"
+            ],
+            "responses":{
+               "200":{
+                  "description":"The success response for a crime data request for all available cities",
+                  "schema":{
+                     "$ref":"#/definitions/crime-all-cities-success-response"
+                  }
+               }
+            }
+         }
       }
    },
    "definitions":{
       "cities-success-response":{
          "type":"array",
-         "items": "Southampton"
+         "items":{
+            "properties":{
+               "name":{
+                  "required":true,
+                  "type":"string",
+                  "example":"Southampton"
+               },
+               "description":{
+                  "required":true,
+                  "type":"schema",
+                  "example":""
+               }
+            }
+         }
       },
       "all-data-success-response":{
          "properties":{
@@ -472,6 +541,49 @@
                   "example":{
                      "speed":"27.03",
                      "rating":"Above Average"
+                  }
+               }
+            }
+         }
+      },
+      "crime-success-response":{
+         "properties":{
+            "city":{
+               "required":true,
+               "type":"string",
+               "example":"Southampton"
+            },
+            "crimeData":{
+               "required":true,
+               "type":"schema",
+               "example":{
+                  "robbery":"10",
+                  "burglary":"368",
+                  "violenceAndSexualOffences":"19.2",
+                  "total":"30.1",
+                  "rating":"Below Average"
+               }
+            }
+         }
+      },
+      "crime-all-cities-success-response":{
+         "type":"array",
+         "items":{
+            "properties":{
+               "city":{
+                  "required":true,
+                  "type":"string",
+                  "example":"Southampton"
+               },
+               "crimeData":{
+                  "required":true,
+                  "type":"schema",
+                  "example":{
+                     "robbery":"10",
+                     "burglary":"368",
+                     "violenceAndSexualOffences":"19.2",
+                     "total":"30.1",
+                     "rating":"Below Average"
                   }
                }
             }

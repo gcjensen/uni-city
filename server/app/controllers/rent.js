@@ -3,29 +3,9 @@
 const express = require('express');
 const router = express.Router();
 const Rent = require('../models/rent');
-const City = require('../models/city');
+const DataService = require('../services/data-service');
 
-router.get('/rent/all-cities', getRentForAllCities);
-router.get('/rent/:city', getRentForCity);
+router.get('/rent/all-cities', (req, res) => DataService.getDataForAllCities(res, Rent, "rent"));
+router.get('/rent/:city', (req, res) => DataService.getDataForCity(req, res, Rent, "rent"));
 
 module.exports = router;
-
-/**************** Private Implementation ****************/
-
-function getRentForCity(req, res, next) {
-  const city = req.params.city.replace(/\b\w/g, l => l.toUpperCase());
-  if (!City.doesCityExist(city)) res.send({ status: 404, message: 'Invalid city'});
-  else {
-    const rent = Rent.getRentForCity(city);
-    res.send({ city, rent });
-  }
-}
-
-function getRentForAllCities(req, res, next) {
-  const citiesWithRent = [];
-  for (let city of City.getCityList()) {
-    const rent = Rent.getRentForCity(city);
-    citiesWithRent.push({ city, rent});
-  }
-  res.send(citiesWithRent);
-}

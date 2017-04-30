@@ -1,0 +1,118 @@
+city,robbery,burglary,violenceAndSexualOffences,total
+York,4.4,0.2,11.3,16
+Buckingham,3.1,0.3,12.6,16.1
+Winchester,4.1,0.4,13.3,17.8
+Royal Agricultural University,7.5,0.2,10.2,17.9
+Harper Adams,4.8,0.1,14.2,19
+Falmouth,3,0.5,16.3,19.9
+Aberystwyth,4.2,0.1,16.6,21
+Warwick,5.4,0.7,15.1,21.2
+Oxford Brookes,6.4,0.5,14.9,21.8
+Rose Bruford College,5.7,0.9,15.5,22.1
+Bath,6.2,0.3,16.1,22.6
+Reading,5.6,0.5,16.5,22.6
+Edge Hill,6.6,0.5,16.2,23.4
+Bath Spa,5.5,0.3,17.6,23.4
+Sheffield,8.6,1.1,14.1,23.9
+Heythrop College,6.1,1.5,16.8,24.4
+St Mary's,6.3,1.1,17.5,24.9
+Plymouth Marjon,4.2,0.3,20.4,24.9
+Queen Mary,5.4,2,17.8,25.2
+Royal Holloway,7.7,0.6,17.1,25.4
+Bucks New,4.8,0.9,20.4,26
+Surrey,4,0.4,22.1,26.4
+Chichester,4.7,0.4,21.4,26.5
+East Anglia,5.2,0.6,21.3,27.1
+Keele,6.4,0.6,20.7,27.7
+Newman,7.5,2,18.8,28.3
+Nottingham,9.4,1.4,18.1,29
+Bishop Grosseteste,9,0.8,19.2,29.1
+Durham,6.3,0.5,22.5,29.3
+Loughborough,12.9,1,15.5,29.3
+Anglia Ruskin,7,1,21.9,29.9
+Hertfordshire,7,1.2,21.7,29.9
+Chester,5.7,0.3,24,30
+Southampton,10,0.9,19.2,30.1
+Suffolk,6.5,0.6,24.2,31.3
+Worcester,6.8,0.7,23.8,31.3
+Royal Veterinary College,7.8,2,21.6,31.4
+University for the Creative Arts,5.9,0.9,24.6,31.4
+Birmingham,10,2.5,18.9,31.4
+Kingston,6.4,1.7,23.4,31.4
+Cumbria,7,0.4,24.4,31.7
+Bournemouth,8.5,0.7,22.8,32
+Portsmouth,7,0.7,24.6,32.2
+Gloucestershire,11.5,0.8,20.1,32.5
+Swansea,7.7,0.4,24.5,32.6
+Leeds Trinity University,12.2,0.9,19.8,32.9
+Brighton,5.6,1,26.5,33.1
+Royal Central School of Speech and Drama,9.2,2.5,21.5,33.1
+Liverpool Hope,10.8,1.2,21.5,33.4
+Roehampton,6.2,1.7,25.5,33.4
+Middlesex,8.5,2.3,22.9,33.6
+University of Wales Trinity Saint David,6,0.4,27.3,33.7
+Canterbury Christ Church,5.7,1,27.2,33.9
+Plymouth College of Art,5.2,0.7,28.5,34.4
+Exeter,5.8,0.6,28,34.4
+"West of England, Bristol",8,1,25.5,34.5
+Goldsmiths,7.2,2.9,24.5,34.6
+Ravensbourne,7.3,2.3,25.2,34.8
+Hull,12.9,0.9,21.1,34.9
+Westminster,7.8,2.8,24.4,35
+Wolverhampton,8.4,2,24.7,35.1
+Lancaster,7.7,0.4,27.1,35.1
+Sussex,5.8,1,28.4,35.2
+Greenwich,7.1,2.1,26,35.2
+Arts University Bournemouth,9.1,0.8,25.5,35.4
+Derby,8.2,1.7,25.6,35.5
+Kent,6.5,1.1,28,35.6
+Bangor,6.4,0.5,29,35.8
+Birmingham City,8.4,3.3,24.2,35.9
+Birkbeck,8,2.7,25.3,36
+Sheffield Hallam,8.2,2,25.9,36.1
+Guildhall School of Music and Drama,8.8,3.1,24.3,36.2
+Wrexham Glynd_r,7.4,0.9,28.4,36.7
+Oxford,6.6,0.8,29.4,36.8
+Plymouth,5.8,0.8,30.5,37.1
+Essex,6.7,1,30,37.7
+Staffordshire,7.4,1,29.4,37.8
+Royal College of Music,7.1,2.3,28.4,37.9
+South Wales,7.4,0.7,29.9,38
+Cardiff Metropolitan,8.1,0.6,29.3,38.1
+Sunderland,8.6,0.9,28.7,38.2
+Brunel,8.2,1.7,28.5,38.5
+Leicester,10.8,2.1,25.7,38.6
+Salford,10.8,2,26,38.9
+Trinity Laban Conservatoire of Music and Dance,8.1,2.9,28.1,39
+Coventry,9.3,3.2,26.5,39.1
+Huddersfield,10.6,1.1,28.1,39.7
+Bedfordshire,8.3,1.8,30.2,40.3
+Conservatoire for Dance and Drama,9.5,2.6,28.6,40.7
+Cambridge,7.8,1.4,32.2,41.5
+Northumbria,8.4,1.2,31.9,41.5
+Central Lancashire,10.5,1.2,30.1,41.7
+Norwich University of the Arts,7.1,1.2,33.8,42
+Royal Academy of Music,11.1,4,27.3,42.4
+York St John,10,0.9,31.6,42.5
+Manchester Metropolitan,13.2,3.3,27.7,44.2
+Bolton,11.7,1.7,30.9,44.3
+Aston,8.3,4.9,31.1,44.4
+Lincoln,12.6,1.2,31,44.7
+Leeds,13.8,2.2,29.2,45.2
+Nottingham Trent,9.2,3,33.1,45.3
+De Montfort,13,2.5,31.7,47.2
+Newcastle,8.3,1.5,38.4,48.1
+Southampton Solent,15,1.8,31.5,48.3
+Leeds Beckett,14.2,2.2,34.4,50.8
+Northampton,11.8,2.2,37.4,51.5
+Cardiff,10,0.9,41.5,52.5
+Leeds College of Art,14.5,2.5,35.7,52.6
+Liverpool John Moores,11.5,2.1,39.4,53
+Liverpool,13.2,2,38,53.2
+Royal Northern College of Music,14.3,5.9,33.4,53.7
+Bristol,12,2.1,40,54.1
+Manchester,17.9,4.6,33.4,56
+Bradford,12.8,2.8,42.9,58.5
+Teesside,14.2,1.5,44.8,60.5
+Liverpool Institute for Performing Arts,11,2.6,49.3,62.9
+London,11.15,4.4,32.5,48

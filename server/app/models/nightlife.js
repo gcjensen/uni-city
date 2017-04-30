@@ -6,7 +6,7 @@ const GooglePlaces = require('node-googleplaces');
 let key;
 readInKey();
 
-const getNightlifeRating = (city) => {
+const getDataForCity = (city) => {
 
   return new Promise((resolve, reject) => {
 
@@ -24,17 +24,15 @@ const getNightlifeRating = (city) => {
     // });
 
     /*
-     * the above is commented out to avoid exceeding Google API Limits
-     * for testing, a random number between 3.0 and 4.5 is generated
+     * the above is commented out to avoid exceeding Google API Limits.
+     * For testing, a random number between 3.0 and 4.5 is generated
      */
 
     resolve({ rating: (Math.floor(Math.random() * 15) + 30)/10})
   });
 };
 
-module.exports.getNightlifeRating = getNightlifeRating;
-
-/**************** Private Implementation ****************/
+module.exports.getDataForCity = getDataForCity;
 
 function readInKey() {
   fs.readFile('./server/config/google-places-api-key.txt', (err, data) => {
