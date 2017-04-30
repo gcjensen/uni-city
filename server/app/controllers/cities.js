@@ -5,6 +5,7 @@ const router = express.Router();
 const City = require('../models/city');
 const Rent = require('../models/rent');
 const Nightlife = require('../models/nightlife');
+const Broadband = require('../models/Broadband');
 
 router.get('/cities', getCityList);
 router.get('/all-data/all-cities', getAllCitiesWithAllData);
@@ -26,8 +27,9 @@ function getCityWithAllData(req, res, next) {
   if (!City.doesCityExist(city)) res.send({ status: 404, message: 'Invalid city'});
   else {
     const rent = Rent.getRentForCity(city);
+    const broadband = Broadband.getBroadbandSpeedForCity(city);
     Nightlife.getNightlifeRating(city)
-      .then((nightlife) => res.send({ city, rent, nightlife }));
+      .then((nightlife) => res.send({ city, rent, nightlife, broadband }));
   }
 }
 
@@ -38,8 +40,9 @@ function getAllCitiesWithAllData(req, res, next) {
   for (let city of City.getCityList()) {
     promises.push(new Promise((resolve, reject) => {
       const rent = Rent.getRentForCity(city);
+      const broadband = Broadband.getBroadbandSpeedForCity(city);
       Nightlife.getNightlifeRating(city)
-        .then((nightlife) => resolve({ city, rent, nightlife }));
+        .then((nightlife) => resolve({ city, rent, nightlife, broadband }));
     }));
   }
   Promise.all(promises).then((response) => {

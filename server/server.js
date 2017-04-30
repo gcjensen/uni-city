@@ -33,6 +33,7 @@ swagger.configure('http://localhost:8080/', '1.0.0');
 app.use('/api', require('./app/controllers/cities'));
 app.use('/api', require('./app/controllers/rent'));
 app.use('/api', require('./app/controllers/nightlife'));
+app.use('/api', require('./app/controllers/broadband'));
 
 app.get('/api/status', (req, res, next) => {
   res.json({ message: 'API is up and available.' });

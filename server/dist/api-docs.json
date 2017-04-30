@@ -1,326 +1,450 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "version": "1.0.0",
-    "title": "UniCity API",
-    "description": "The specification for the UniCity API. This API provides data on the cities in which universities are located.",
-  },
-  "basePath": "/api",
-  "tags" : [
-    {
-      "name": "All Data",
-      "description": "The route for retrieving all the available data for cities"
-    },
-    {
-      "name": "Rent",
-      "description": "The route for retrieving the rent data for cities"
-    }
-  ],
-  "schemes": [
-    "http"
-  ],
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
-  ],
-  "paths": {
-    "/all-data/{city}": {
-      "get":{
-          "tags": ["All Data"],
-          "description": "Returns all the available data for the city",
-          "operationId": "",
-          "produces": [
-            "application/json"
-          ],
-          "parameters": [
-              {
-                "name": "city",
-                "in": "path",
-                "description": "City to fetch all data for",
-                "required": true,
-                "type": "string"
-              }
-            ],
-          "responses": {
-              "200": {
-                "description": "The success response for an all data request",
-                "schema": {
-                  "$ref": "#/definitions/all-data-success-response"
-                }
-              },
-              "404": {
-                "description": "The failure response for an all data request",
-                "schema": {
-                  "$ref": "#/definitions/failure-response"
-                }
-              }
-           }
-        }
+   "swagger":"2.0",
+   "info":{
+      "version":"1.0.0",
+      "title":"UniCity API",
+      "description":"The specification for the UniCity API. This API provides data on the cities in which universities are located."
+   },
+   "basePath":"/api",
+   "tags":[
+      {
+         "name":"All Data",
+         "description":"The route for retrieving all the available data for cities"
       },
-      "/all-data/all-cities": {
-        "get":{
-            "tags": ["All Data"],
-            "description": "Returns all the available data for all the available cities",
-            "operationId": "",
-            "produces": [
-              "application/json"
-            ],
-            "responses": {
-                "200": {
-                  "description": "The success response for an all data request",
-                  "schema": {
-                    "$ref": "#/definitions/all-data-all-cities-success-response"
-                  }
-                }
-             }
-          }
-        },
-    "/rent/{city}": {
-      "get":{
-          "tags": ["Rent"],
-          "description": "Returns the monthly rent data for a single room in the city",
-          "operationId": "",
-          "produces": [
-            "application/json"
-          ],
-          "parameters": [
-              {
-                "name": "city",
-                "in": "path",
-                "description": "City to fetch the rent data for",
-                "required": true,
-                "type": "string"
-              }
-            ],
-          "responses": {
-              "200": {
-                "description": "The success response for a rent request",
-                "schema": {
-                  "$ref": "#/definitions/rent-success-response"
-                }
-              },
-              "404": {
-                "description": "The failure response for a rent request",
-                "schema": {
-                  "$ref": "#/definitions/failure-response"
-                }
-              }
-           }
-        }
+      {
+         "name":"Rent",
+         "description":"The route for retrieving the rent data for cities"
       },
-      "/rent/all-cities": {
-        "get":{
-            "tags": ["Rent"],
-            "description": "Returns the monthly rent data for a single room in the all the cities available",
-            "operationId": "",
-            "produces": [
-              "application/json"
+      {
+         "name":"Broadband Speed",
+         "description":"The route for retrieving the average download speed (Mbps) for cities"
+      }
+   ],
+   "schemes":[
+      "http"
+   ],
+   "consumes":[
+      "application/json"
+   ],
+   "produces":[
+      "application/json"
+   ],
+   "paths":{
+      "/all-data/{city}":{
+         "get":{
+            "tags":[
+               "All Data"
             ],
-            "responses": {
-                "200": {
-                  "description": "The success response for a rent request for all available cities",
-                  "schema": {
-                    "$ref" : "#/definitions/rent-all-cities-success-response"
+            "description":"Returns all the available data for the city",
+            "operationId":"",
+            "produces":[
+               "application/json"
+            ],
+            "parameters":[
+               {
+                  "name":"city",
+                  "in":"path",
+                  "description":"City to fetch all data for",
+                  "required":true,
+                  "type":"string"
+               }
+            ],
+            "responses":{
+               "200":{
+                  "description":"The success response for an all data request",
+                  "schema":{
+                     "$ref":"#/definitions/all-data-success-response"
                   }
-                }
-             }
-          }
-        },
-        "/nightlife/{city}": {
-          "get":{
-              "tags": ["Nightlife Rating"],
-              "description": "Returns the nightlife rating for the city",
-              "operationId": "",
-              "produces": [
-                "application/json"
-              ],
-              "parameters": [
-                  {
-                    "name": "city",
-                    "in": "path",
-                    "description": "City to fetch the nightlife rating for",
-                    "required": true,
-                    "type": "string"
-                  }
-                ],
-              "responses": {
-                  "200": {
-                    "description": "The success response for a nightlife rating request",
-                    "schema": {
-                      "$ref": "#/definitions/nightlife-success-response"
-                    }
-                  },
-                  "404": {
-                    "description": "The failure response for a nightlife rating request",
-                    "schema": {
-                      "$ref": "#/definitions/failure-response"
-                    }
+               },
+               "404":{
+                  "description":"The failure response for an all data request",
+                  "schema":{
+                     "$ref":"#/definitions/failure-response"
                   }
                }
-            }
-          },
-          "/nightlife/all-cities": {
-            "get":{
-                "tags": ["Nightlife Rating"],
-                "description": "Returns the nightlife ratings for all available cities",
-                "operationId": "",
-                "produces": [
-                  "application/json"
-                ],
-                "responses": {
-                    "200": {
-                      "description": "The success response for a nightlife rating request for all available cities",
-                      "schema": {
-                        "$ref" : "#/definitions/nightlife-all-cities-success-response"
-                      }
-                    }
-                 }
-              }
-            }
-  },
-  "definitions": {
-    "all-data-success-response": {
-        "properties": {
-          "city": {
-            "required":true,
-            "type": "string",
-            "example": "Southampton"
-          },
-          "rent": {
-            "required":true,
-            "type": "schema",
-            "example": {
-              "median":"355",
-              "mean": "368",
-              "rating": "Above Average"
-            }
-          },
-          "nightlife": {
-            "required":true,
-            "type": "schema",
-            "example": {
-              "rating": "3.7"
-            }
-          }
-      }
-    },
-    "all-data-all-cities-success-response": {
-        "type": "array",
-        "items": {
-          "properties": {
-            "city": {
-              "required":true,
-              "type": "string",
-              "example": "Southampton"
-            },
-            "rent": {
-              "required":true,
-              "type": "schema",
-              "example": {
-                "median":"355",
-                "mean": "368",
-                "rating": "Above Average"
-              }
-            },
-            "nightlife": {
-              "required":true,
-              "type": "schema",
-              "example": {
-                "rating": "3.7"
-              }
-            }
-          }
-        }
-    },
-    "rent-success-response": {
-        "properties": {
-          "city": {
-            "required":true,
-            "type": "string",
-            "example": "Southampton"
-          },
-          "rent": {
-            "required":true,
-            "type": "schema",
-            "example": {
-              "median":"355",
-              "mean": "368",
-              "rating": "Above Average"
-            }
-          }
-      }
-    },
-    "failure-response": {
-        "properties": {
-          "status": {
-            "required":true,
-            "type": "number",
-            "example": "404"
-          },
-          "message": {
-            "required":true,
-            "type": "schema",
-            "example": "Invalid city"
-          }
-        }
-    },
-    "rent-all-cities-success-response": {
-        "type": "array",
-        "items": {
-          "properties": {
-            "city": {
-              "required":true,
-              "type": "string",
-              "example": "Southampton"
-            },
-            "rent": {
-              "required":true,
-              "type": "schema",
-              "example": {
-                "median":"355",
-                "mean": "368",
-                "rating": "Above Average"
-              }
             }
          }
-       }
-     },
-     "nightlife-success-response": {
-         "properties": {
-           "city": {
-             "required":true,
-             "type": "string",
-             "example": "Southampton"
-           },
-           "nightlife": {
-             "required":true,
-             "type": "schema",
-             "example": {
-               "rating":"3.7"
-             }
-           }
-       }
-     },
-     "nightlife-all-cities-success-response": {
-         "type": "array",
-         "items": {
-           "properties": {
-             "city": {
-               "required":true,
-               "type": "string",
-               "example": "Southampton"
-             },
-             "nightlife": {
-               "required":true,
-               "type": "schema",
-               "example": {
-                 "rating":"3.7"
+      },
+      "/all-data/all-cities":{
+         "get":{
+            "tags":[
+               "All Data"
+            ],
+            "description":"Returns all the available data for all the available cities",
+            "operationId":"",
+            "produces":[
+               "application/json"
+            ],
+            "responses":{
+               "200":{
+                  "description":"The success response for an all data request",
+                  "schema":{
+                     "$ref":"#/definitions/all-data-all-cities-success-response"
+                  }
                }
-             }
-          }
-        }
+            }
+         }
+      },
+      "/rent/{city}":{
+         "get":{
+            "tags":[
+               "Rent"
+            ],
+            "description":"Returns the monthly rent data for a single room in the city",
+            "operationId":"",
+            "produces":[
+               "application/json"
+            ],
+            "parameters":[
+               {
+                  "name":"city",
+                  "in":"path",
+                  "description":"City to fetch the rent data for",
+                  "required":true,
+                  "type":"string"
+               }
+            ],
+            "responses":{
+               "200":{
+                  "description":"The success response for a rent request",
+                  "schema":{
+                     "$ref":"#/definitions/rent-success-response"
+                  }
+               },
+               "404":{
+                  "description":"The failure response for a rent request",
+                  "schema":{
+                     "$ref":"#/definitions/failure-response"
+                  }
+               }
+            }
+         }
+      },
+      "/rent/all-cities":{
+         "get":{
+            "tags":[
+               "Rent"
+            ],
+            "description":"Returns the monthly rent data for a single room in the all the cities available",
+            "operationId":"",
+            "produces":[
+               "application/json"
+            ],
+            "responses":{
+               "200":{
+                  "description":"The success response for a rent request for all available cities",
+                  "schema":{
+                     "$ref":"#/definitions/rent-all-cities-success-response"
+                  }
+               }
+            }
+         }
+      },
+      "/nightlife/{city}":{
+         "get":{
+            "tags":[
+               "Nightlife Rating"
+            ],
+            "description":"Returns the nightlife rating for the city",
+            "operationId":"",
+            "produces":[
+               "application/json"
+            ],
+            "parameters":[
+               {
+                  "name":"city",
+                  "in":"path",
+                  "description":"City to fetch the nightlife rating for",
+                  "required":true,
+                  "type":"string"
+               }
+            ],
+            "responses":{
+               "200":{
+                  "description":"The success response for a nightlife rating request",
+                  "schema":{
+                     "$ref":"#/definitions/nightlife-success-response"
+                  }
+               },
+               "404":{
+                  "description":"The failure response for a nightlife rating request",
+                  "schema":{
+                     "$ref":"#/definitions/failure-response"
+                  }
+               }
+            }
+         }
+      },
+      "/nightlife/all-cities":{
+         "get":{
+            "tags":[
+               "Nightlife Rating"
+            ],
+            "description":"Returns the nightlife ratings for all available cities",
+            "operationId":"",
+            "produces":[
+               "application/json"
+            ],
+            "responses":{
+               "200":{
+                  "description":"The success response for a nightlife rating request for all available cities",
+                  "schema":{
+                     "$ref":"#/definitions/nightlife-all-cities-success-response"
+                  }
+               }
+            }
+         }
+      },
+      "/broadband/{city}":{
+         "get":{
+            "tags":[
+               "Broadband Speed"
+            ],
+            "description":"Returns the average download speed (Mbps) for the city",
+            "operationId":"",
+            "produces":[
+               "application/json"
+            ],
+            "parameters":[
+               {
+                  "name":"city",
+                  "in":"path",
+                  "description":"City to fetch the average download speed for",
+                  "required":true,
+                  "type":"string"
+               }
+            ],
+            "responses":{
+               "200":{
+                  "description":"The success response for a broadband speed request",
+                  "schema":{
+                     "$ref":"#/definitions/broadband-success-response"
+                  }
+               },
+               "404":{
+                  "description":"The failure response for a broadband request",
+                  "schema":{
+                     "$ref":"#/definitions/failure-response"
+                  }
+               }
+            }
+         }
+      },
+      "/broadband/all-cities":{
+         "get":{
+            "tags":[
+               "Broadband Speed"
+            ],
+            "description":"Returns the average download speed (Mbps) for all the available cities",
+            "operationId":"",
+            "produces":[
+               "application/json"
+            ],
+            "responses":{
+               "200":{
+                  "description":"The success response for a broadband speed request for all available cities",
+                  "schema":{
+                     "$ref":"#/definitions/broadband-all-cities-success-response"
+                  }
+               }
+            }
+         }
       }
-  }
+   },
+   "definitions":{
+      "all-data-success-response":{
+         "properties":{
+            "city":{
+               "required":true,
+               "type":"string",
+               "example":"Southampton"
+            },
+            "rent":{
+               "required":true,
+               "type":"schema",
+               "example":{
+                  "median":"355",
+                  "mean":"368",
+                  "rating":"Above Average"
+               }
+            },
+            "nightlife":{
+               "required":true,
+               "type":"schema",
+               "example":{
+                  "rating":"3.7"
+               }
+            },
+            "broadband":{
+               "required":true,
+               "type":"schema",
+               "example":{
+                  "speed":"27.03",
+                  "rating":"Above Average"
+               }
+            }
+         }
+      },
+      "all-data-all-cities-success-response":{
+         "type":"array",
+         "items":{
+            "properties":{
+               "city":{
+                  "required":true,
+                  "type":"string",
+                  "example":"Southampton"
+               },
+               "rent":{
+                  "required":true,
+                  "type":"schema",
+                  "example":{
+                     "median":"355",
+                     "mean":"368",
+                     "rating":"Above Average"
+                  }
+               },
+               "nightlife":{
+                  "required":true,
+                  "type":"schema",
+                  "example":{
+                     "rating":"3.7"
+                  }
+               },
+               "broadband":{
+                  "required":true,
+                  "type":"schema",
+                  "example":{
+                     "speed":"27.03",
+                     "rating":"Above Average"
+                  }
+               }
+            }
+         }
+      },
+      "rent-success-response":{
+         "properties":{
+            "city":{
+               "required":true,
+               "type":"string",
+               "example":"Southampton"
+            },
+            "rent":{
+               "required":true,
+               "type":"schema",
+               "example":{
+                  "median":"355",
+                  "mean":"368",
+                  "rating":"Above Average"
+               }
+            }
+         }
+      },
+      "failure-response":{
+         "properties":{
+            "status":{
+               "required":true,
+               "type":"number",
+               "example":"404"
+            },
+            "message":{
+               "required":true,
+               "type":"schema",
+               "example":"Invalid city"
+            }
+         }
+      },
+      "rent-all-cities-success-response":{
+         "type":"array",
+         "items":{
+            "properties":{
+               "city":{
+                  "required":true,
+                  "type":"string",
+                  "example":"Southampton"
+               },
+               "rent":{
+                  "required":true,
+                  "type":"schema",
+                  "example":{
+                     "median":"355",
+                     "mean":"368",
+                     "rating":"Above Average"
+                  }
+               }
+            }
+         }
+      },
+      "nightlife-success-response":{
+         "properties":{
+            "city":{
+               "required":true,
+               "type":"string",
+               "example":"Southampton"
+            },
+            "nightlife":{
+               "required":true,
+               "type":"schema",
+               "example":{
+                  "rating":"3.7"
+               }
+            }
+         }
+      },
+      "nightlife-all-cities-success-response":{
+         "type":"array",
+         "items":{
+            "properties":{
+               "city":{
+                  "required":true,
+                  "type":"string",
+                  "example":"Southampton"
+               },
+               "nightlife":{
+                  "required":true,
+                  "type":"schema",
+                  "example":{
+                     "rating":"3.7"
+                  }
+               }
+            }
+         }
+      },
+      "broadband-success-response":{
+         "properties":{
+            "city":{
+               "required":true,
+               "type":"string",
+               "example":"Southampton"
+            },
+            "broadband":{
+               "required":true,
+               "type":"schema",
+               "example":{
+                  "speed":"27.03",
+                  "rating":"Above Average"
+               }
+            }
+         }
+      },
+      "broadband-all-cities-success-response":{
+         "type":"array",
+         "items":{
+            "properties":{
+               "city":{
+                  "required":true,
+                  "type":"string",
+                  "example":"Southampton"
+               },
+               "broadband":{
+                  "required":true,
+                  "type":"schema",
+                  "example":{
+                     "speed":"27.03",
+                     "rating":"Above Average"
+                  }
+               }
+            }
+         }
+      }
+   }
 }
