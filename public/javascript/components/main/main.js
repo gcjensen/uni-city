@@ -6,7 +6,7 @@ angular.module('open-data').component('main', {
 
 angular.module('open-data').controller('MainController', function ($scope) {
 
-  $scope.currentPage = 'map';
+  $scope.currentPage = 'city';
 
   $scope.changeToPage = function(page) {
 

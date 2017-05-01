@@ -1,13 +1,13 @@
 <div>
   <md-nav-bar class="nav" md-selected-nav-item="currentPage" nav-bar-aria-label="navigation links">
-    <md-nav-item md-nav-click="changeToPage('map')" name="map">
-      Map
+    <md-nav-item md-nav-click="changeToPage('city')" name="city">
+      City
     </md-nav-item>
     <md-nav-item md-nav-click="changeToPage('ranking')" name="ranking">
       Ranking
     </md-nav-item>
   </md-nav-bar>
 
-  <map ng-if="currentPage == 'map'"></map>
+  <city ng-if="currentPage == 'city'"></city>
   <ranking ng-if="currentPage == 'ranking'"></ranking>
 </div>

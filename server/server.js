@@ -20,6 +20,7 @@ app.use('../server/resources', express.static(__dirname + '../server/resources')
 app.use(bodyParser.json());
 var swagger = require('swagger-node-express').createNew(subpath);
 app.use(express.static('server/dist'));
+app.use(express.static(path.join(__dirname, '../server/resources')));
 
 app.get('/docs', function (req, res) {
     res.sendFile(__dirname + '/dist/index.html');
