@@ -12,24 +12,14 @@ const getDataForCity = (city) => {
   return new Promise((resolve, reject) => {
     let constituencyWages = ConstituencyService.filterByConstituencies(city, citiesWithWageData);
 	constituencyWages = constituencyWages.filter((c) => !isNaN(c.Median));
-    let totalWage = constituencyWages.reduce((a, b) => ({Median: parseInt(a.Median) + parseInt(b.Median)}), ({Median:0}));
-    let averageWage = totalWage.Median / constituencyWages.length;
+	constituencyWages = constituencyWages.map((d) => d['Median']);
 
-    const rating = compareWageAmount(averageWage);
+    let totalWage = constituencyWages.reduce((a, b) => (parseInt(a) + parseInt(b)), 0);
+    let averageWage = totalWage / constituencyWages.length;
+
+    const rating = ComparisonService.compare(citiesWithWageData, averageWage, 'Median');
     resolve({ average: averageWage, rating: rating });
   });
 };
-
-// TODO As with the rent one, could probably do with some complexity
-function compareWageAmount(wage) {
-  let filteredData = citiesWithWageData.filter((c) => !isNaN(c.Median));
-  let totalWage = filteredData.reduce((a, b) => ({Median: parseInt(a.Median) + parseInt(b.Median)}), ({Median:0}));
-  let averageWage = totalWage.Median / filteredData.length;
-
-  if (wage < averageWage) return 'Below Average';
-  if (wage > averageWage) return 'Above Average';
-  if (wage === averageWage) return 'Average';
-}
-
 
 module.exports.getDataForCity = getDataForCity;
