@@ -11,5 +11,6 @@ module.exports = {
   "rent": require('../app/models/rent'),
   "crimeData": require('../app/models/crime'),
   "nightlife": require('../app/models/nightlife'),
-  "broadband": require('../app/models/broadband')
+  "broadband": require('../app/models/broadband'),
+  "wage": require('../app/models/wage')
 };
