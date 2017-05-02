@@ -1,15 +1,17 @@
 <div>
     
-  <md-nav-bar class="nav" md-selected-nav-item="currentPage" nav-bar-aria-label="navigation links">
+  <div style="display: flex; align-items: center; justify-content: space-between; height: 60px; width: 100%; position: absolute; z-index: 11">
+    
+    <a ng-click="changeToPage('homepage')" style="display: flex; align-items: center; height: 100%; cursor: pointer; margin-left: 30px">
+      <span ng-class="getLogoStyle()">Uni</span><span ng-class="getLogoStyle()" style="font-weight: 700">City</span>
+    </a>  
+    
+    <div style="display: flex; flex-direction: horizontal; height: 100%">
+      <a ng-class="getMenuItemStyle('ranking')" ng-click="changeToPage('ranking')">RANKING</a>
+      <a ng-class="getMenuItemStyle('about')" ng-click="changeToPage('about')">ABOUT</a>  
+    </div>
       
-    <md-nav-item md-nav-click="changeToPage('homepage')" name="homepage">
-      Home
-    </md-nav-item>
-    <md-nav-item md-nav-click="changeToPage('ranking')" name="ranking">
-      Ranking
-    </md-nav-item>
-      
-  </md-nav-bar>
+  </div>
     
   <div ng-view />
     

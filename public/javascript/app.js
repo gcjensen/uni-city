@@ -11,6 +11,10 @@ angular
             controller: 'RankingController',
             templateUrl: '/javascript/components/ranking/ranking.html',
         });
+        $routeProvider.when('/about', {
+            controller: 'AboutController',
+            templateUrl: '/javascript/components/about/about.html',
+        });
         $routeProvider.when('/city/:arg', {
             controller: 'CityController',
             templateUrl: '/javascript/components/city/city.html',

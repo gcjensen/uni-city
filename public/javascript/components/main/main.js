@@ -4,16 +4,31 @@ angular.module('open-data').component('main', {
 });
 
 
-angular.module('open-data').controller('MainController', function ($scope, $location, $routeParams) {
+angular.module('open-data').controller('MainController', function ($rootScope, $scope, $location, $routeParams) {
 
-  $scope.currentPage = 'homepage';
+  // What happens when city?
+  $scope.currentPage = $location.path().split("/")[1];
+  if ($scope.currentPage === "") $scope.currentPage = "homepage";
 
   $scope.changeToPage = function(page) {
     $location.path('/' + page);
+    $scope.currentPage = page;
   }
   
-  $scope.viewCity = function(city){
-    $location.path('/city/' + city);
-  };
+  $scope.getLogoStyle = function () {
+    if ($location.path().split("/")[1] === "city")
+      return 'menu-logo-white';
+    else
+      return 'menu-logo';
+  }
+    
+  $scope.getMenuItemStyle = function (name) {
+    if ($location.path().split("/")[1] === "city")
+      return 'menu-item-white';
+    else if ($scope.currentPage === name)
+      return 'menu-item-active';
+    else
+      return 'menu-item';
+  }
 
 });
