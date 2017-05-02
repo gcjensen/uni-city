@@ -1,0 +1,635 @@
+Description,Code,Median
+Berwick-upon-Tweed,513,20009
+Bishop Auckland,506,20456
+Blaydon,517,20526
+Blyth Valley,514,20232
+City of Durham,508,20855
+Darlington,507,19133
+Easington,509,18300
+Gateshead,921,19126
+Hartlepool,500,20038
+Hexham,515,20133
+Houghton and Sunderland South,928,20316
+Jarrow,520,20799
+Middlesbrough,501,16291
+Middlesbrough South and East Cleveland,502,19205
+Newcastle upon Tyne Central,521,16421
+Newcastle upon Tyne East,940,17752
+Newcastle upon Tyne North,522,19656
+North Durham,510,20976
+North Tyneside,524,18860
+North West Durham,511,19947
+Redcar,503,18959
+Sedgefield,512,20522
+South Shields,525,x
+Stockton North,504,18660
+Stockton South,505,20798
+Sunderland Central,966,20329
+Tynemouth,529,21243
+Wansbeck,516,19459
+Washington and Sunderland West,972,17575
+Altrincham and Sale West,435,24433
+Ashton-under-Lyne,436,19608
+Barrow and Furness,494,19491
+Birkenhead,478,19713
+Blackburn,463,15735
+Blackley and Broughton,903,15731
+Blackpool North and Cleveleys,904,16554
+Blackpool South,465,15481
+Bolton North East,437,17974
+Bolton South East,438,16743
+Bolton West,439,19729
+Bootle,479,20377
+Burnley,466,18664
+Bury North,440,23971
+Bury South,441,21143
+Carlisle,495,18196
+Cheadle,442,22298
+Chorley,467,x
+City of Chester,424,20890
+Congleton,425,21548
+Copeland,496,16901
+Crewe and Nantwich,426,19246
+Denton and Reddish,443,18825
+Eddisbury,427,22996
+Ellesmere Port and Neston,428,18662
+Fylde,468,21386
+Garston and Halewood,920,22043
+Halton,429,19300
+Hazel Grove,445,21778
+Heywood and Middleton,446,20485
+Hyndburn,469,19032
+Knowsley,931,21678
+Lancaster and Fleetwood,932,18911
+Leigh,447,18719
+"Liverpool, Riverside",484,21518
+"Liverpool, Walton",485,16027
+"Liverpool, Wavertree",486,21767
+"Liverpool, West Derby",487,19577
+Macclesfield,430,20832
+Makerfield,448,20770
+Manchester Central,450,19225
+"Manchester, Gorton",451,18188
+"Manchester, Withington",452,24766
+Morecambe and Lunesdale,471,18582
+Oldham East and Saddleworth,453,19736
+Oldham West and Royton,454,18689
+Pendle,472,19125
+Penrith and The Border,497,17373
+Preston,473,16895
+Ribble Valley,474,21773
+Rochdale,455,19864
+Rossendale and Darwen,475,19782
+Salford and Eccles,955,18488
+Sefton Central,956,22237
+South Ribble,476,20864
+Southport,488,16947
+St Helens North,489,21170
+St Helens South and Whiston,965,18987
+Stalybridge and Hyde,457,18571
+Stockport,458,22787
+Stretford and Urmston,459,21876
+Tatton,431,24161
+Wallasey,491,17886
+Warrington North,432,21135
+Warrington South,433,22507
+Weaver Vale,434,22322
+West Lancashire,477,21843
+Westmorland and Lonsdale,498,18395
+Wigan,460,19367
+Wirral South,492,24400
+Wirral West,493,22608
+Workington,499,16743
+Worsley and Eccles South,976,19564
+Wyre and Preston North,977,20801
+Wythenshawe and Sale East,462,17773
+Barnsley Central,386,20356
+Barnsley East,900,19321
+Batley and Spen,401,19627
+Beverley and Holderness,368,22406
+Bradford East,905,17939
+Bradford South,403,18527
+Bradford West,404,16170
+Brigg and Goole,369,21423
+Calder Valley,405,21557
+Cleethorpes,370,19855
+Colne Valley,406,19894
+Dewsbury,407,18824
+Don Valley,389,20247
+Doncaster Central,390,17641
+Doncaster North,391,18838
+East Yorkshire,371,x
+Elmet and Rothwell,918,21998
+Great Grimsby,372,17833
+Halifax,409,18788
+Haltemprice and Howden,373,24998
+Harrogate and Knaresborough,378,21367
+Hemsworth,410,17422
+Huddersfield,411,17666
+Keighley,412,19759
+Kingston upon Hull East,374,15554
+Kingston upon Hull North,375,17860
+Kingston upon Hull West and Hessle,376,16044
+Leeds Central,413,18939
+Leeds East,414,19157
+Leeds North East,415,23548
+Leeds North West,416,23113
+Leeds West,417,19086
+Morley and Outwood,939,21638
+"Normanton, Pontefract and Castleford",942,17593
+Penistone and Stocksbridge,946,21476
+Pudsey,421,23794
+Richmond (Yorks),379,19974
+Rother Valley,392,20570
+Rotherham,393,16040
+Scarborough and Whitby,381,19063
+Scunthorpe,377,19131
+Selby and Ainsty,957,22434
+Sheffield Central,396,18900
+Sheffield South East,958,18673
+"Sheffield, Brightside and Hillsborough",959,15957
+"Sheffield, Hallam",397,28762
+"Sheffield, Heeley",398,19259
+Shipley,422,20677
+Skipton and Ripon,383,20074
+Thirsk and Malton,968,17277
+Wakefield,423,19187
+Wentworth and Dearne,973,18313
+York Central,978,21676
+York Outer,979,20960
+Amber Valley,324,20118
+Ashfield,357,18100
+Bassetlaw,358,19932
+Bolsover,325,x
+Boston and Skegness,344,16940
+Bosworth,335,20792
+Broxtowe,359,21429
+Charnwood,336,21305
+Chesterfield,326,20514
+Corby,351,21319
+Daventry,352,24181
+Derby North,327,22855
+Derby South,328,18634
+Derbyshire Dales,916,22166
+Erewash,329,19903
+Gainsborough,345,19477
+Gedling,360,21300
+Grantham and Stamford,346,x
+Harborough,337,23021
+High Peak,330,21647
+Kettering,353,20039
+Leicester East,338,16767
+Leicester South,339,18368
+Leicester West,340,17383
+Lincoln,347,18142
+Loughborough,341,22287
+Louth and Horncastle,348,19212
+Mansfield,361,17053
+Mid Derbyshire,936,23568
+Newark,362,19852
+North East Derbyshire,331,21716
+North West Leicestershire,342,22425
+Northampton North,354,18571
+Northampton South,355,20164
+Nottingham East,363,20776
+Nottingham North,364,18183
+Nottingham South,365,20357
+Rushcliffe,366,25371
+Rutland and Melton,343,21485
+Sherwood,367,17563
+Sleaford and North Hykeham,349,19577
+South Derbyshire,332,21378
+South Holland and The Deepings,350,21427
+South Leicestershire,961,22003
+South Northamptonshire,962,24996
+Wellingborough,356,20910
+Aldridge-Brownhills,295,17991
+"Birmingham, Edgbaston",296,21161
+"Birmingham, Erdington",297,20381
+"Birmingham, Hall Green",298,20036
+"Birmingham, Hodge Hill",299,17578
+"Birmingham, Ladywood",300,17728
+"Birmingham, Northfield",301,18065
+"Birmingham, Perry Barr",302,18745
+"Birmingham, Selly Oak",303,21967
+"Birmingham, Yardley",305,18229
+Bromsgrove,265,21437
+Burton,278,18916
+Cannock Chase,279,19946
+Coventry North East,306,18919
+Coventry North West,307,24236
+Coventry South,308,21801
+Dudley North,309,19110
+Dudley South,310,17840
+Halesowen and Rowley Regis,311,19169
+Hereford and South Herefordshire,926,17578
+Kenilworth and Southam,929,24332
+Lichfield,280,22804
+Ludlow,273,18267
+Meriden,312,23061
+Mid Worcestershire,268,22199
+Newcastle-under-Lyme,281,19036
+North Herefordshire,944,16950
+North Shropshire,274,20105
+North Warwickshire,290,22429
+Nuneaton,291,20707
+Redditch,269,18669
+Rugby,953,22866
+Shrewsbury and Atcham,275,19571
+Solihull,313,26343
+South Staffordshire,282,21844
+Stafford,283,20000
+Staffordshire Moorlands,284,19449
+Stoke-on-Trent Central,285,16370
+Stoke-on-Trent North,286,18131
+Stoke-on-Trent South,287,18594
+Stone,288,19137
+Stourbridge,314,17625
+Stratford-on-Avon,293,22461
+Sutton Coldfield,315,26902
+Tamworth,289,20943
+Telford,276,18364
+The Wrekin,277,19987
+Walsall North,316,17310
+Walsall South,317,18002
+Warley,318,19192
+Warwick and Leamington,294,23599
+West Bromwich East,319,19295
+West Bromwich West,320,18191
+West Worcestershire,270,x
+Wolverhampton North East,321,17556
+Wolverhampton South East,322,17265
+Wolverhampton South West,323,20018
+Worcester,271,21119
+Wyre Forest,272,17674
+Bath,214,21757
+Bournemouth East,240,19868
+Bournemouth West,241,18722
+Bridgwater and West Somerset,907,18017
+Bristol East,215,19081
+Bristol North West,216,20557
+Bristol South,217,19962
+Bristol West,218,24613
+Camborne and Redruth,909,18250
+Central Devon,910,17483
+Cheltenham,248,22946
+Chippenham,913,20505
+Christchurch,242,20670
+Devizes,259,21707
+East Devon,229,20346
+Exeter,230,19609
+Filton and Bradley Stoke,919,23774
+Forest of Dean,250,21452
+Gloucester,251,18684
+Kingswood,219,21172
+Mid Dorset and North Poole,243,19996
+Newton Abbot,941,17593
+North Cornwall,225,x
+North Devon,231,16937
+North Dorset,244,19869
+North East Somerset,943,20327
+North Somerset,945,24124
+North Swindon,260,21667
+North Wiltshire,261,19889
+"Plymouth, Moor View",947,18979
+"Plymouth, Sutton and Devonport",948,20162
+Poole,245,20297
+Salisbury,262,20203
+Somerton and Frome,255,19328
+South Dorset,246,19433
+South East Cornwall,226,17588
+South Swindon,263,23097
+South West Devon,234,20897
+South West Wiltshire,963,20953
+St Austell and Newquay,964,17170
+St Ives,227,16217
+Stroud,252,22692
+Taunton Deane,967,21147
+Tewkesbury,253,19995
+The Cotswolds,249,17479
+Thornbury and Yate,969,21139
+Tiverton and Honiton,236,18097
+Torbay,237,17097
+Torridge and West Devon,238,16551
+Totnes,239,17802
+Truro and Falmouth,970,19624
+Wells,257,18010
+West Dorset,247,21254
+Weston-Super-Mare,222,21841
+Yeovil,258,18614
+Basildon and Billericay,901,21018
+Bedford,1,20020
+Braintree,32,22697
+Brentwood and Ongar,33,30512
+Broadland,908,x
+Broxbourne,64,24216
+Bury St Edmunds,133,20540
+Cambridge,118,25148
+Castle Point,34,21508
+Central Suffolk and North Ipswich,134,21685
+Chelmsford,911,25976
+Clacton,914,19307
+Colchester,35,22259
+Epping Forest,36,27075
+Great Yarmouth,125,16879
+Harlow,37,20935
+Harwich and North Essex,925,24717
+Hemel Hempstead,65,22652
+Hertford and Stortford,66,27093
+Hertsmere,67,23969
+Hitchin and Harpenden,68,32327
+Huntingdon,119,23014
+Ipswich,135,17869
+Luton North,2,20227
+Luton South,3,x
+Maldon,934,26619
+Mid Bedfordshire,4,26154
+Mid Norfolk,126,19141
+North East Bedfordshire,5,23162
+North East Cambridgeshire,120,20900
+North East Hertfordshire,69,28384
+North Norfolk,127,18008
+North West Cambridgeshire,121,24179
+North West Norfolk,128,18039
+Norwich North,129,19145
+Norwich South,130,20483
+Peterborough,122,19659
+Rayleigh and Wickford,950,25055
+Rochford and Southend East,42,19911
+Saffron Walden,43,26513
+South Basildon and East Thurrock,960,23057
+South Cambridgeshire,123,26337
+South East Cambridgeshire,124,25402
+South Norfolk,131,21293
+South Suffolk,136,21835
+South West Bedfordshire,6,21903
+South West Hertfordshire,70,30257
+South West Norfolk,132,17062
+Southend West,44,23210
+St Albans,71,30446
+Stevenage,72,24009
+Suffolk Coastal,137,21234
+Thurrock,45,23392
+Watford,73,27401
+Waveney,138,18366
+Welwyn Hatfield,74,24110
+West Suffolk,139,17954
+Witham,975,25961
+Barking,140,22392
+Battersea,141,33026
+Beckenham,142,30439
+Bermondsey and Old Southwark,902,30532
+Bethnal Green and Bow,143,26559
+Bexleyheath and Crayford,144,26568
+Brent Central,906,20313
+Brent North,146,19846
+Brentford and Isleworth,148,29022
+Bromley and Chislehurst,149,30605
+Camberwell and Peckham,150,23020
+Carshalton and Wallington,151,25441
+Chelsea and Fulham,912,x
+Chingford and Woodford Green,152,26121
+Chipping Barnet,153,28073
+Cities of London and Westminster,154,x
+Croydon Central,155,27183
+Croydon North,156,23017
+Croydon South,157,28182
+Dagenham and Rainham,915,24923
+Dulwich and West Norwood,159,32695
+Ealing Central and Acton,917,31319
+Ealing North,161,25265
+"Ealing, Southall",162,22419
+East Ham,163,22084
+Edmonton,164,21148
+Eltham,165,28663
+Enfield North,166,25006
+"Enfield, Southgate",167,26066
+Erith and Thamesmead,168,24188
+Feltham and Heston,169,25062
+Finchley and Golders Green,170,32295
+Greenwich and Woolwich,171,25877
+Hackney North and Stoke Newington,172,27212
+Hackney South and Shoreditch,173,28028
+Hammersmith,923,27968
+Hampstead and Kilburn,924,35000
+Harrow East,176,24730
+Harrow West,177,27161
+Hayes and Harlington,178,21786
+Hendon,179,22113
+Holborn and St Pancras,180,29547
+Hornchurch and Upminster,927,27049
+Hornsey and Wood Green,182,29709
+Ilford North,183,26420
+Ilford South,184,25610
+Islington North,185,31771
+Islington South and Finsbury,186,33431
+Kensington,930,x
+Kingston and Surbiton,188,28979
+Lewisham East,190,25830
+Lewisham West and Penge,933,24397
+"Lewisham, Deptford",189,25745
+Leyton and Wanstead,192,24028
+Mitcham and Morden,193,22653
+Old Bexley and Sidcup,195,29723
+Orpington,196,28390
+Poplar and Limehouse,949,32349
+Putney,198,35892
+Richmond Park,200,35689
+Romford,201,28170
+"Ruislip, Northwood and Pinner",954,31172
+Streatham,203,31972
+Sutton and Cheam,204,26044
+Tooting,205,33957
+Tottenham,206,21947
+Twickenham,207,36077
+Uxbridge and South Ruislip,971,29844
+Vauxhall,210,28074
+Walthamstow,211,23133
+West Ham,212,20476
+Westminster North,974,39745
+Wimbledon,213,36185
+Aldershot,47,24837
+Arundel and South Downs,110,20426
+Ashford,76,21132
+Aylesbury,15,22485
+Banbury,93,23357
+Basingstoke,48,25611
+Beaconsfield,16,28581
+Bexhill and Battle,22,x
+Bognor Regis and Littlehampton,111,17175
+Bracknell,7,27097
+"Brighton, Kemptown",23,21525
+"Brighton, Pavilion",24,23200
+Buckingham,17,27379
+Canterbury,77,22426
+Chatham and Aylesford,78,24329
+Chesham and Amersham,18,29406
+Chichester,112,19890
+Crawley,113,22803
+Dartford,79,24299
+Dover,80,23286
+East Hampshire,49,24739
+East Surrey,99,24356
+East Worthing and Shoreham,114,19712
+Eastbourne,25,18512
+Eastleigh,50,23495
+Epsom and Ewell,100,29054
+Esher and Walton,101,30495
+Fareham,51,22489
+Faversham and Mid Kent,81,25019
+Folkestone and Hythe,82,21696
+Gillingham and Rainham,922,20461
+Gosport,52,20360
+Gravesham,84,21571
+Guildford,102,27935
+Hastings and Rye,26,20185
+Havant,53,20003
+Henley,94,24665
+Horsham,115,26008
+Hove,27,20240
+Isle of Wight,75,17701
+Lewes,28,22213
+Maidenhead,8,28536
+Maidstone and The Weald,85,23205
+Meon Valley,935,24298
+Mid Sussex,116,24960
+Milton Keynes North,937,24873
+Milton Keynes South,938,22329
+Mole Valley,103,28450
+New Forest East,54,20674
+New Forest West,55,20659
+Newbury,9,24840
+North East Hampshire,56,32380
+North Thanet,87,16118
+North West Hampshire,57,23748
+Oxford East,95,21414
+Oxford West and Abingdon,96,26122
+Portsmouth North,58,19197
+Portsmouth South,59,20060
+Reading East,10,23575
+Reading West,11,21803
+Reigate,104,30850
+Rochester and Strood,951,23505
+Romsey and Southampton North,952,23355
+Runnymede and Weybridge,105,x
+Sevenoaks,88,23738
+Sittingbourne and Sheppey,89,22150
+Slough,12,23547
+South Thanet,90,16234
+South West Surrey,106,26746
+"Southampton, Itchen",61,19911
+"Southampton, Test",62,19841
+Spelthorne,107,30644
+Surrey Heath,108,27903
+Tonbridge and Malling,91,25023
+Tunbridge Wells,92,27580
+Wantage,97,26459
+Wealden,29,22243
+Winchester,63,25456
+Windsor,13,29922
+Witney,98,24625
+Woking,109,24861
+Wokingham,14,27725
+Worthing West,117,21960
+Wycombe,21,23386
+Aberavon,565,x
+Aberconwy,981,16164
+Alyn and Deeside,530,19522
+Arfon,980,17502
+Blaenau Gwent,541,17625
+Brecon and Radnorshire,558,20304
+Bridgend,551,19133
+Caerphilly,552,19967
+Cardiff Central,560,21560
+Cardiff North,561,23752
+Cardiff South and Penarth,562,20987
+Cardiff West,563,20043
+Carmarthen East and Dinefwr,536,19133
+Carmarthen West and South Pembrokeshire,537,x
+Ceredigion,538,18830
+Clwyd South,531,20455
+Clwyd West,532,18351
+Cynon Valley,553,19162
+Delyn,533,20231
+Dwyfor Meirionnydd,982,14743
+Gower,566,22035
+Islwyn,542,20940
+Llanelli,539,18699
+Merthyr Tydfil and Rhymney,554,19351
+Monmouth,543,22712
+Montgomeryshire,559,17308
+Neath,567,19112
+Newport East,544,19872
+Newport West,545,20178
+Ogmore,555,17172
+Pontypridd,556,21548
+Preseli Pembrokeshire,540,18348
+Rhondda,557,17756
+Swansea East,568,18231
+Swansea West,569,20085
+Torfaen,546,20762
+Vale of Clwyd,534,16287
+Vale of Glamorgan,564,19559
+Wrexham,535,20213
+Ynys Môn,550,18331
+Scotland,,20862
+Aberdeen North,801,19917
+Aberdeen South,802,25211
+Airdrie and Shotts,803,20815
+Angus,804,17714
+Argyll and Bute,805,20795
+"Ayr, Carrick and Cumnock",806,21179
+Banff and Buchan,807,19425
+"Berwickshire, Roxburgh and Selkirk",808,18166
+"Caithness, Sutherland and Easter Ross",809,18017
+Central Ayrshire,810,22300
+"Coatbridge, Chryston and Bellshill",811,19423
+"Cumbernauld, Kilsyth and Kirkintilloch East",812,20927
+Dumfries and Galloway,813,16981
+"Dumfriesshire, Clydesdale and Tweeddale",814,19583
+Dundee East,815,20568
+Dundee West,816,18227
+Dunfermline and West Fife,817,20629
+East Dunbartonshire,818,24987
+"East Kilbride, Strathaven and Lesmahagow",819,21770
+East Lothian,820,21354
+East Renfrewshire,821,26904
+Edinburgh East,822,22237
+Edinburgh North and Leith,823,26203
+Edinburgh South,824,27319
+Edinburgh South West,825,22009
+Edinburgh West,826,23177
+Falkirk,827,22036
+Glasgow Central,828,19704
+Glasgow East,829,18959
+Glasgow North,830,23674
+Glasgow North East,831,17426
+Glasgow North West,832,22155
+Glasgow South,833,22686
+Glasgow South West,834,19714
+Glenrothes,835,18788
+Gordon,836,24610
+Inverclyde,837,19079
+"Inverness, Nairn, Badenoch and Strathspey",838,19743
+Kilmarnock and Loudoun,839,19067
+Kirkcaldy and Cowdenbeath,840,19511
+Lanark and Hamilton East,841,23210
+Linlithgow and East Falkirk,842,21627
+Livingston,843,20663
+Midlothian,844,19735
+Moray,845,18009
+Motherwell and Wishaw,846,19708
+Na h-Eileanan an Iar,847,19727
+North Ayrshire and Arran,848,20604
+North East Fife,849,23200
+Ochil and South Perthshire,850,19276
+Orkney and Shetland,851,20668
+Paisley and Renfrewshire North,852,21535
+Paisley and Renfrewshire South,853,20558
+Perth and North Perthshire,854,20585
+"Ross, Skye and Lochaber",855,18676
+Rutherglen and Hamilton West,856,21106
+Stirling,857,20259
+West Aberdeenshire and Kincardine,858,24000
+West Dunbartonshire,859,19347
+Northern Ireland,,18494
