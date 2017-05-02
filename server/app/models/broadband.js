@@ -8,14 +8,16 @@ ParsingService.parseCSV('broadband.csv')
   .then((data) => citiesWithBroadbandSpeeds = data);
 
 const getDataForCity = (city) => {
-  const cityWithSpeed = citiesWithBroadbandSpeeds.find((c) => c.city === city);
-  let speed = "n/a";
-  let rating = "n/a";
-  if (cityWithSpeed) {
-    speed = cityWithSpeed.speed;
-    rating = ComparisonService.compare(citiesWithBroadbandSpeeds, speed, 'speed');
-  }
-  return { speed, rating };
+  return new Promise((resolve, reject) => {
+    const cityWithSpeed = citiesWithBroadbandSpeeds.find((c) => c.city === city);
+    let speed = "n/a";
+    let rating = "n/a";
+    if (cityWithSpeed) {
+      speed = cityWithSpeed.speed;
+      rating = ComparisonService.compare(citiesWithBroadbandSpeeds, speed, 'speed');
+    }
+    resolve({ speed, rating });
+  })
 };
 
 module.exports.getDataForCity = getDataForCity;

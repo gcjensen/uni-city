@@ -7,10 +7,12 @@ ParsingService.parseCSV('rent.csv')
   .then((data) => citiesWithRent = data);
 
 const getDataForCity = (city) => {
-  const rent = citiesWithRent.find((c) => c.area === city);
-  const { median, mean } = rent;
-  const rating = compareRentAmount(median);
-  return { median, mean, rating };
+  return new Promise((resolve, reject) => {
+    const rent = citiesWithRent.find((c) => c.area === city);
+    const { median, mean } = rent;
+    const rating = compareRentAmount(median);
+    resolve({ median, mean, rating });
+  });
 };
 
 module.exports.getDataForCity = getDataForCity;
