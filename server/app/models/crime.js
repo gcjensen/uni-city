@@ -11,7 +11,7 @@ const getDataForCity = (city) => {
   return new Promise((resolve, reject) => {
     const crimeData = citiesWithCrimeData.find((c) => c.city === city);
     const { robbery, burglary, violenceAndSexualOffences, total } = crimeData;
-    const rating = ComparisonService.compare(citiesWithCrimeData, total, 'total');
+    const rating = ComparisonService.compare(citiesWithCrimeData, total, 'total', 7);
     resolve({ robbery, burglary, violenceAndSexualOffences, total, rating });
   });
 };

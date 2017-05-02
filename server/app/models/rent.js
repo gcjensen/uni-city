@@ -20,7 +20,8 @@ module.exports.getDataForCity = getDataForCity;
 // Simple rent 'rating' function - needs to be improved
 function compareRentAmount(rent) {
   const averageRent = citiesWithRent.find((c) => c.area === 'England').median;
+  if (rent < (averageRent + averageRent/10) && rent > (averageRent - averageRent/10))
+    return 'About average';
   if (rent < averageRent) return 'Below Average';
   if (rent > averageRent) return 'Above Average';
-  if (rent === averageRent) return 'Average';
 }

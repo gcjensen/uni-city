@@ -28,7 +28,7 @@
          "description":"The routes for retrieving the crime data (per 1000 people) for cities"
       },
       {
-         "name":"Wage",
+         "name":"Wages",
          "description":"The routes for retrieving the wage data for cities"
       },
    ],
@@ -337,10 +337,10 @@
             }
          }
       },
-    "/wage/{city}":{
+    "/wages/{city}":{
          "get":{
             "tags":[
-               "Wage"
+               "Wages"
             ],
             "description":"Returns the average annual salary in the city",
             "operationId":"",
@@ -358,13 +358,13 @@
             ],
             "responses":{
                "200":{
-                  "description":"The success response for a wage request",
+                  "description":"The success response for a wages request",
                   "schema":{
-                     "$ref":"#/definitions/wage-success-response"
+                     "$ref":"#/definitions/wages-success-response"
                   }
                },
                "404":{
-                  "description":"The failure response for a wage request",
+                  "description":"The failure response for a wages request",
                   "schema":{
                      "$ref":"#/definitions/failure-response"
                   }
@@ -372,10 +372,10 @@
             }
          }
       },
-      "/wage/all-cities":{
+      "/wages/all-cities":{
          "get":{
             "tags":[
-               "Wage"
+               "Wages"
             ],
             "description":"Returns the average annual salary for all the cities available",
             "operationId":"",
@@ -384,9 +384,9 @@
             ],
             "responses":{
                "200":{
-                  "description":"The success response for a wage request for all available cities",
+                  "description":"The success response for a wages request for all available cities",
                   "schema":{
-                     "$ref":"#/definitions/wage-all-cities-success-response"
+                     "$ref":"#/definitions/wages-all-cities-success-response"
                   }
                }
             }
@@ -648,14 +648,14 @@
             }
          }
       },
-      "wage-success-response":{
+      "wages-success-response":{
          "properties":{
             "city":{
                "required":true,
                "type":"string",
                "example":"Southampton"
             },
-            "wage":{
+            "wages":{
                "required":true,
                "type":"schema",
                "example":{
@@ -665,7 +665,7 @@
             }
          }
       },
-      "wage-all-cities-success-response":{
+      "wages-all-cities-success-response":{
          "type":"array",
          "items":{
             "properties":{
@@ -674,7 +674,7 @@
                   "type":"string",
                   "example":"Southampton"
                },
-               "wage":{
+               "wages":{
                   "required":true,
                   "type":"schema",
                   "example":{

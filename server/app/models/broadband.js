@@ -14,7 +14,7 @@ const getDataForCity = (city) => {
     let rating = "n/a";
     if (cityWithSpeed) {
       speed = cityWithSpeed.speed;
-      rating = ComparisonService.compare(citiesWithBroadbandSpeeds, speed, 'speed');
+      rating = ComparisonService.compare(citiesWithBroadbandSpeeds, speed, 'speed', 15);
     }
     resolve({ speed, rating });
   })
