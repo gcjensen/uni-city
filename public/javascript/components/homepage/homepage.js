@@ -4,8 +4,10 @@ angular.module('open-data').component('homepage', {
 });
 
 
-angular.module('open-data').controller('HomepageController', function ($scope, $location) {
+angular.module('open-data').controller('HomepageController', function ($rootScope, $scope, $location) {
     
-    
+    $scope.viewCity = function (city) {
+        $location.path('/city/' + city);
+    }
 
 });
