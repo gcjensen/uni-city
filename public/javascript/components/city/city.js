@@ -4,7 +4,9 @@ angular.module('open-data').component('city', {
 });
 
 
-angular.module('open-data').controller('CityController', function ($scope) {
+angular.module('open-data').controller('CityController', function ($scope, $location, $routeParams) {
+    
+    $scope.cityName = $routeParams.arg;
     
     
     

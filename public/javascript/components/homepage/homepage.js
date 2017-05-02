@@ -4,8 +4,8 @@ angular.module('open-data').component('homepage', {
 });
 
 
-angular.module('open-data').controller('HomepageController', function ($scope) {
-
-    $scope.title = "Open Data Innovation";
+angular.module('open-data').controller('HomepageController', function ($scope, $location) {
+    
+    
 
 });
