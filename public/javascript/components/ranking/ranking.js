@@ -8,62 +8,19 @@ angular.module('open-data').controller('RankingController', function ($scope, $h
 
 
   $http.get('api/all-data/all-cities').
-      then(function(response) {
+      then((response) => {
           $scope.data = response.data;
-          console.log(response.data);
           $scope.userPreferences = Object.keys($scope.data[0]).filter((key) => key !== "city");
-
-          console.log($scope.userPreferences);
       });
 
-  // $scope.data = [
-  //   {
-  //     "name": "London",
-  //     "Rent": {
-  //       "actual": 8674000,
-  //       "relative": 10,
-  //     },
-  //     "Cost of Living": {
-  //       "actual": 'High',
-  //       "relative": 1,
-  //     },
-  //     "Nightlife": {
-  //       "actual": 'Excellent',
-  //       "relative": 8,
-  //     }
-  //   },
-  //   {
-  //     "name": "Southampton",
-  //     "Population": {
-  //       "actual": 236900,
-  //       "relative": 6,
-  //     },
-  //     "Cost of Living": {
-  //       "actual": 'Average',
-  //       "relative": 6,
-  //     },
-  //     "Nightlife": {
-  //       "actual": 'Good',
-  //       "relative": 6,
-  //     }
-  //   },
-  //   {
-  //     "name": "York",
-  //     "Population": {
-  //       "actual": 198051,
-  //       "relative": 4,
-  //     },
-  //     "Cost of Living": {
-  //       "actual": 'Low',
-  //       "relative": 5,
-  //     },
-  //     "Nightlife": {
-  //       "actual": 'Average',
-  //       "relative": 6,
-  //     }
-  //   }
-  // ]
-
+  $scope.dataTypes = {
+    "Rent": "Average Monthly Room Rent",
+    "Nightlife": "Average Google Club Rating",
+    "Broadband": "Average Broadband Speed",
+    "Food": "Average Weekly Food Shop",
+    "Crime": "Offences per 1000 people",
+    "Wage": "Average Wage"
+  }
 
 
   /*
@@ -85,7 +42,7 @@ angular.module('open-data').controller('RankingController', function ($scope, $h
   //   }
   //   return data.sort((a, b) => a.ranking < b.ranking);
   // }
-  
+
   // $scope.$watch('userPreferences', function () {
   //   $scope.data = determineRanking($scope.data, $scope.userPreferences);
   // }, true);

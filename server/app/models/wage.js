@@ -15,7 +15,7 @@ const getDataForCity = (city) => {
     constituencyWages = constituencyWages.map((d) => d['Median']);
 
     let totalWage = constituencyWages.reduce((a, b) => (parseInt(a) + parseInt(b)), 0);
-    let average = totalWage / constituencyWages.length;
+    let average = Math.round(totalWage / constituencyWages.length);
 
     const rating = ComparisonService.compare(citiesWithWageData, average, 'Median', 20);
     resolve({ average, rating });

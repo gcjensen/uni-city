@@ -2,18 +2,14 @@
   <span style="font-size: 48px; font-weight: 300">Which city suits <span style="color: #7c5a9d"><b>you</b></span> best?</span>
   <div layout="row" style="padding-top: 70px">
     <div class="preferences" layout="column">
-      <md-card>
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">What's important to you?</span>
-            <span class="md-subhead">Rank how important these factors are to you (most important at the top).</span>
-          </md-card-title-text>
-        </md-card-title>
-        <div psi-sortable="" ng-model="userPreferences">
-          <div class="ordering" ng-repeat="userPreference in userPreferences track by $index"> {{userPreference}} </div>
+        <span class="md-headline">What's important to you?</span>
+        <span class="md-subhead">Rank how important these factors are to you (most important at the top).</span>
+        <div psi-sortable="" ng-model="dataTypes">
+          <div class="ordering" ng-repeat="(dataType, description) in dataTypes track by $index">{{dataType}}</div>
         </div>
       </md-card>
     </div>
+    <div class="vertical-divider"></div>
     <div class="ranking" layout="column">
       <md-toolbar class="md-table-toolbar md-default">
         <div class="md-toolbar-tools">
@@ -25,19 +21,20 @@
           <thead md-head>
             <tr md-row>
               <th md-column class="column-heading">City</th>
-              <th md-column class="column-heading">Average Monthly Rent</th>
-              <th md-column class="column-heading">Nightlife Rating</th>
-              <th md-column class="column-heading">Average Broadband Speed</th>
-              <th md-column class="column-heading">Average Wage</th>
+              <th md-column class="column-heading" ng-repeat="(key, value) in dataTypes">
+                <div><md-tooltip md-direction="top">{{value}}</md-tooltip>{{key}}</div>
+              </th>
             </tr>
           </thead>
           <tbody md-body>
             <tr md-row md-select="data" md-select-id="name" md-auto-select ng-repeat="datum in data">
               <td md-cell>{{datum.city}}</td>
-              <td md-cell>{{datum.rent.median}}</td>
+              <td md-cell>£{{datum.rent.median}}</td>
               <td md-cell>{{datum.nightlife.rating}}</td>
               <td md-cell>{{datum.broadband.speed}}</td>
-              <td md-cell>{{datum.wages.average}}</td>
+              <td md-cell>£{{datum.food.foodAverage}}</td>
+              <td md-cell>{{datum.crimeData.total}}</td>
+              <td md-cell>£{{datum.wages.average}}</td>
             </tr>
           </tbody>
         </table>
