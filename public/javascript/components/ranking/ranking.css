@@ -7,7 +7,7 @@ body {
 }
 
 .ordering {
-  background-color: #4c6e95;
+  background-color: #7c5a9d;
   color: white;
   margin: 10px;
   padding: 10px;
@@ -25,8 +25,9 @@ body {
   font-size: 24px;
   font-weight: 400;
   line-height: 32px;
+  margin: auto;
 }
 
 .column-heading {
-  color: #4c6e95 !important;
+  color: #7c5a9d !important;
 }
