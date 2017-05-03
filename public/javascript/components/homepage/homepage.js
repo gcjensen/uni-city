@@ -9,5 +9,14 @@ angular.module('open-data').controller('HomepageController', function ($rootScop
     $scope.viewCity = function (city) {
         $location.path('/city/' + city);
     }
+    
+    $scope.cities = ['southampton', 'bristol', 'london'];
+    
+    $scope.getSearchLogoStyle = function (focused) {
+        if (focused)
+            return 'input-logo-focus';
+        else
+            return 'input-logo-blur';
+    }
 
 });

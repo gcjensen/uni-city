@@ -1,5 +1,5 @@
 angular
-    .module('open-data', ['ngRoute', 'psi.sortable', 'ngMaterial', 'md.data.table'])
+    .module('open-data', ['ngAnimate', 'ngRoute', 'psi.sortable', 'ngMaterial', 'md.data.table'])
     
     .config(function ($routeProvider) {
         $routeProvider.when('/', {
