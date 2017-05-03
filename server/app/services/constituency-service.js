@@ -1,5 +1,5 @@
-// Finds a list of constituencies for a given city
-
+// For use with data that is sorted by constituencies, not city
+// Use to filter data to only get the constituencies within a given city
 const ParsingService = require('../services/parsing-service');
 
 let constituencies;

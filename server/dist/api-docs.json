@@ -31,6 +31,10 @@
          "name":"Wages",
          "description":"The routes for retrieving the wage data for cities"
       },
+      {
+         "name":"Food",
+         "description":"The routes for retrieving the food data for cities"
+      },
    ],
    "schemes":[
       "http"
@@ -392,6 +396,81 @@
             }
          }
       },
+      "/food/{city}":{
+         "get":{
+            "tags":[
+               "Food"
+            ],
+            "description":"Returns the average weekly food expenditure in the city",
+            "operationId":"",
+            "produces":[
+               "application/json"
+            ],
+            "parameters":[
+               {
+                  "name":"city",
+                  "in":"path",
+                  "description":"City to fetch the food data for",
+                  "required":true,
+                  "type":"string"
+               }
+            ],
+            "responses":{
+               "200":{
+                  "description":"The success response for a food request",
+                  "schema":{
+                     "$ref":"#/definitions/food-success-response"
+                  }
+               },
+               "404":{
+                  "description":"The failure response for a food request",
+                  "schema":{
+                     "$ref":"#/definitions/failure-response"
+                  }
+               }
+            }
+         }
+      },
+      "/food/all-cities":{
+         "get":{
+            "tags":[
+               "Food"
+            ],
+            "description":"Returns the average weekly food costs for all the cities available",
+            "operationId":"",
+            "produces":[
+               "application/json"
+            ],
+            "responses":{
+               "200":{
+                  "description":"The success response for a food request for all available cities",
+                  "schema":{
+                     "$ref":"#/definitions/food-all-cities-success-response"
+                  }
+               }
+            }
+         }
+      },
+      "/food/all-regions":{
+         "get":{
+            "tags":[
+               "Food"
+            ],
+            "description":"Returns the average weekly food costs for all the regions available",
+            "operationId":"",
+            "produces":[
+               "application/json"
+            ],
+            "responses":{
+               "200":{
+                  "description":"The success response for a food request for all available regions",
+                  "schema":{
+                     "$ref":"#/definitions/food-all-regions-success-response"
+                  }
+               }
+            }
+         }
+      },
     },
   "definitions":{
       "cities-success-response":{
@@ -402,6 +481,11 @@
                   "required":true,
                   "type":"string",
                   "example":"Southampton"
+               },
+               "region": {
+                  "required":true,
+                  "type":"string",
+                  "example":"South East" 
                },
                "description":{
                   "required":true,
@@ -681,6 +765,81 @@
                     "average":"21035.67",
                     "rating":"Below Average"
                   }
+               }
+            }
+         }
+      },
+       "food-success-response":{
+         "properties":{
+            "city":{
+               "required":true,
+               "type":"string",
+               "example":"Southampton"
+            },
+            "food":{
+               "required":true,
+               "type":"schema",
+               "example":{
+                  "region":"South East",
+                  "foodAverage":"26.75",
+                  "foodRating":"Above average",
+                  "narcoticAverage":"5.21",
+                  "narcoticRating":"Above Average"
+               }
+            }
+         }
+      },
+      "food-all-cities-success-response":{
+         "type":"array",
+         "items":{
+            "properties":{
+               "city":{
+                  "required":true,
+                  "type":"string",
+                  "example":"Southampton"
+               },
+               "wages":{
+                  "required":true,
+                  "type":"schema",
+                  "example":{
+                     "region":"South East",
+                     "foodAverage":"26.75",
+                     "foodRating":"Above average",
+                     "narcoticAverage":"5.21",
+                     "narcoticRating":"Above Average"
+                  }
+               }
+            }
+         }
+      },
+      "food-all-regions-success-response":{
+         "type":"array",
+         "items":{
+            "properties":{
+               "region":{
+                  "required":true,
+                  "type":"string",
+                  "example":"South East"
+               },
+               "foodAverage": {
+                  "required":true,
+                  "type":"string",
+                  "example":"26.75" 
+               },
+               "foodRating":{
+                  "required":true,
+                  "type":"string",
+                  "example":"Above average"
+               },
+               "narcoticAverage": {
+                  "required":true,
+                  "type":"string",
+                  "example":"5.21" 
+               },
+               "narcoticRating":{
+                  "required":true,
+                  "type":"string",
+                  "example":"Above average"
                }
             }
          }

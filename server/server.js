@@ -38,6 +38,7 @@ app.use('/api', require('./app/controllers/nightlife'));
 app.use('/api', require('./app/controllers/broadband'));
 app.use('/api', require('./app/controllers/crimes'));
 app.use('/api', require('./app/controllers/wages'));
+app.use('/api', require('./app/controllers/food'));
 
 
 app.get('/api/status', (req, res, next) => {
