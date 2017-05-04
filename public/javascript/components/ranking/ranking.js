@@ -6,20 +6,46 @@ angular.module('open-data').component('ranking', {
 
 angular.module('open-data').controller('RankingController', function ($scope, $http) {
 
+    $scope.icon = 'check';
 
   $http.get('api/all-data/all-cities').
       then((response) => {
           $scope.data = response.data;
           $scope.userPreferences = Object.keys($scope.data[0]).filter((key) => key !== "city");
       });
+    
+    
+  $scope.dataTypes = [
+    {name: "Rent", description: "Average Monthly Room Rent"},
+    {name: "Nightlife", description: "Average Google Club Rating"},
+    {name: "Broadband", description: "Average Broadband Speed"},
+    {name: "Food", description: "Average Weekly Food Shop"},
+    {name: "Crime", description: "Offences per 1000 people"},
+    {name: "Wage", description: "Average Wage"}
+  ]
+    
+  $scope.active = [
+    {name: "Rent", description: "Average Monthly Room Rent", icon: "check"},
+    {name: "Nightlife", description: "Average Google Club Rating", icon: "check"},
+    {name: "Broadband", description: "Average Broadband Speed", icon: "check"},
+  ]
+    
+  $scope.inactive = [
+    {name: "Food", description: "Average Weekly Food Shop", icon: "close"},
+    {name: "Crime", description: "Offences per 1000 people", icon: "close"},
+    {name: "Wage", description: "Average Wage", icon: "close"}
+  ]
+    
+  $scope.activate = function (preference) {
+    $scope.inactive = $scope.inactive.filter(obj => obj !== preference);
+    preference.icon = 'check';
+    $scope.active.push(preference);
+  }
 
-  $scope.dataTypes = {
-    "Rent": "Average Monthly Room Rent",
-    "Nightlife": "Average Google Club Rating",
-    "Broadband": "Average Broadband Speed",
-    "Food": "Average Weekly Food Shop",
-    "Crime": "Offences per 1000 people",
-    "Wage": "Average Wage"
+  $scope.deactivate = function (preference) {
+    $scope.active = $scope.active.filter(obj => obj !== preference);
+    preference.icon = 'close';
+    $scope.inactive.push(preference);
   }
 
 
