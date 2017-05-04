@@ -3,17 +3,19 @@
     
     <div style="display: flex; flex-direction: column; margin-top: 40px; width: 100%">
 
+        <!-- Introduction -->
         <span class="md-headline">What's important to you?</span>
         <span class="md-subhead">Rank how important these factors are to you. TBC.</span>
 
+        <!-- Active preferences -->
         <div ui-sortable="{ 'ui-floating': true }" style="display: flex; margin-top: 10px" ng-model="active">
             <div ng-repeat="x in active track by $index">
-                <div style="display: flex; align-items: center; width: 130px; height: 36px; border-radius: 30px; background-color: #7c5a9d; margin-right: 10px; cursor: move;">
-                    <div style="width: 100%; height: 100%; color: #fff; margin: 0 16px; display: flex; flex-direction: horizontal; justify-content: space-between">
-                        <div style="display: flex; align-items: center; width: 100%; height: 100% ; font-size: 14px">
+                <div class="active-preference">
+                    <div class="preference-content">
+                        <div class="preference-text">
                             {{$index+1}}. {{x.name}}
                         </div>
-                        <div ng-mouseenter="x.icon='close'" ng-mouseleave="x.icon='check'" ng-click="deactivate(x)" style="display: flex; align-items: center; cursor: pointer">
+                        <div ng-mouseenter="x.icon='close'" ng-mouseleave="x.icon='check'" ng-click="deactivate(x)" class="preference-icon">
                             <i class='material-icons' style="font-size: 14px">{{x.icon}}</i>
                         </div>
                     </div>
@@ -21,15 +23,16 @@
             </div>
         </div>
 
+        <!-- Inactive preferences -->
         <div ui-sortable="{ 'ui-floating': true }" style="display: flex" ng-model="inactive">
             <div style="display: flex; margin-top: 20px">
                 <div ng-repeat="x in inactive track by $index">
-                    <div style="display: flex; align-items: center; width: 130px; height: 36px; border-radius: 30px; background-color: #bbb; margin-right: 10px;">
-                        <div style="width: 100%; height: 100%; color: #fff; margin: 0 16px; display: flex; flex-direction: horizontal; justify-content: space-between">
-                            <div style="display: flex; align-items: center; width: 100%; height: 100% ; font-size: 14px">
+                    <div class="inactive-preference">
+                        <div class="preference-content">
+                            <div class="preference-text">
                                 {{x.name}}
                             </div>
-                            <div ng-mouseenter="x.icon='check'" ng-mouseleave="x.icon='close'" ng-click="activate(x)" style="display: flex; align-items: center; cursor: pointer">
+                            <div ng-mouseenter="x.icon='check'" ng-mouseleave="x.icon='close'" ng-click="activate(x)" class="preference-icon">
                                 <i class='material-icons' style="font-size: 14px">{{x.icon}}</i>
                             </div>
                         </div>
@@ -38,6 +41,7 @@
             </div>
         </div>
 
+        <!-- Ranking table -->
         <md-table-container style="margin-top: 30px">
             <table md-table ng-model="data" md-progress="promise">
                 <thead md-head>
