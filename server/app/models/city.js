@@ -15,5 +15,10 @@ const doesCityExist = (city) => {
   return cities.map((c) => c.name).includes(city);
 }
 
+const getCity = (city) => {
+	return cities.filter((c) => c.name == city)[0];
+}
+
 module.exports.getCityList = getCityList;
 module.exports.doesCityExist = doesCityExist;
+module.exports.getCity = getCity;

@@ -16,7 +16,11 @@ function getCityWithAllData(req, callback) {
   const city = req.params.city.replace(/\b\w/g, l => l.toUpperCase());
   if (!City.doesCityExist(city)) res.send({ status: 404, message: 'Invalid city'});
   else {
-    let response = { city };
+    const cityObj = City.getCity(city);
+    const description = cityObj.description;
+    const region = cityObj.region;
+
+    let response = { city, description, region };
     const promises = []; // used to keep track of the async data retrievals
 
     for (let key in DataSources) {
