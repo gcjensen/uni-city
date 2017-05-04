@@ -5,11 +5,11 @@ angular.module('open-data').component('city', {
 
 
 angular.module('open-data').controller('CityController', function ($scope, $location, $routeParams, $http) {
-    
+
     $scope.cityData;
-    
+
     $scope.cityName = $routeParams.arg;
-    
+
     /* Load data for the specified city in URL */
     $http.get('api/all-data/' + $scope.cityName).
         then(function(response) {
@@ -66,8 +66,18 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
         ], 'rows': barData};
 
         $scope.foodChart.options = {
-            'title': 'Average Weekly Food, Drink and Narcotic Spend by Region'
+            'title': 'Average Weekly Food, Drink and Narcotic Spend by Region',
+            legend: 'bottom',
         };
         
     }
+
+    $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+    $scope.series = ['Series A', 'Series B'];
+
+    $scope.data = [
+      [65, 59, 80, 81, 56, 55, 40],
+      [28, 48, 40, 19, 86, 27, 90]
+    ];
+
 });

@@ -2,9 +2,18 @@
     height: 100vh;
     background-size: cover;
     background-position: center center;
-    position: absolute;
     z-index: 10;
     top: 0;
+}
+
+.img-overlay {
+    height: 100%; 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    background-image: -webkit-linear-gradient(top, transparent 0%,rgba(20, 27, 46, 0.5) 40%,#141b2e 100%)
 }
 
 .city-name {
@@ -31,9 +40,23 @@
     text-shadow: 0px 0px 5px rgba(20, 27, 46, 0.6)
 }
 
+.key-info-rating {
+    font-weight: 300; 
+    color: white; 
+    font-size: 18px; 
+    text-shadow: 0px 0px 5px rgba(20, 27, 46, 0.6)
+}
+
 .about-container {
     background-color: #141b2e;
     color: white;
+}
+
+.content-title {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #333;
 }
 
 p {
