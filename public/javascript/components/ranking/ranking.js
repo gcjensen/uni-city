@@ -10,11 +10,11 @@ angular.module('open-data').controller('RankingController', function ($scope, $h
 
   $http.get('api/all-data/all-cities').
       then((response) => {
-          $scope.data = response.data;
+          $scope.data = rankCities(response.data);
           $scope.userPreferences = Object.keys($scope.data[0]).filter((key) => key !== "city");
       });
-    
-    
+
+
   $scope.dataTypes = [
     {name: "Rent", description: "Average Monthly Room Rent"},
     {name: "Nightlife", description: "Average Google Club Rating"},
@@ -23,31 +23,41 @@ angular.module('open-data').controller('RankingController', function ($scope, $h
     {name: "Crime", description: "Offences per 1000 people"},
     {name: "Wage", description: "Average Wage"}
   ]
-    
-  $scope.active = [
-    {name: "Rent", description: "Average Monthly Room Rent", icon: "check"},
-    {name: "Nightlife", description: "Average Google Club Rating", icon: "check"},
-    {name: "Broadband", description: "Average Broadband Speed", icon: "check"},
-  ]
-    
+
+  $scope.active = []
+
   $scope.inactive = [
-    {name: "Food", description: "Average Weekly Food Shop", icon: "close"},
-    {name: "Crime", description: "Offences per 1000 people", icon: "close"},
-    {name: "Wage", description: "Average Wage", icon: "close"}
+    {name: "Rent", description: "Average Monthly Room Rent", icon: ""},
+    {name: "Nightlife", description: "Average Google Club Rating", icon: ""},
+    {name: "Broadband", description: "Average Broadband Speed", icon: ""},
+    {name: "Food", description: "Average Weekly Food Shop", icon: ""},
+    {name: "Crime", description: "Offences per 1000 people", icon: ""},
+    {name: "Wage", description: "Average Wage", icon: ""}
   ]
-    
+
   $scope.activate = function (preference) {
     $scope.inactive = $scope.inactive.filter(obj => obj !== preference);
-    preference.icon = 'check';
+    preference.icon = '';
     $scope.active.push(preference);
   }
 
   $scope.deactivate = function (preference) {
     $scope.active = $scope.active.filter(obj => obj !== preference);
-    preference.icon = 'close';
+    preference.icon = '';
     $scope.inactive.push(preference);
   }
 
+
+  const rankCities = (cities) => {
+    for (let city of cities) {
+      totalRating = 0;
+      for (let factor in city) {
+        totalRating += city[factor].rating || 0;
+      }
+      city.totalRating = Math.round(totalRating * 10) / 10;
+    }
+    return cities;
+  }
 
   /*
    * Simple algorithm for location ranking.
