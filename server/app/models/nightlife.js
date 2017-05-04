@@ -28,7 +28,7 @@ const getDataForCity = (city) => {
      * For testing, a random number between 3.0 and 4.5 is generated
      */
 
-    resolve({ rating: (Math.floor(Math.random() * 15) + 30)/10})
+    resolve({ rating: (Math.floor(Math.random() * 15) + 30)/ 5})
   });
 };
 

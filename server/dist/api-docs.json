@@ -485,7 +485,7 @@
                "region": {
                   "required":true,
                   "type":"string",
-                  "example":"South East" 
+                  "example":"South East"
                },
                "description":{
                   "required":true,
@@ -508,14 +508,14 @@
                "example":{
                   "median":"355",
                   "mean":"368",
-                  "rating":"Above Average"
+                  "rating":"7"
                }
             },
             "nightlife":{
                "required":true,
                "type":"schema",
                "example":{
-                  "rating":"3.7"
+                  "rating":"7.6"
                }
             },
             "broadband":{
@@ -523,7 +523,36 @@
                "type":"schema",
                "example":{
                   "speed":"27.03",
-                  "rating":"Above Average"
+                  "rating":"7.2"
+               }
+            },
+            "crimeData":{
+               "required":true,
+               "type":"schema",
+               "example":{
+                  "robbery":"10",
+                  "burglary":"368",
+                  "violenceAndSexualOffences":"19.2",
+                  "total":"30.1",
+                  "rating":"6.5"
+               }
+            },
+            "wages":{
+               "required":true,
+               "type":"schema",
+               "example":{
+                 "average":"21035.67",
+                 "rating":"3.4"
+               }
+            },
+            "food":{
+               "required":true,
+               "type":"schema",
+               "example":{
+                  "foodAverage":"26.75",
+                  "foodRating":"0",
+                  "narcoticAverage":"5.21",
+                  "narcoticRating":"1.5"
                }
             }
          }
@@ -543,14 +572,14 @@
                   "example":{
                      "median":"355",
                      "mean":"368",
-                     "rating":"Above Average"
+                     "rating":"7"
                   }
                },
                "nightlife":{
                   "required":true,
                   "type":"schema",
                   "example":{
-                     "rating":"3.7"
+                     "rating":"7.6"
                   }
                },
                "broadband":{
@@ -558,7 +587,36 @@
                   "type":"schema",
                   "example":{
                      "speed":"27.03",
-                     "rating":"Above Average"
+                     "rating":"7.2"
+                  }
+               },
+               "crimeData":{
+                  "required":true,
+                  "type":"schema",
+                  "example":{
+                     "robbery":"10",
+                     "burglary":"368",
+                     "violenceAndSexualOffences":"19.2",
+                     "total":"30.1",
+                     "rating":"6.5"
+                  }
+               },
+               "wages":{
+                  "required":true,
+                  "type":"schema",
+                  "example":{
+                    "average":"21035.67",
+                    "rating":"3.4"
+                  }
+               },
+               "food":{
+                  "required":true,
+                  "type":"schema",
+                  "example":{
+                     "foodAverage":"26.75",
+                     "foodRating":"0",
+                     "narcoticAverage":"5.21",
+                     "narcoticRating":"1.5"
                   }
                }
             }
@@ -577,7 +635,7 @@
                "example":{
                   "median":"355",
                   "mean":"368",
-                  "rating":"Above Average"
+                  "rating":"7"
                }
             }
          }
@@ -611,7 +669,7 @@
                   "example":{
                      "median":"355",
                      "mean":"368",
-                     "rating":"Above Average"
+                     "rating":"7"
                   }
                }
             }
@@ -628,7 +686,7 @@
                "required":true,
                "type":"schema",
                "example":{
-                  "rating":"3.7"
+                  "rating":"7.6"
                }
             }
          }
@@ -646,7 +704,7 @@
                   "required":true,
                   "type":"schema",
                   "example":{
-                     "rating":"3.7"
+                     "rating":"7.6"
                   }
                }
             }
@@ -664,7 +722,7 @@
                "type":"schema",
                "example":{
                   "speed":"27.03",
-                  "rating":"Above Average"
+                  "rating":"7.2"
                }
             }
          }
@@ -683,7 +741,7 @@
                   "type":"schema",
                   "example":{
                      "speed":"27.03",
-                     "rating":"Above Average"
+                     "rating":"7.2"
                   }
                }
             }
@@ -704,7 +762,7 @@
                   "burglary":"368",
                   "violenceAndSexualOffences":"19.2",
                   "total":"30.1",
-                  "rating":"Below Average"
+                  "rating":"6.5"
                }
             }
          }
@@ -726,7 +784,7 @@
                      "burglary":"368",
                      "violenceAndSexualOffences":"19.2",
                      "total":"30.1",
-                     "rating":"Below Average"
+                     "rating":"6.5"
                   }
                }
             }
@@ -744,7 +802,7 @@
                "type":"schema",
                "example":{
                   "average":"21035.67",
-                  "rating":"Below Average"
+                  "rating":"3.4"
                }
             }
          }
@@ -763,7 +821,7 @@
                   "type":"schema",
                   "example":{
                     "average":"21035.67",
-                    "rating":"Below Average"
+                    "rating":"3.4"
                   }
                }
             }
@@ -780,11 +838,10 @@
                "required":true,
                "type":"schema",
                "example":{
-                  "region":"South East",
                   "foodAverage":"26.75",
-                  "foodRating":"Above average",
+                  "foodRating":"0",
                   "narcoticAverage":"5.21",
-                  "narcoticRating":"Above Average"
+                  "narcoticRating":"1.5"
                }
             }
          }
@@ -798,15 +855,15 @@
                   "type":"string",
                   "example":"Southampton"
                },
-               "wages":{
+               "food":{
                   "required":true,
                   "type":"schema",
                   "example":{
                      "region":"South East",
                      "foodAverage":"26.75",
-                     "foodRating":"Above average",
+                     "foodRating":"0",
                      "narcoticAverage":"5.21",
-                     "narcoticRating":"Above Average"
+                     "narcoticRating":"1.5"
                   }
                }
             }
@@ -824,22 +881,22 @@
                "foodAverage": {
                   "required":true,
                   "type":"string",
-                  "example":"26.75" 
+                  "example":"26.75"
                },
                "foodRating":{
                   "required":true,
                   "type":"string",
-                  "example":"Above average"
+                  "example":"0"
                },
                "narcoticAverage": {
                   "required":true,
                   "type":"string",
-                  "example":"5.21" 
+                  "example":"5.21"
                },
                "narcoticRating":{
                   "required":true,
                   "type":"string",
-                  "example":"Above average"
+                  "example":"1.5"
                }
             }
          }
