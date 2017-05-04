@@ -1,5 +1,6 @@
 angular
-    .module('open-data', ['ngAnimate', 'ngRoute', 'psi.sortable', 'ui.sortable', 'ngMaterial', 'md.data.table', 'googlechart'])    
+    .module('open-data', ['chart.js', 'ngAnimate', 'ngRoute', 'psi.sortable', 'ui.sortable', 'ngMaterial', 'md.data.table', 'googlechart'])    
+
     .config(function ($routeProvider) {
         $routeProvider.when('/', {
             controller: 'HomepageController',
