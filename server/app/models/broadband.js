@@ -1,6 +1,6 @@
 'use strict';
 
-const ComparisonService = require('../services/comparison-service');
+const RatingService = require('../services/rating-service');
 const ParsingService = require('../services/parsing-service');
 
 let citiesWithBroadbandSpeeds;
@@ -14,7 +14,7 @@ const getDataForCity = (city) => {
     let rating = "n/a";
     if (cityWithSpeed) {
       speed = cityWithSpeed.speed;
-      rating = ComparisonService.compare(citiesWithBroadbandSpeeds, speed, 'speed', 15);
+      rating = RatingService.rate(citiesWithBroadbandSpeeds, speed, 'speed', false);
     }
     resolve({ speed, rating });
   })

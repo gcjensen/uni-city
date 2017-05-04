@@ -6,22 +6,58 @@ angular.module('open-data').component('ranking', {
 
 angular.module('open-data').controller('RankingController', function ($scope, $http) {
 
+    $scope.icon = 'check';
 
   $http.get('api/all-data/all-cities').
       then((response) => {
-          $scope.data = response.data;
+          $scope.data = rankCities(response.data);
           $scope.userPreferences = Object.keys($scope.data[0]).filter((key) => key !== "city");
       });
 
-  $scope.dataTypes = {
-    "Rent": "Average Monthly Room Rent",
-    "Nightlife": "Average Google Club Rating",
-    "Broadband": "Average Broadband Speed",
-    "Food": "Average Weekly Food Shop",
-    "Crime": "Offences per 1000 people",
-    "Wage": "Average Wage"
+
+  $scope.dataTypes = [
+    {name: "Rent", description: "Average Monthly Room Rent"},
+    {name: "Nightlife", description: "Average Google Club Rating"},
+    {name: "Broadband", description: "Average Broadband Speed"},
+    {name: "Food", description: "Average Weekly Food Shop"},
+    {name: "Crime", description: "Offences per 1000 people"},
+    {name: "Wage", description: "Average Wage"}
+  ]
+
+  $scope.active = []
+
+  $scope.inactive = [
+    {name: "Rent", description: "Average Monthly Room Rent", icon: ""},
+    {name: "Nightlife", description: "Average Google Club Rating", icon: ""},
+    {name: "Broadband", description: "Average Broadband Speed", icon: ""},
+    {name: "Food", description: "Average Weekly Food Shop", icon: ""},
+    {name: "Crime", description: "Offences per 1000 people", icon: ""},
+    {name: "Wage", description: "Average Wage", icon: ""}
+  ]
+
+  $scope.activate = function (preference) {
+    $scope.inactive = $scope.inactive.filter(obj => obj !== preference);
+    preference.icon = '';
+    $scope.active.push(preference);
   }
 
+  $scope.deactivate = function (preference) {
+    $scope.active = $scope.active.filter(obj => obj !== preference);
+    preference.icon = '';
+    $scope.inactive.push(preference);
+  }
+
+
+  const rankCities = (cities) => {
+    for (let city of cities) {
+      totalRating = 0;
+      for (let factor in city) {
+        totalRating += city[factor].rating || 0;
+      }
+      city.totalRating = Math.round(totalRating * 10) / 10;
+    }
+    return cities;
+  }
 
   /*
    * Simple algorithm for location ranking.

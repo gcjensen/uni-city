@@ -1,44 +1,74 @@
-<div style="display: flex; flex-direction: column; align-items: center; padding-top: 120px; width: 85%; margin: 0 auto">
-  <span style="font-size: 48px; font-weight: 300">Which city suits <span style="color: #7c5a9d"><b>you</b></span> best?</span>
-  <div layout="row" style="padding-top: 70px">
-    <div class="preferences" layout="column">
+<div style="display: flex; flex-direction: column; align-items: center; padding-top: 120px; width: 70%; margin: 0 auto">
+    <span style="font-size: 48px; font-weight: 300">Which city suits <span style="color: #7c5a9d"><b>you</b></span> best?</span>
+
+    <div style="display: flex; flex-direction: column; margin-top: 40px; width: 100%">
+
+        <!-- Introduction -->
         <span class="md-headline">What's important to you?</span>
-        <span class="md-subhead">Rank how important these factors are to you (most important at the top).</span>
-        <div psi-sortable="" ng-model="dataTypes">
-          <div class="ordering" ng-repeat="(dataType, description) in dataTypes track by $index">{{dataType}}</div>
+        <span class="md-subhead">Select the factors you care about and order them by how important they are to you.</span>
+
+        <!-- Active preferences -->
+        <div ui-sortable="{ 'ui-floating': true }" style="display: flex; margin-top: 10px" ng-model="active">
+            <div ng-repeat="x in active track by $index">
+                <div class="active-preference" ng-mouseenter="x.icon='close'" ng-mouseleave="x.icon=''">
+                    <div class="preference-content">
+                        <div class="preference-text">
+                            {{$index+1}}. {{x.name}}
+                        </div>
+                        <div ng-click="deactivate(x)" class="preference-icon">
+                            <i class='material-icons' style="font-size: 16px">{{x.icon}}</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </md-card>
-    </div>
-    <div class="vertical-divider"></div>
-    <div class="ranking" layout="column">
-      <md-toolbar class="md-table-toolbar md-default">
-        <div class="md-toolbar-tools">
-          <span class="table-title">City Ranking per your Preferences</span>
+
+        <!-- Inactive preferences -->
+        <div ui-sortable="{ 'ui-floating': true }" style="display: flex" ng-model="inactive">
+            <div style="display: flex; margin-top: 20px">
+                <div ng-repeat="x in inactive track by $index">
+                    <div class="inactive-preference" ng-mouseenter="x.icon='add'" ng-mouseleave="x.icon=''" >
+                        <div class="preference-content">
+                            <div class="preference-text">
+                                {{x.name}}
+                            </div>
+                            <div ng-click="activate(x)" class="preference-icon">
+                                <i class='material-icons' style="font-size: 18px">{{x.icon}}</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </md-toolbar>
-      <md-table-container>
-        <table md-table ng-model="data" md-progress="promise">
-          <thead md-head>
-            <tr md-row>
-              <th md-column class="column-heading">City</th>
-              <th md-column class="column-heading" ng-repeat="(key, value) in dataTypes">
-                <div><md-tooltip md-direction="top">{{value}}</md-tooltip>{{key}}</div>
-              </th>
-            </tr>
-          </thead>
-          <tbody md-body>
-            <tr md-row md-select="data" md-select-id="name" md-auto-select ng-repeat="datum in data">
-              <td md-cell>{{datum.city}}</td>
-              <td md-cell>£{{datum.rent.median}}</td>
-              <td md-cell>{{datum.nightlife.rating}}</td>
-              <td md-cell>{{datum.broadband.speed}}</td>
-              <td md-cell>£{{datum.food.foodAverage}}</td>
-              <td md-cell>{{datum.crimeData.total}}</td>
-              <td md-cell>£{{datum.wages.average}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </md-table-container>
+
+        <!-- Ranking table -->
+        <md-table-container style="margin-top: 30px; margin-bottom: 40px;">
+            <table md-table ng-model="data" md-progress="promise">
+                <thead md-head>
+                    <tr md-row>
+                        <th md-column class="column-heading">Ranking</th>
+                        <th md-column class="column-heading">City</th>
+                        <th md-column class="column-heading" ng-repeat="(key, value) in dataTypes">
+                            <div><md-tooltip md-direction="top">{{value.description}}</md-tooltip>{{value.name}}</div>
+                        </th>
+                        <th md-column class="column-heading">Rating</th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                    <tr md-row md-select="data" md-select-id="name" md-auto-select ng-repeat="datum in data | orderBy:'-totalRating'">
+                        <td md-cell>{{$index+1}}</td>
+                        <td md-cell>{{datum.city}}</td>
+                        <td md-cell>£{{datum.rent.median}}</td>
+                        <td md-cell>{{datum.nightlife.rating}}</td>
+                        <td md-cell>{{datum.broadband.speed}}</td>
+                        <td md-cell>£{{datum.food.foodAverage}}</td>
+                        <td md-cell>{{datum.crimeData.total}}</td>
+                        <td md-cell>£{{datum.wages.averageWage}}</td>
+                        <td md-cell>{{datum.totalRating}} / 60</td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+
     </div>
-  </div>
 </div>

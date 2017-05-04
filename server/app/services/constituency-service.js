@@ -8,13 +8,12 @@ ParsingService.parseCSV('constituencies.csv')
 
 function filterByConstituencies(city, data) {
 	let constituencies = findConstituencies(city);
-
 	return data.filter((c) => constituencies.includes(c.Code));
 }
 
 function findConstituencies(city) {
   let results = constituencies.filter((c) => c.City === city);
-  return results.map(function(a) {return a.Code;});
+  return results.map((r) => r.Code);
 }
 
 module.exports.findConstituencies = findConstituencies;

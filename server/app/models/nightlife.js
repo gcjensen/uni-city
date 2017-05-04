@@ -18,7 +18,7 @@ const getDataForCity = (city) => {
     //   let ratings = response.body.results.map((r) => r.rating);
     //   ratings = ratings.filter((r) => !isNaN(r));
     //   let totalRating = ratings.reduce((a, b) => a + b, 0);
-    //   let averageRating = totalRating / ratings.length
+    //   let averageRating = (totalRating / ratings.length) * 2;
     //   averageRating = Math.round(averageRating * 100) / 100;
     //   resolve({ rating: averageRating });
     // });
@@ -28,7 +28,7 @@ const getDataForCity = (city) => {
      * For testing, a random number between 3.0 and 4.5 is generated
      */
 
-    resolve({ rating: (Math.floor(Math.random() * 15) + 30)/10})
+    resolve({ rating: (Math.floor(Math.random() * 15) + 30)/ 5})
   });
 };
 

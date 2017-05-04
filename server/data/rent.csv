@@ -1,4 +1,4 @@
-area,count of rents,mean,lower quartile,median,upper quartile
+city,count of rents,mean,lower quartile,median,upper quartile
 England,"29,946",367,303,347,400
 North East,679,296,256,290,347
 Durham,97,330,300,364,368
