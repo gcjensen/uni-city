@@ -42,29 +42,31 @@
         </div>
 
         <!-- Ranking table -->
-        <md-table-container style="margin-top: 30px; margin-bottom: 40px;">
-            <table md-table ng-model="data" md-progress="promise">
+        <md-table-container style="margin-top: 30px">
+            <table md-table ng-model="cities" md-progress="promise">
                 <thead md-head>
                     <tr md-row>
                         <th md-column class="column-heading">Ranking</th>
                         <th md-column class="column-heading">City</th>
-                        <th md-column class="column-heading" ng-repeat="(key, value) in dataTypes">
-                            <div><md-tooltip md-direction="top">{{value.description}}</md-tooltip>{{value.name}}</div>
+                        <th md-column ng-repeat="(key, value) in dataTypes">
+                            <div class="column-heading"><md-tooltip md-direction="top">{{value.description}}</md-tooltip>{{value.name}}</div>
                         </th>
-                        <th md-column class="column-heading">Rating</th>
+                        <th md-column class="column-heading">
+                          <div><md-tooltip md-direction="top">The total rating of the city, considering any factors you've ranked</md-tooltip>Rating</div>
+                        </th>
                     </tr>
                 </thead>
                 <tbody md-body>
-                    <tr md-row md-select="data" md-select-id="name" md-auto-select ng-repeat="datum in data | orderBy:'-totalRating'">
+                    <tr md-row md-select="cities" md-select-id="name" md-auto-select ng-repeat="city in cities | orderBy:'-totalRating'">
                         <td md-cell>{{$index+1}}</td>
-                        <td md-cell>{{datum.city}}</td>
-                        <td md-cell>£{{datum.rent.median}}</td>
-                        <td md-cell>{{datum.nightlife.rating}}</td>
-                        <td md-cell>{{datum.broadband.speed}}</td>
-                        <td md-cell>£{{datum.food.foodAverage}}</td>
-                        <td md-cell>{{datum.crimeData.total}}</td>
-                        <td md-cell>£{{datum.wages.averageWage}}</td>
-                        <td md-cell>{{datum.totalRating}} / 60</td>
+                        <td md-cell>{{city.city}}</td>
+                        <td md-cell><a ng-class="{'active-column': check('Rent')}">£{{city.rent.median}}</a></td>
+                        <td md-cell><a ng-class="{'active-column': check('Nightlife')}">{{city.nightlife.rating}}</a></td>
+                        <td md-cell><a ng-class="{'active-column': check('Broadband')}">{{city.broadband.speed}}</a></td>
+                        <td md-cell><a ng-class="{'active-column': check('Food')}">£{{city.food.foodAverage}}</a></td>
+                        <td md-cell><a ng-class="{'active-column': check('Crime')}">{{city.crimeData.total}}</a></td>
+                        <td md-cell><a ng-class="{'active-column': check('Wage')}">£{{city.wages.averageWage}}</a></td>
+                        <td md-cell>{{city.totalRating}}</td>
                     </tr>
                 </tbody>
             </table>

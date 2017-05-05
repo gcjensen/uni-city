@@ -3,7 +3,7 @@
     <div class="background-img" style="background-image: url('img/{{cityName}}.png')">
 
         <div class="img-overlay">
-            
+
             <span class="city-name">{{cityName}}</span>
 
             <div style="display: flex; flex-direction: horizontal; justify-content: space-between; width: 50%; margin-top: 60px">
@@ -12,31 +12,31 @@
                     <img src="icon/placeholder.png" style="width: 50px; height: auto; margin-bottom: 18px">
                     <span class="key-info-label">NIGHTLIFE RATING</span>
                     <span class="key-info-figure">{{cityData.nightlife.rating}}</span>
-                    <span class="key-info-rating">{{cityData.nightlife.rating}}</span>
+                    <span class="key-info-rating">{{cityData.nightlife.rating}} / 10</span>
                 </div>
 
                 <div style="display: flex; flex-direction: column; align-items: center">
                     <img src="icon/home.png" style="width: 50px; height: auto; margin-bottom: 18px">
                     <span class="key-info-label">MONTHLY RENT</span>
                     <span class="key-info-figure">&pound;{{cityData.rent.median}}</span>
-                    <span class="key-info-rating">{{cityData.rent.rating}}</span>
+                    <span class="key-info-rating">{{cityData.rent.rating}} / 10</span>
                 </div>
 
                 <div style="display: flex; flex-direction: column; align-items: center">
                     <img src="icon/wifi.png" style="width: 50px; height: auto; margin-bottom: 18px">
                     <span class="key-info-label">BROADBAND SPEED</span>
                     <span class="key-info-figure">{{cityData.broadband.speed}}</span>
-                    <span class="key-info-rating">{{cityData.broadband.rating}}</span>
+                    <span class="key-info-rating">{{cityData.broadband.rating}} / 10</span>
                 </div>
 
             </div>
 
         </div>
-        
+
     </div>
-    
+
     <div class="about-container">
-            
+
         <div style="padding: 10px 100px 70px 100px">
 
             <span class="key-info-label">ABOUT</span><br><br>
@@ -46,7 +46,7 @@
         </div>
 
     </div>
-            
+
     <div style="padding: 80px 100px 100px 100px">
 
         <span class="content-title">LIVING COSTS</span><br><br>
@@ -81,9 +81,9 @@
                 <div google-chart chart="foodChart" style="height:600px; width:800px"></div>
 
         </div>
-        
+
         <div style="border-width: 0px; border-bottom-width: 1px; border-color: #ddd; border-style: solid; width: 100%; margin: 60px 0"></div>
-        
+
         <span class="content-title">ENTERTAINMENT</span><br><br>
 
         <div style="display: flex; flex-direction: horizontal; justify-content: space-between; align-items: center; margin-top: 40px">
