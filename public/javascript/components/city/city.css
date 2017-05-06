@@ -62,3 +62,75 @@
 p {
     line-height: 24px;
 }
+
+.text-highlight {
+    color: #7c5a9d; 
+    font-weight: 700; 
+    text-transform: lowercase
+}
+.places-container {
+    width: 100%; 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    flex-wrap: wrap;
+}
+
+.place-container {
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: space-between;
+    margin: 40px 0 20px 0;
+    width: 500px;
+}
+
+.place-name {
+    font-weight: 600;
+    font-size: 32px;
+    color: #7c5a9d;
+}
+
+.place-address {
+    font-weight: 300; 
+    font-size: 18px; 
+    color: #666;
+    cursor: pointer;
+}
+
+.place-address:hover {
+    color: #7c5a9d;
+}
+
+.place-type-tag {
+    display: flex; 
+    flex-direction: horizontal; 
+    align-items: center; 
+    width: 100px; 
+    height: 30px; 
+    border-radius: 20px; 
+    background-color: #ccc; 
+    margin-top: 20px;
+    margin-right: 6px;
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.place-rating-ring {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    min-width: 130px; 
+    min-height: 130px; 
+    border-radius: 130px; 
+    border-style: solid; 
+    border-width: 3px; 
+    border-color: #7c5a9d; 
+    margin-left: 30px;
+}
+
+.place-rating-text {
+    font-size: 48px; 
+    color: #7c5a9d
+}

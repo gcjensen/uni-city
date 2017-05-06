@@ -12,21 +12,21 @@
                     <img src="icon/placeholder.png" style="width: 50px; height: auto; margin-bottom: 18px">
                     <span class="key-info-label">NIGHTLIFE RATING</span>
                     <span class="key-info-figure">{{cityData.nightlife.rating}}</span>
-                    <span class="key-info-rating">{{cityData.nightlife.rating}} / 10</span>
+                    <span class="key-info-rating">{{getStringRating(cityData.nightlife.rating)}}</span>
                 </div>
 
                 <div style="display: flex; flex-direction: column; align-items: center">
                     <img src="icon/home.png" style="width: 50px; height: auto; margin-bottom: 18px">
                     <span class="key-info-label">MONTHLY RENT</span>
                     <span class="key-info-figure">&pound;{{cityData.rent.median}}</span>
-                    <span class="key-info-rating">{{cityData.rent.rating}} / 10</span>
+                    <span class="key-info-rating">{{getStringRating((cityData.rent.rating - 10)*-1)}}</span>
                 </div>
 
                 <div style="display: flex; flex-direction: column; align-items: center">
                     <img src="icon/wifi.png" style="width: 50px; height: auto; margin-bottom: 18px">
                     <span class="key-info-label">BROADBAND SPEED</span>
                     <span class="key-info-figure">{{cityData.broadband.speed}}</span>
-                    <span class="key-info-rating">{{cityData.broadband.rating}} / 10</span>
+                    <span class="key-info-rating">{{getStringRating(cityData.broadband.rating)}}</span>
                 </div>
 
             </div>
@@ -52,55 +52,58 @@
         <span class="content-title">LIVING COSTS</span><br><br>
 
         <div style="display: flex; flex-direction: horizontal; justify-content: space-between; align-items: center; margin-top: 40px">
-
-            <div style="display: flex; flex-direction: column; width: 400px; margin-right: 40px">
-                <div style="display: flex; flex-direction: horizontal; align-items: center">
-                    <i class='material-icons' style="font-size: 24px; color: #7c5a9d; margin-right: 6px">home</i>
-                    <span style="font-weight: 400; font-size: 24px; color: #7c5a9d">AVERAGE MONTHLY RENT</span>
-                </div>
-                <span style="font-weight: 600; font-size: 48px">&pound;547.40</span>
-                <p>The monthly rent in {{cityName}} is <span style="color: #7c5a9d; font-weight: 600; text-transform: lowercase">{{cityData.rent.rating}}</span> when compared against other UK cities.</p>
-            </div>
-
-            <div style="width: 600px; height: 300px">
-                <canvas id="base" class="chart-horizontal-bar" chart-data="data" chart-labels="labels"></canvas>
-            </div>
-
-        </div>
-
-        <div style="display: flex; flex-direction: horizontal; justify-content: space-between; align-items: center; margin-top: 40px">
+            
             <div style="display: flex; flex-direction: column; width: 400px; margin-right: 40px">
                 <div style="display: flex; flex-direction: horizontal; align-items: center">
                     <i class='material-icons' style="font-size: 24px; color: #7c5a9d; margin-right: 6px">local_grocery_store</i>
                     <span style="font-weight: 400; font-size: 24px; color: #7c5a9d">AVERAGE WEEKLY FOOD SPEND</span>
                 </div>
                 <span style="font-weight: 600; font-size: 48px">&pound;54.40</span>
-                <p>The monthly rent in {{cityName}} is <span style="color: #7c5a9d; font-weight: 600; text-transform: lowercase">{{cityData.rent.rating}}</span> when compared against other UK cities.</p>
+                <p>The weekly food shopping cost in {{cityName}} is <span class="text-highlight">{{getStringRating(cityData.food.foodRating)}}</span> in comparison to other UK cities.</p>
             </div>
 
-                <div google-chart chart="foodChart" style="height:600px; width:800px"></div>
+            <div google-chart chart="foodChart" style="width:660px; height: 340px;"></div>
 
         </div>
 
         <div style="border-width: 0px; border-bottom-width: 1px; border-color: #ddd; border-style: solid; width: 100%; margin: 60px 0"></div>
 
         <span class="content-title">ENTERTAINMENT</span><br><br>
+        
+        <div class="places-container">
+        
+        <div ng-repeat="place in places | limitTo: 4">
 
-        <div style="display: flex; flex-direction: horizontal; justify-content: space-between; align-items: center; margin-top: 40px">
-
-            <div style="display: flex; flex-direction: column; width: 400px; margin-right: 40px">
-                <div style="display: flex; flex-direction: horizontal; align-items: center">
-                    <i class='material-icons' style="font-size: 24px; color: #7c5a9d; margin-right: 6px">home</i>
-                    <span style="font-weight: 400; font-size: 24px; color: #7c5a9d">AVERAGE MONTHLY RENT</span>
+            <div class="place-container">
+                <div style="display: flex; flex-direction: column">
+                    <span class="place-name">{{place.name}}</span>
+                    <span class="place-address">
+                        <i class='material-icons' style="font-size: 16px; color: #666; margin-right: 2px">location_on</i>
+                        <a ng-click="openMap(place.formatted_address)">{{place.formatted_address.split(", United Kingdom")[0]}}</a>
+                    </span>
+                    <div style="display: flex; flex-direction: row">
+                        <div class="place-type-tag" ng-if="place.types.includes('night_club')">
+                            <i class='material-icons' style="font-size: 12px; color: #fff; margin-left: 10px; margin-right: 4px">music_note</i>
+                            <span style="color:#fff">night club</span>
+                        </div>
+                        <div class="place-type-tag" ng-if="place.types.includes('bar')">
+                            <i class='material-icons' style="font-size: 12px; color: #fff; margin-left: 10px; margin-right: 4px">local_bar</i>
+                            <span style="color:#fff">bar</span>
+                        </div>
+                        <div class="place-type-tag" ng-if="place.types.includes('food')">
+                            <i class='material-icons' style="font-size: 12px; color: #fff; margin-left: 10px; margin-right: 4px">local_dining</i>
+                            <span style="color:#fff">food</span>
+                        </div>
+                    </div>
                 </div>
-                <span style="font-weight: 600; font-size: 48px">&pound;547.40</span>
-                <p>The monthly rent in {{cityName}} is <span style="color: #7c5a9d; font-weight: 600; text-transform: lowercase">{{cityData.rent.rating}}</span> when compared against other UK cities.</p>
+                <div class="place-rating-ring">
+                    <span class="place-rating-text">{{place.rating}}</span>
+                    <span>out of 5</span>
+                </div>
             </div>
-
-            <div style="width: 600px; height: 300px">
-                <canvas id="base" class="chart-horizontal-bar" chart-data="data" chart-labels="labels"></canvas>
-            </div>
-
+        
+        </div>
+            
         </div>
 
     </div>
