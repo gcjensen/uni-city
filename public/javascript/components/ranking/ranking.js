@@ -3,7 +3,7 @@ angular.module('open-data').component('ranking', {
     controller: 'RankingController',
 });
 
-angular.module('open-data').controller('RankingController', function ($scope, $http) {
+angular.module('open-data').controller('RankingController', function ($scope, $http, $location) {
 
   $scope.icon = 'check';
 
@@ -16,7 +16,7 @@ angular.module('open-data').controller('RankingController', function ($scope, $h
     {name: "Rent", description: "Average Monthly Room Rent"},
     {name: "Nightlife", description: "Average Google Club Rating"},
     {name: "Broadband", description: "Average Broadband Speed"},
-    {name: "Food", description: "Average Weekly Food Shop"},
+    {name: "Food Cost", description: "Average Weekly Food Shop"},
     {name: "Crime", description: "Offences per 1000 people"},
     {name: "Wage", description: "Average Wage"}
   ]
@@ -27,7 +27,7 @@ angular.module('open-data').controller('RankingController', function ($scope, $h
     {name: "Rent", dataRef: "rent", description: "Average Monthly Room Rent", icon: ""},
     {name: "Nightlife", dataRef: "nightlife", description: "Average Google Club Rating", icon: ""},
     {name: "Broadband", dataRef: "broadband", description: "Average Broadband Speed", icon: ""},
-    {name: "Food", dataRef: "food", description: "Average Weekly Food Shop", icon: ""},
+    {name: "Food Cost", dataRef: "food", description: "Average Weekly Food Shop", icon: ""},
     {name: "Crime", dataRef: "crimeData", description: "Offences per 1000 people", icon: ""},
     {name: "Wage", dataRef: "wages", description: "Average Wage", icon: ""}
   ]
@@ -54,7 +54,8 @@ angular.module('open-data').controller('RankingController', function ($scope, $h
       for (let factor in city) {
         totalRating += city[factor].rating || city[factor].foodRating || 0;
       }
-      city.totalRating = Math.round(totalRating * 10) / 10;
+      // Divide by 6 to get rating out of 10
+      city.totalRating = Math.round((totalRating/6) * 10) / 10;
     }
     return cities;
   }
@@ -73,9 +74,17 @@ angular.module('open-data').controller('RankingController', function ($scope, $h
       total = 0.0;
       for (let i = 0; i < userPreferences.length; i++) {
         const rating = city[userPreferences[i].dataRef].rating || city[userPreferences[i].dataRef].foodRating || 0;
-        total +=  rating * (userPreferences.length - i);
+        total +=  rating * (1 + ((userPreferences.length - i)/2));
       }
-      city.totalRating =  Math.round(total * 100) / 100;
+      //city.totalRating =  Math.round(total * 10) / 10;
+    
+      let temp = 0;
+      for (let i = 1; i <= userPreferences.length; i++){
+          temp += (1 + i/2);
+      }
+      city.totalRating = Math.round((total / temp) * 10) / 10;
+      
+        
     }
     return cities;
   }
@@ -86,5 +95,9 @@ angular.module('open-data').controller('RankingController', function ($scope, $h
       else $scope.cities = rankCitiesByUserPreferences($scope.cities, $scope.active);
     }
   }, true);
+    
+  $scope.viewCity = function (city) {
+    $location.path('/city/' + city);
+  }
 
 });

@@ -59,14 +59,23 @@
                 <tbody md-body>
                     <tr md-row md-select="cities" md-select-id="name" md-auto-select ng-repeat="city in cities | orderBy:'-totalRating'">
                         <td md-cell>{{$index+1}}</td>
-                        <td md-cell>{{city.city}}</td>
-                        <td md-cell><a ng-class="{'active-column': check('Rent')}">£{{city.rent.median}}</a></td>
-                        <td md-cell><a ng-class="{'active-column': check('Nightlife')}">{{city.nightlife.rating}}</a></td>
-                        <td md-cell><a ng-class="{'active-column': check('Broadband')}">{{city.broadband.speed}}</a></td>
-                        <td md-cell><a ng-class="{'active-column': check('Food')}">£{{city.food.foodAverage}}</a></td>
-                        <td md-cell><a ng-class="{'active-column': check('Crime')}">{{city.crimeData.total}}</a></td>
-                        <td md-cell><a ng-class="{'active-column': check('Wage')}">£{{city.wages.averageWage}}</a></td>
-                        <td md-cell>{{city.totalRating}}</td>
+                        <td md-cell>
+                            <div class="city-cell" ng-click="viewCity(city.city)">
+                                <div style="width: 30px; height: 30px; border-radius: 30px; margin-right: 12px; background-size: cover; background-position: center; background-image: url('img/{{city.city}}.png')"></div>
+                                {{city.city}}
+                            </div>
+                        </td>
+                        <td md-cell><a class="inactive-column" ng-class="{'active-column': check('Rent')}">£{{city.rent.median}}</a></td>
+                        <td md-cell><a class="inactive-column" ng-class="{'active-column': check('Nightlife')}">{{city.nightlife.rating}}</a></td>
+                        <td md-cell><a class="inactive-column" ng-class="{'active-column': check('Broadband')}">{{city.broadband.speed}}</a></td>
+                        <td md-cell><a class="inactive-column" ng-class="{'active-column': check('Food Cost')}">£{{city.food.foodAverage}}</a></td>
+                        <td md-cell><a class="inactive-column" ng-class="{'active-column': check('Crime')}">{{city.crimeData.total}}</a></td>
+                        <td md-cell><a class="inactive-column" ng-class="{'active-column': check('Wage')}">£{{city.wages.averageWage}}</a></td>
+                        <td md-cell>
+                            <div style="display: flex; justify-content: center; align-items: center; width: 46px; height: 26px; background-color: #7c5a9d; color: #fff; border-radius: 3px">
+                                {{city.totalRating}}
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>

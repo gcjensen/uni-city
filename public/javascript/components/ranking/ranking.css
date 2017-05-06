@@ -102,7 +102,23 @@ body {
     cursor: pointer
 }
 
+.inactive-column {
+    color: #666;
+}
+
 .active-column {
-  color: #7c5a9d;
-  font-weight: 700;
+    color: #000;
+}
+
+.city-cell {
+    display: flex;
+    flex-direction: horizontal;
+    align-items: center;
+    margin: 16px 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.city-cell:hover {
+    color: #7c5a9d;
 }
