@@ -16,14 +16,14 @@ angular.module('open-data').controller('MainController', function ($rootScope, $
   }
   
   $scope.getLogoStyle = function () {
-    if ($location.path().split("/")[1] === "city")
+    if ($location.path().split("/")[1] === "city" || $location.path().split("/")[1] === "about")
       return 'menu-logo-white';
     else
       return 'menu-logo';
   }
     
   $scope.getMenuItemStyle = function (name) {
-    if ($location.path().split("/")[1] === "city")
+    if ($location.path().split("/")[1] === "city" || $location.path().split("/")[1] === "about")
       return 'menu-item-white';
     else if ($scope.currentPage === name)
       return 'menu-item-active';

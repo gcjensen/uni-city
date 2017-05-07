@@ -16,7 +16,7 @@
     </div>
 
     <div class="city-cards-container">
-        <div class="city-cards" ng-repeat="city in cities | filter: search | orderBy: order" style="display: flex; justify-content: space-between">
+        <div class="city-cards" ng-repeat="city in cities | filter: {name: search} | orderBy: order" style="display: flex; justify-content: space-between">
 
             <div class="parent" ng-click="viewCity(city.name)">
                 <div class="child" style="background-image: url('img/{{city.name}}.png')">

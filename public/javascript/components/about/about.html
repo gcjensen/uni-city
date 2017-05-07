@@ -1,5 +1,59 @@
-<div style="padding-top: 70px">
+<div style="background-color: white">
 
-    About page.
-
+    <div class="about-background" style="background-image: url('img/lol.png')">
+        <div class="background-overlay">
+            <span class="city-name">ABOUT</span>
+        </div>
+    </div>
+    
+    <div style="padding-top: 80px; padding-bottom: 80px; background-color: white">
+        
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-bottom: 60px">
+        
+            <span class="about-section-title">The Team</span>
+            
+            <div class="about-paragraph">
+                UniCity is headed up by a team of University of Southampton undergraduates specialising in Computer Science and Information Technology in Organisations. We want to help upcoming university students by providing them with the necessary information to choose their ideal place of study.
+            </div>
+            
+            <div class="members-container">
+                <div ng-repeat="member in members" style="width:100%">
+                    
+                    <div class="member-parent" ng-click="viewLinkedIn(member.linkedin)">
+                        <div class="member-child" style="background-image: url('img/{{member.url}}')">
+                            <div class="member-text">
+                                <span class="member-name">{{member.name}}</span>
+                                <span class="member-role">{{member.role}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+        
+            <span class="about-section-title">The Data</span>
+            
+            <div class="about-paragraph">
+                UniCity uses a whole range of datasets and APIs to provide detailed insights. We ensure that every source of information is realiable and believe that the combination of different datasets provides a more genuine representation of each city.
+            </div>
+            
+            <div style="width: 90%; display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap;">
+            
+                <div ng-repeat="source in sources" style="display: flex; align-items: center">
+                    <img src='img/{{source.url}}' class="source-img">
+                </div>
+                
+            </div>
+            
+            
+        </div>
+    
+    </div>
+    
+    
+    
 </div>

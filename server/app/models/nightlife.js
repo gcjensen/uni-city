@@ -10,17 +10,6 @@ const getDataForCity = (city) => {
 
   return new Promise((resolve, reject) => {
 
-      /*
-     const places = new GooglePlaces(key);
-     const params = {
-       query: `nightclub in ${city}`
-     };
-
-     places.textSearch(params, (err, response) => {
-         console.log(response.body.results);
-     });
-     */
-
     // const places = new GooglePlaces(key);
     // const params = {
     //   query: `nightclub in ${city}`
