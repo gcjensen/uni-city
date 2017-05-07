@@ -12,7 +12,7 @@ const getDataForCity = (city) => {
 
     // const places = new GooglePlaces(key);
     // const params = {
-    //   query: `nightclub in ${city}`
+    //   query: `nightclub in ${city} uk`
     // };
     // places.textSearch(params, (err, response) => {
     //   const topClubs = getTopClubs(response, 4);
