@@ -4,7 +4,7 @@
   "author": "groupX",
   "repository": "https://github.com/gcjensen/comp6214.git",
   "scripts": {
-    "start": "mocha server/tests/* && node server/server.js",
+    "start": "node server/server.js",
     "test": "mocha server/tests/*"
   },
   "dependencies": {

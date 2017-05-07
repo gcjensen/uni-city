@@ -28,7 +28,7 @@ const getDataForCity = (city) => {
     // places.textSearch(params, (err, response) => {
     //   const topClubs = getTopClubs(response, 4);
     //   const averageRating = computeAverageRating(response);
-    //   resolve({ rating: averageRating });
+    //   resolve({ topClubs, rating: averageRating });
     // });
 
     /*
@@ -42,7 +42,7 @@ const getDataForCity = (city) => {
 
 module.exports.getDataForCity = getDataForCity;
 
-function computeAverageRating(results) {
+function computeAverageRating(response) {
   let ratings = response.body.results.map((r) => r.rating);
   ratings = ratings.filter((r) => !isNaN(r));
   let totalRating = ratings.reduce((a, b) => a + b, 0);
