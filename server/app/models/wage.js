@@ -2,7 +2,7 @@
 
 const RatingService = require('../services/rating-service');
 const ParsingService = require('../services/parsing-service');
-const ConstituencyService = require('../services/constituency-service');
+const PartService = require('../services/part-service');
 const City = require('../models/city');
 
 let citiesWithWageData;
@@ -12,7 +12,7 @@ ParsingService.parseCSV('wages.csv')
 const mapConstituencyDataToCities = (constituencyWages) => {
   const citiesWithWageData = [];
   for (let city of City.getCityList()) {
-    let constituencyWagesForCity = ConstituencyService.filterByConstituencies(city.name, constituencyWages);
+    let constituencyWagesForCity = PartService.filterData(city.name, constituencyWages, "constituencies", "Description");
     constituencyWagesForCity = constituencyWagesForCity.filter((c) => !isNaN(c.Median));
     constituencyWagesForCity = constituencyWagesForCity.map((d) => d['Median']);
     let totalWage = constituencyWagesForCity.reduce((a, b) => (parseInt(a) + parseInt(b)), 0);
