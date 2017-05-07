@@ -85,6 +85,16 @@
     color: white;
 }
 
+.wiki-link {
+    color: #fff;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.wiki-link:hover {
+    text-decoration: underline;
+}
+
 .content-title {
     font-size: 32px;
     font-weight: 600;

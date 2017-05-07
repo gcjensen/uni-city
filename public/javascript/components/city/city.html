@@ -4,7 +4,7 @@
 
         <div class="img-overlay">
 
-            <span class="city-name fadeInUp" ng-if="cityData !== undefined">{{cityName}}</span>
+            <span class="city-name" ng-if="cityData !== undefined">{{cityName}}</span>
 
             <div class="info-container" ng-if="cityData !== undefined">
 
@@ -42,7 +42,7 @@
             <span class="key-info-label">ABOUT</span><br><br>
 
                 <p>{{cityData.description}}</p>
-                <p><a href="http://en.wikipedia.org/wiki/{{cityData.wikipedia}}">Read more on Wikipedia</a></p>
+                <a class="wiki-link" href="http://en.wikipedia.org/wiki/{{cityData.wikipedia}}">Read more on Wikipedia</a>
         </div>
 
     </div>
