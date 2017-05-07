@@ -13,7 +13,7 @@ const getDataForCity = (city) => {
     let speed = "n/a";
     let rating = "n/a";
     if (cityWithSpeed) {
-      speed = cityWithSpeed.speed;
+      speed = parseFloat(cityWithSpeed.speed);
       rating = RatingService.rate(citiesWithBroadbandSpeeds, speed, 'speed', false);
     }
     resolve({ speed, rating });

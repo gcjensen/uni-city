@@ -1,6 +1,6 @@
 const City = require('../models/city');
 
-function rate(allData, data, prop, lowIsBetter = true) {
+const rate = (allData, data, prop, lowIsBetter = true) => {
   allData = allData.filter((c) => City.doesCityExist(c.city));
   let allValuesForProp = allData.map((d) => d[prop]);
   allValuesForProp = allValuesForProp.filter((d) => !isNaN(d));
@@ -9,7 +9,7 @@ function rate(allData, data, prop, lowIsBetter = true) {
   else return Math.round(score * 10) / 10;
 }
 
-function computeRating(allData, data) {
+const computeRating = (allData, data) => {
   const max = Math.max.apply(null, allData)
   const min = Math.min.apply(null, allData);
   const bracket = (max - min) / 10;

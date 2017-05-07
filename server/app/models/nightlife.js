@@ -9,13 +9,13 @@ readInKey();
 const getDataForCity = (city) => {
 
   return new Promise((resolve, reject) => {
-      
+
       /*
      const places = new GooglePlaces(key);
      const params = {
        query: `nightclub in ${city}`
      };
-      
+
      places.textSearch(params, (err, response) => {
          console.log(response.body.results);
      });
@@ -36,7 +36,7 @@ const getDataForCity = (city) => {
 
     /*
      * the above is commented out to avoid exceeding Google API Limits.
-     * For testing, a random number between 3.0 and 4.5 is generated
+     * For testing, a random number between 6.0 and 9.0 is generated
      */
 
     resolve({ rating: (Math.floor(Math.random() * 15) + 30)/ 5})

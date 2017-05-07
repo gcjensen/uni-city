@@ -69,8 +69,8 @@
                     <i class='material-icons' style="font-size: 24px; color: #7c5a9d; margin-right: 6px">local_grocery_store</i>
                     <span style="font-weight: 400; font-size: 24px; color: #7c5a9d">AVERAGE WEEKLY FOOD SPEND</span>
                 </div>
-                <span style="font-weight: 600; font-size: 48px">&pound;54.40</span>
-                <p>The weekly food shopping cost in {{cityName}} is <span class="text-highlight">{{getStringRating(cityData.food.foodRating)}}</span> in comparison to other UK cities.</p>
+                <span style="font-weight: 600; font-size: 48px">&pound;{{cityData.food.foodAverage}}</span>
+                <p>The weekly food shopping cost in {{cityName}} is <span class="text-highlight">{{getStringRating((cityData.food.foodRating - 10)*-1)}}</span> in comparison to other UK cities.</p>
             </div>
 
             <div google-chart chart="foodChart" style="width:660px; height: 340px;"></div>
