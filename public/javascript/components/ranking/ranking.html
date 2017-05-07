@@ -42,7 +42,7 @@
         </div>
 
         <!-- Ranking table -->
-        <md-table-container style="margin-top: 30px">
+        <md-table-container class="ranking-table" ng-if="cities !== undefined">
             <table md-table ng-model="cities" md-progress="promise">
                 <thead md-head>
                     <tr md-row>

@@ -9,6 +9,19 @@ body {
   text-align: center;
 }
 
+.ranking-table {
+    margin-top: 30px;
+}
+
+.ranking-table.ng-enter {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    transform: translate3d(0, 10%, 0);
+}
+.ranking-table.ng-enter-active {
+    transform: none;
+}
+
 .md-headline {
   margin-bottom: 10px;
 }

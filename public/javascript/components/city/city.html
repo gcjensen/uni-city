@@ -4,25 +4,25 @@
 
         <div class="img-overlay">
 
-            <span class="city-name">{{cityName}}</span>
+            <span class="city-name fadeInUp" ng-if="cityData !== undefined">{{cityName}}</span>
 
-            <div style="display: flex; flex-direction: horizontal; justify-content: space-between; width: 50%; margin-top: 60px">
+            <div class="info-container" ng-if="cityData !== undefined">
 
-                <div style="display: flex; flex-direction: column; align-items: center">
+                <div class="key-info">
                     <img src="icon/placeholder.png" style="width: 50px; height: auto; margin-bottom: 18px">
                     <span class="key-info-label">NIGHTLIFE RATING</span>
                     <span class="key-info-figure">{{cityData.nightlife.rating}}</span>
                     <span class="key-info-rating">{{getStringRating(cityData.nightlife.rating)}}</span>
                 </div>
 
-                <div style="display: flex; flex-direction: column; align-items: center">
+                <div class="key-info">
                     <img src="icon/home.png" style="width: 50px; height: auto; margin-bottom: 18px">
                     <span class="key-info-label">MONTHLY RENT</span>
                     <span class="key-info-figure">&pound;{{cityData.rent.median}}</span>
                     <span class="key-info-rating">{{getStringRating((cityData.rent.rating - 10)*-1)}}</span>
                 </div>
 
-                <div style="display: flex; flex-direction: column; align-items: center">
+                <div class="key-info">
                     <img src="icon/wifi.png" style="width: 50px; height: auto; margin-bottom: 18px">
                     <span class="key-info-label">BROADBAND SPEED</span>
                     <span class="key-info-figure">{{cityData.broadband.speed}}</span>

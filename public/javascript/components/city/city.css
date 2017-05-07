@@ -18,12 +18,45 @@
 
 .city-name {
     font-family: 'Lato';
-    font-weight: 400;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 10px;
     color: white; 
     font-size: 65px; 
     text-shadow: 0px 0px 15px rgba(20, 27, 46, 0.6)
+}
+.city-name.ng-enter {
+    -webkit-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+}
+.city-name.ng-enter-active {
+    opacity: 1;
+}
+
+.info-container {
+    display: flex; 
+    flex-direction: horizontal; 
+    justify-content: space-between; 
+    width: 50%; 
+    margin-top: 60px;
+}
+.info-container.ng-enter {
+    -webkit-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+    transform: translate3d(0, 20%, 0);
+}
+.info-container.ng-enter-active {
+    opacity: 1;
+    transform: none;
+}
+
+.key-info {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    opacity: 1;
 }
 
 .key-info-label {
