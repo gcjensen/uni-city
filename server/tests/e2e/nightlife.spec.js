@@ -14,7 +14,9 @@ describe('Nightlife (end-to-end)', () => {
             res.should.have.status(200);
             res.body.should.be.a('object');
             res.body.should.have.property('city').that.is.an('string');
-            res.body.should.have.deep.property('nightlife.rating').that.is.an('number');
+            res.body.should.have.deep.property('nightlife.rating').that.is.a('number');
+            res.body.should.have.deep.property('nightlife.topClubs').that.is.an('array');
+            res.body.nightlife.topClubs.should.have.lengthOf(4);
             res.body.nightlife.rating.should.be.within(0, 10);
             done();
         });
@@ -29,7 +31,9 @@ describe('Nightlife (end-to-end)', () => {
             for (let element of res.body) {
               element.should.be.an('object');
               element.should.have.property('city').that.is.an('string');
-              element.should.have.deep.property('nightlife.rating').that.is.an('number');
+              element.should.have.deep.property('nightlife.rating').that.is.a('number');
+              element.should.have.deep.property('nightlife.topClubs').that.is.an('array');
+              element.nightlife.topClubs.should.have.lengthOf(4);
               element.nightlife.rating.should.be.within(0, 10);
             }
             done();

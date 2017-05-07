@@ -41,6 +41,7 @@ function computeAverageRating(response) {
 
 function getTopClubs(response = dummyResponse, numberRequired = 4) {
   let clubs = response.body.results;
+  clubs = clubs.filter((club) => !isNaN(club.rating));
   let topClubs = clubs.sort((a, b) => b.rating - a.rating).slice(0, numberRequired);
   return topClubs;
 }
