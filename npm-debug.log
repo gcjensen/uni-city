@@ -7,12 +7,12 @@
 6 silly lifecycle open-data@~prestart: no script for prestart, continuing
 7 info lifecycle open-data@~start: open-data@
 8 verbose lifecycle open-data@~start: unsafe-perm in lifecycle true
-9 verbose lifecycle open-data@~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/george/Documents/Uni/MEng Computer Science/Fourth Year/Semester 2/COMP6214 - Open Data Innovation/Coursework II/comp6214/node_modules/.bin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/CrossPack-AVR/bin:/usr/local/go/bin:/Library/TeX/texbin:/Users/george/Library/Android/sdk/tools/:/Users/george/Library/Android/sdk/platform-tools/
-10 verbose lifecycle open-data@~start: CWD: /Users/george/Documents/Uni/MEng Computer Science/Fourth Year/Semester 2/COMP6214 - Open Data Innovation/Coursework II/comp6214
-11 silly lifecycle open-data@~start: Args: [ '-c', 'node server/server.js' ]
+9 verbose lifecycle open-data@~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/george/Documents/Uni/MEng Computer Science/Fourth Year/Semester 2/COMP6214 - Open Data Innovation/Coursework II/uni-city/node_modules/.bin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/CrossPack-AVR/bin:/usr/local/go/bin:/Library/TeX/texbin:/Users/george/Library/Android/sdk/tools/:/Users/george/Library/Android/sdk/platform-tools/
+10 verbose lifecycle open-data@~start: CWD: /Users/george/Documents/Uni/MEng Computer Science/Fourth Year/Semester 2/COMP6214 - Open Data Innovation/Coursework II/uni-city
+11 silly lifecycle open-data@~start: Args: [ '-c', 'mocha server/tests/* && node server/server.js' ]
 12 silly lifecycle open-data@~start: Returned: code: 1  signal: null
 13 info lifecycle open-data@~start: Failed to exec start script
-14 verbose stack Error: open-data@ start: `node server/server.js`
+14 verbose stack Error: open-data@ start: `mocha server/tests/* && node server/server.js`
 14 verbose stack Exit status 1
 14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:242:16)
 14 verbose stack     at emitTwo (events.js:106:13)
@@ -23,20 +23,20 @@
 14 verbose stack     at maybeClose (internal/child_process.js:877:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid open-data@
-16 verbose cwd /Users/george/Documents/Uni/MEng Computer Science/Fourth Year/Semester 2/COMP6214 - Open Data Innovation/Coursework II/comp6214
+16 verbose cwd /Users/george/Documents/Uni/MEng Computer Science/Fourth Year/Semester 2/COMP6214 - Open Data Innovation/Coursework II/uni-city
 17 error Darwin 16.5.0
 18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
 19 error node v6.7.0
 20 error npm  v3.10.3
 21 error code ELIFECYCLE
-22 error open-data@ start: `node server/server.js`
+22 error open-data@ start: `mocha server/tests/* && node server/server.js`
 22 error Exit status 1
-23 error Failed at the open-data@ start script 'node server/server.js'.
+23 error Failed at the open-data@ start script 'mocha server/tests/* && node server/server.js'.
 23 error Make sure you have the latest version of node.js and npm installed.
 23 error If you do, this is most likely a problem with the open-data package,
 23 error not with npm itself.
 23 error Tell the author that this fails on your system:
-23 error     node server/server.js
+23 error     mocha server/tests/* && node server/server.js
 23 error You can get information on how to open an issue for this project with:
 23 error     npm bugs open-data
 23 error Or if that isn't available, you can get their info via:

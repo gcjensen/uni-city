@@ -66,8 +66,8 @@ angular.module('open-data').controller('RankingController', function ($scope, $h
    * (between 1 and 10), which is then multiplied by a number
    * according to how the user has ranked their preferences,
    * i.e. if there are 3 preferences, the top one will multiply
-   * by 3, the second one by 2 and the third one by 1. The
-   * locations are then ordered according to their overall score.
+   * by 2.5, the second one by 2 and the third one by 1.5. The
+   * cities are then ordered according to their overall score.
    */
   const rankCitiesByUserPreferences = (cities, userPreferences) => {
     for (let city of cities) {
@@ -76,15 +76,12 @@ angular.module('open-data').controller('RankingController', function ($scope, $h
         const rating = city[userPreferences[i].dataRef].rating || city[userPreferences[i].dataRef].foodRating || 0;
         total +=  rating * (1 + ((userPreferences.length - i)/2));
       }
-      //city.totalRating =  Math.round(total * 10) / 10;
-    
-      let temp = 0;
+
+      let divisor = 0;
       for (let i = 1; i <= userPreferences.length; i++){
-          temp += (1 + i/2);
+          divisor += (1 + i/2);
       }
-      city.totalRating = Math.round((total / temp) * 10) / 10;
-      
-        
+      city.totalRating = Math.round((total / divisor) * 10) / 10;
     }
     return cities;
   }
@@ -95,7 +92,7 @@ angular.module('open-data').controller('RankingController', function ($scope, $h
       else $scope.cities = rankCitiesByUserPreferences($scope.cities, $scope.active);
     }
   }, true);
-    
+
   $scope.viewCity = function (city) {
     $location.path('/city/' + city);
   }
