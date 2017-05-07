@@ -15,10 +15,11 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
     then(function(response) {
         $scope.cityData = response.data;
         prepareFoodChart();
+        prepareChartData();
     });
 
     $scope.getStringRating = function (num) {
-        
+
         if (num <= 1)
             return "Very Low";
         else if (num > 1 && num < 4)
@@ -39,6 +40,57 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
             drawFoodChart(response.data);
         });
     }
+
+    function prepareChartData() {
+        $http.get('api/all-data/all-cities/').
+        then(function(response) {
+            drawRentChart(response.data);
+        });
+    }
+
+    function drawRentChart(data) {
+
+        $scope.rentChart = {};
+
+        $scope.rentChart.type = 'BarChart';
+
+        let barData = [];
+
+        for (let datum of data) {
+            var city = datum['city'];
+            var dataObjs = [];
+            dataObjs.push( { v: city } );
+            dataObjs.push( { v: datum['rent']['median'] } );
+
+            if( city == $scope.cityName ) {
+                dataObjs.push( { v: '#3A4C81' } );
+            } else {
+                dataObjs.push( { v: '#8894BB' } );
+            }
+
+            barData.push( {c: dataObjs } );
+        }
+
+        $scope.rentChart.data = {'cols': [
+            {id: 't', label: 'City', type: 'string'},
+            {id: 's', label: 'Monthly rent', type: 'number'},
+            {role: "style", type: "string"},
+        ], 'rows': barData};
+
+        $scope.rentChart.options = {
+            'width': '100%',
+            'height': '100%',
+            'chartArea': {left: 160, top: 20, width: '80%','height': '100%'},
+            'legend': 'none',
+            'bar': {groupWidth: "40%"},
+            'hAxis': {
+                'textStyle': {color: '#555'}
+            },
+            'vAxis': {
+                'textStyle': {color: '#555'}
+            }
+          };
+        }
 
     function drawFoodChart(data) {
 
@@ -105,12 +157,12 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
         [65, 59, 80, 81, 56, 55, 40],
         [28, 48, 40, 19, 86, 27, 90]
     ];
-    
+
     $scope.openMap = function (address) {
         let win = window.open('http://maps.google.com/?q=' + address, '_blank');
     }
 
-    $scope.places = [ 
+    $scope.places = [
         { formatted_address: '55 London Rd, Southampton SO15 2AD, United Kingdom',
          geometry: { location: [Object], viewport: [Object] },
          icon: 'https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png',
@@ -176,7 +228,7 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
          place_id: 'ChIJZ3NaB1VxdEgRAl_Ui2UMLGM',
          rating: 4.3,
          reference: 'CmRRAAAAT3IQQRf9d_9KGSKtmzcBsHQ7GwIaL8SrHu49lGVgSPHF0CaTGs7EjqETm5p5U-3EnqBbcGxovuqwuaMAnnG3vMMZxbMsTiyrFfbHgycgHfQ1dHbF6QA2KGqBduchI_EhEhBMYF18abOxiJkVy0309d_uGhTpK1klLd3bzoKk4foJq17cfcxY2A',
-         types: 
+         types:
          [ 'night_club',
           'bar',
           'food',
@@ -203,7 +255,7 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
          place_id: 'ChIJ-dT5Y652dEgRjw2q2BLiQGE',
          rating: 3.9,
          reference: 'CmRRAAAANufLNOx45jm3gG2rzZvcfusDuOJqQe-UPBWOw1JLCPoOAk-HEevA2q3K2wDy-blYaBaqEdvXocr-bQbhLHVKhUmoji7E7yQEOxQbp_T9jFiz_arrmbDCTo1qSL0hnZZHEhBzrcQ2kCHf2UJ2qFUuzExiGhTL7m9EB-Nx_Fj4WyLK4rah0WBfIQ',
-         types: 
+         types:
          [ 'night_club',
           'bar',
           'restaurant',
@@ -260,7 +312,7 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
          place_id: 'ChIJC0lRgK52dEgRJSeVP0pTdtc',
          rating: 4.1,
          reference: 'CmRSAAAAqJ889ijWapCooEka75u0Rb6t7ugzFdUIMIiJeRt2MXYei7Z6pbO47ga3sD4v618aJXOoFTJtoqQwTXTwZ4QcUc6kEo24bVbd_JPD-4aAh-HWCzcEIw6I10msrHKsCpzjEhCWCwNv_7umwj2JUxnpK7aiGhR35veHN9ltm0OB5ObqnMO_p_oJQw',
-         types: 
+         types:
          [ 'night_club',
           'bar',
           'food',
@@ -331,7 +383,7 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
          place_id: 'ChIJnSOHbLF2dEgRcdYCilxODaU',
          rating: 3.6,
          reference: 'CmRSAAAAA8AywjmnlWJyRhfA3dcW-675QdGEdK2BJXPUulmz0btG78pb9a4wwhYgHDkSBbm49kCAXZCSjS0KvX_2roXRzLzeu9YHd5fxzzzsrKLJ8tXNEA7F_Fk4hMLfXqM7WWh7EhDsnWzg1vytby-UxxEEnUXNGhQG_qZsTY2TqTo-dcZtr_G7crruPQ',
-         types: [ 'night_club', 'bar', 'point_of_interest', 'establishment' ] } 
+         types: [ 'night_club', 'bar', 'point_of_interest', 'establishment' ] }
     ];
 
 });
