@@ -19,8 +19,10 @@ function getCityWithAllData(req, callback) {
     const cityObj = City.getCity(city);
     const description = cityObj.description;
     const region = cityObj.region;
+    const wikipedia = cityObj.wikipedia;
+    const population = cityObj.population;
 
-    let response = { city, description, region };
+    let response = { city, description, region, wikipedia, population };
     const promises = []; // used to keep track of the async data retrievals
 
     for (let key in DataSources) {
