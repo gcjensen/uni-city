@@ -16,6 +16,8 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
         $scope.cityData = response.data;
         prepareFoodChart();
         prepareChartData();
+        drawCrimeChart(response.data.crimeData);
+
     });
 
     $scope.getStringRating = function (num) {
@@ -92,6 +94,53 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
           };
         }
 
+        function drawCrimeChart(data) {
+
+            $scope.crimeChart = {};
+
+            $scope.crimeChart.type = 'PieChart';
+
+            let pieData = [];
+
+            var dataObjs = [];
+            dataObjs.push( { v: 'Burglary' } );
+            dataObjs.push( { v: parseFloat(data['burglary']) } );
+            pieData.push( {c: dataObjs } );
+
+            var dataObjs1 = [];
+            dataObjs1.push( { v: 'Robbery' } );
+            dataObjs1.push( { v: parseFloat(data['robbery']) } );
+            pieData.push( {c: dataObjs1 } );
+
+            var dataObjs2 = [];
+            dataObjs2.push( { v: 'Violence And Sexual Offences' } );
+            dataObjs2.push( { v: parseFloat(data['violenceAndSexualOffences']) } );
+            pieData.push( {c: dataObjs2 } );
+
+            var dataObjs3 = [];
+            dataObjs3.push( { v: 'Others' } );
+            dataObjs3.push( { v: parseFloat(data['total'])-(parseFloat(data['burglary'])+parseFloat(data['robbery'])+parseFloat(data['violenceAndSexualOffences'])) } );
+            pieData.push( {c: dataObjs3 } );
+
+            $scope.crimeChart.data = {'cols': [
+              {id: 't', label: 'Crime', type: 'string'},
+              {id: 's', label: 'Occurance', type: 'number'},
+
+            ], 'rows': pieData};
+
+            $scope.crimeChart.options = {
+                'slices': [{color:'#7C5A9D'},{color:'#B4A4C4'},{color:'#3A4C81'},{color:'#8894BB'}],
+                'width': '100%',
+                'height': '100%',
+                'hAxis': {
+                    'textStyle': {color: '#555'}
+                },
+                'vAxis': {
+                    'textStyle': {color: '#555'}
+                }
+            }
+          }
+
     function drawFoodChart(data) {
 
         $scope.foodChart = {};
@@ -100,7 +149,7 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
 
         let barData = [];
 
-        data = data.filter(obj => 
+        data = data.filter(obj =>
                            obj.region === "West Midlands" ||
                            obj.region === "East Midlands" ||
                            obj.region === "North East" ||
