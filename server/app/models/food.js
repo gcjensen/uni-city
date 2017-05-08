@@ -7,11 +7,16 @@ const City = require('../models/city');
 
 let regionsWithFoodData;
 let citiesWithFoodData;
-ParsingService.parseCSV('food.csv')
-  .then((data) => {
-    regionsWithFoodData = data;
-    citiesWithFoodData = mapRegionDataToCities(data)
+
+const doInitialParsing = () => {
+  return new Promise((resolve, reject) => {
+    ParsingService.parseCSV('food.csv').then((data) => {
+      regionsWithFoodData = data;
+      citiesWithFoodData = mapRegionDataToCities(data);
+      resolve();
+    });
   });
+}
 
 const mapRegionDataToCities = (regionsWithFoodData) => {
   const citiesWithFoodData = [];
@@ -44,6 +49,6 @@ const getRegionList = () => {
   return regionsWithFoodData;
 };
 
-
+module.exports.doInitialParsing = doInitialParsing;
 module.exports.getDataForCity = getDataForCity;
 module.exports.getRegionList = getRegionList;

@@ -5,6 +5,17 @@ const ParsingService = require('../services/parsing-service');
 const PartService = require('../services/part-service');
 const City = require('../models/city');
 
+let citiesWithCrimeData;
+
+const doInitialParsing = () => {
+  return new Promise((resolve, reject) => {
+    ParsingService.parseCSV('crime.csv').then((data) => {
+      citiesWithCrimeData = mapUniversitiesToCities(data);
+      resolve();
+    });
+  });
+}
+
 const mapUniversitiesToCities = (universityCrimeData) => {
   const citiesWithCrimeData = [];
   for (let city of City.getCityList()) {
@@ -24,20 +35,18 @@ const mapUniversitiesToCities = (universityCrimeData) => {
 
 const getDataForCity = (city) => {
   return new Promise((resolve, reject) => {
-    ParsingService.parseCSV('crime.csv').then((data) => {
-      const citiesWithCrimeData = mapUniversitiesToCities(data);
-      const crimeData = citiesWithCrimeData.find((c) => c.city === city).crimeData;
-      const citiesWithTotalCrime = [];
-      for (let cityWithCrimeData of citiesWithCrimeData) {
-        citiesWithTotalCrime.push({
-          city: cityWithCrimeData.city,
-          total: cityWithCrimeData.crimeData.total
-        });
-      }
-      crimeData.rating = RatingService.rate(citiesWithTotalCrime, crimeData.total, 'total');
-      resolve(crimeData);
-    });
+    const crimeData = citiesWithCrimeData.find((c) => c.city === city).crimeData;
+    const citiesWithTotalCrime = [];
+    for (let cityWithCrimeData of citiesWithCrimeData) {
+      citiesWithTotalCrime.push({
+        city: cityWithCrimeData.city,
+        total: cityWithCrimeData.crimeData.total
+      });
+    }
+    crimeData.rating = RatingService.rate(citiesWithTotalCrime, crimeData.total, 'total');
+    resolve(crimeData);
   });
 };
 
+module.exports.doInitialParsing = doInitialParsing;
 module.exports.getDataForCity = getDataForCity;

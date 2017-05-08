@@ -1,11 +1,12 @@
-var express    = require('express');
-var app        = express();
-var subpath    = express();
-var path       = require('path');
-var bodyParser = require('body-parser');
-var argv = require('minimist')(process.argv.slice(2));
+const express           = require('express');
+const app               = express();
+const subpath           = express();
+const path              = require('path');
+const bodyParser        = require('body-parser');
+const argv              = require('minimist')(process.argv.slice(2));
+const DependencyService = require('./app/services/dependency-service');
 
-var port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/node_modules', express.static(__dirname + '../node_modules'));
@@ -16,9 +17,9 @@ app.use('../server/resources', express.static(__dirname + '../server/resources/'
  *
  * ------------------------------------------------
  */
- app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-var swagger = require('swagger-node-express').createNew(subpath);
+const swagger = require('swagger-node-express').createNew(subpath);
 app.use(express.static('server/dist'));
 app.use(express.static(path.join(__dirname, '../server/resources')));
 
@@ -40,6 +41,7 @@ app.use('/api', require('./app/controllers/crimes'));
 app.use('/api', require('./app/controllers/wages'));
 app.use('/api', require('./app/controllers/food'));
 
+DependencyService.startParsing();
 
 app.get('/api/status', (req, res, next) => {
   res.json({ message: 'API is up and available.' });

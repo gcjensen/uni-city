@@ -4,8 +4,13 @@ const RatingService = require('../services/rating-service');
 const ParsingService = require('../services/parsing-service');
 
 let citiesWithBroadbandSpeeds;
-ParsingService.parseCSV('broadband.csv')
-  .then((data) => citiesWithBroadbandSpeeds = data);
+
+const doInitialParsing = () => {
+  return new Promise((resolve, reject) => {
+    ParsingService.parseCSV('broadband.csv')
+      .then((data) => { citiesWithBroadbandSpeeds = data; resolve(); });
+  });
+}
 
 const getDataForCity = (city) => {
   return new Promise((resolve, reject) => {
@@ -20,4 +25,5 @@ const getDataForCity = (city) => {
   })
 };
 
+module.exports.doInitialParsing = doInitialParsing;
 module.exports.getDataForCity = getDataForCity;

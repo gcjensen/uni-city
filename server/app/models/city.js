@@ -4,10 +4,14 @@ const ParsingService = require('../services/parsing-service');
 const PartService = require('../services/part-service');
 
 let cities;
-ParsingService.parseCSV('cities.csv')
-  .then((data) => { cities = data; parseStudentPopulations() });
-
 let cityStudentPopulations;
+
+const doInitialParsing = () => {
+  return new Promise((resolve, reject) => {
+    ParsingService.parseCSV('cities.csv')
+      .then((data) => { cities = data; parseStudentPopulations(); resolve(); });
+  });
+}
 
 const parseStudentPopulations = () => {
 	ParsingService.parseCSV('university-population.csv')
@@ -43,6 +47,7 @@ const getStudentPopulationForCity = (city) => {
 	return cityStudentPopulations.filter((c) => c.city == city)[0]['population'];
 };
 
+module.exports.doInitialParsing = doInitialParsing;
 module.exports.getCityList = getCityList;
 module.exports.doesCityExist = doesCityExist;
 module.exports.getCity = getCity;

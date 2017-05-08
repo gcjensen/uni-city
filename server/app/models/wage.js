@@ -6,8 +6,15 @@ const PartService = require('../services/part-service');
 const City = require('../models/city');
 
 let citiesWithWageData;
-ParsingService.parseCSV('wages.csv')
-  .then((data) => citiesWithWageData = mapConstituencyDataToCities(data));
+
+const doInitialParsing = () => {
+  return new Promise((resolve, reject) => {
+    ParsingService.parseCSV('wages.csv').then((data) => {
+      citiesWithWageData = mapConstituencyDataToCities(data);
+      resolve();
+    });
+  });
+}
 
 const mapConstituencyDataToCities = (constituencyWages) => {
   const citiesWithWageData = [];
@@ -30,4 +37,5 @@ const getDataForCity = (city) => {
   });
 };
 
+module.exports.doInitialParsing = doInitialParsing;
 module.exports.getDataForCity = getDataForCity;
