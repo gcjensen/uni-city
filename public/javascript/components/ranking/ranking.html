@@ -61,7 +61,7 @@
                         <td md-cell>{{$index+1}}</td>
                         <td md-cell>
                             <div class="city-cell" ng-click="viewCity(city.city)">
-                                <div style="width: 30px; height: 30px; border-radius: 30px; margin-right: 12px; background-size: cover; background-position: center; background-image: url('img/{{city.city}}.png')"></div>
+                                <div style="width: 30px; height: 30px; border-radius: 30px; margin-right: 12px; background-size: cover; background-position: center; background-image: url('img/{{city.city.toLowerCase()}}.png')"></div>
                                 {{city.city}}
                             </div>
                         </td>

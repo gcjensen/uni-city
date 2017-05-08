@@ -19,7 +19,7 @@
         <div class="city-cards" ng-repeat="city in cities | filter: {name: search} | orderBy: order" style="display: flex; justify-content: space-between">
 
             <div class="parent" ng-click="viewCity(city.name)">
-                <div class="child" style="background-image: url('img/{{city.name}}.png')">
+                <div class="child" style="background-image: url('img/{{city.name.toLowerCase()}}.png')">
                     <div class="child-text">
                         <span>{{city.name}}</span>
                     </div>
