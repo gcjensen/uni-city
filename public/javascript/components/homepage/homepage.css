@@ -102,6 +102,7 @@ body {
     transition: 0.5s;
     opacity: 0;
     transform: scale3d(.6, .6, .6);
+    -webkit-transform: scale3d(.6, .6, .6);
 }
 .city-cards.ng-enter-active {
     opacity: 1;

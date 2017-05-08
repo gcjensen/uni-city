@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const Broadband = require('../models/Broadband');
+const Broadband = require('../models/broadband');
 const DataService = require('../services/data-service');
 
 router.get('/broadband/all-cities', (req, res) => DataService.getDataForAllCities(res, Broadband, "broadband"));

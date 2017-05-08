@@ -45,6 +45,7 @@
     -webkit-transition: 1s;
     transition: 1s;
     opacity: 0;
+    -webkit-transform: translate3d(0, 20%, 0);
     transform: translate3d(0, 20%, 0);
 }
 .info-container.ng-enter-active {
