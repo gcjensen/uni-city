@@ -28,6 +28,8 @@ After cloning the repo, the API and application can be built and run by followin
 
 The application can then be found at [localhost:8080/](http://localhost:8080/) and the API documentation at [localhost:8080/docs](http://localhost:8080/docs).
 
+API tests can be run with `npm test`.
+
 #### Troubleshooting
 
 If upon running the application the node interpreter complains about ES6 syntax, you will need to update your version of Node.
