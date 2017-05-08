@@ -1,4 +1,5 @@
 /node_modules/
 .DS_STORE
 /public/.DS_STORE
-/server/config/google-places-api-key.txt
+/server/config/google-places-api-key.tx
+npm-debug.logt
