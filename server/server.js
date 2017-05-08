@@ -9,7 +9,7 @@ var port = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/node_modules', express.static(__dirname + '../node_modules'));
-app.use('../server/resources', express.static(__dirname + '../server/resources'));
+app.use('../server/resources', express.static(__dirname + '../server/resources/'));
 
 /*
  * For creating Swagger documentation
