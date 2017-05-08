@@ -490,7 +490,17 @@
                "description":{
                   "required":true,
                   "type":"schema",
-                  "example":""
+                  "example":"Southampton, on the south coast of England, is the largest city in the ceremonial county of Hampshire."
+               },
+               "wikipedia": {
+                  "required":true,
+                  "type":"string",
+                  "example":"Southampton"
+               },
+               "population": {
+                  "required":true,
+                  "type":"string",
+                  "example":"253651"
                }
             }
          }
@@ -501,6 +511,31 @@
                "required":true,
                "type":"string",
                "example":"Southampton"
+            },
+            "region": {
+               "required":true,
+               "type":"string",
+               "example":"South East"
+            },
+            "description":{
+               "required":true,
+               "type":"schema",
+               "example":"Southampton, on the south coast of England, is the largest city in the ceremonial county of Hampshire."
+            },
+            "wikipedia": {
+               "required":true,
+               "type":"string",
+               "example":"Southampton"
+            },
+            "population": {
+               "required":true,
+               "type":"string",
+               "example":"253651"
+            },
+            "studentPopulation": {
+               "required":true,
+               "type":"string",
+               "example":"36160"
             },
             "rent":{
                "required":true,
@@ -515,6 +550,7 @@
                "required":true,
                "type":"schema",
                "example":{
+                 "topClubs": ["..."],
                   "rating":"7.6"
                }
             },
@@ -566,6 +602,31 @@
                   "type":"string",
                   "example":"Southampton"
                },
+               "region": {
+                  "required":true,
+                  "type":"string",
+                  "example":"South East"
+               },
+               "description":{
+                  "required":true,
+                  "type":"schema",
+                  "example":"Southampton, on the south coast of England, is the largest city in the ceremonial county of Hampshire."
+               },
+               "wikipedia": {
+                  "required":true,
+                  "type":"string",
+                  "example":"Southampton"
+               },
+               "population": {
+                  "required":true,
+                  "type":"string",
+                  "example":"253651"
+               },
+               "studentPopulation": {
+                  "required":true,
+                  "type":"string",
+                  "example":"36160"
+               },
                "rent":{
                   "required":true,
                   "type":"schema",
@@ -579,6 +640,7 @@
                   "required":true,
                   "type":"schema",
                   "example":{
+                    "topClubs": ["..."],
                      "rating":"7.6"
                   }
                },
@@ -686,6 +748,7 @@
                "required":true,
                "type":"schema",
                "example":{
+                 "topClubs": ["..."],
                   "rating":"7.6"
                }
             }
@@ -704,6 +767,7 @@
                   "required":true,
                   "type":"schema",
                   "example":{
+                    "topClubs": ["..."],
                      "rating":"7.6"
                   }
                }

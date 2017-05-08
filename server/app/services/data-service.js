@@ -2,7 +2,7 @@ const City = require('../models/city');
 
 function getDataForCity(req, res, Model, dataType) {
   const city = req.params.city.replace(/\b\w/g, l => l.toUpperCase());
-  if (!City.doesCityExist(city)) res.send({ status: 404, message: 'Invalid city'});
+  if (!City.doesCityExist(city)) res.status(404).send({error: 'Invalid city'});
   else Model.getDataForCity(city).then((data) => res.send({ city, [dataType]: data }));
 }
 

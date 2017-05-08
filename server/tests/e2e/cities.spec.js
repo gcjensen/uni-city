@@ -15,9 +15,9 @@ describe('Cities (end-to-end)', () => {
             res.body.should.be.an('array');
             for (let element of res.body) {
                element.should.be.an('object');
-               element.should.have.property('name').that.is.an('string');
-               element.should.have.property('region').that.is.an('string');
-               element.should.have.property('description').that.is.an('string');
+               const expectedKeys = ['name', 'region', 'description', 'wikipedia', 'population'];
+               element.should.have.all.keys(expectedKeys);
+               for (let key of expectedKeys) element[key].should.be.a('string');
             }
             done();
         });
@@ -29,14 +29,14 @@ describe('Cities (end-to-end)', () => {
         .end((err, res) => {
             res.should.have.status(200);
             res.body.should.be.an('object');
-            res.body.should.have.property('city').that.is.an('string');
-            res.body.should.have.property('description').that.is.an('string');
-            res.body.should.have.property('region').that.is.an('string');
+            res.body.should.have.all.keys(['city', 'region', 'description', 'wikipedia', 'population', 'broadband', 'crimeData', 'food', 'nightlife', 'rent', 'studentPopulation', 'wages']);
 
-            const properties = ['rent.median', 'rent.mean', 'crimeData.robbery', 'crimeData.burglary', 'crimeData.violenceAndSexualOffences', 'crimeData.total', 'nightlife.rating', 'broadband.speed', 'wages.averageWage', 'food.foodAverage', 'food.narcoticAverage'];
-            for (let property of properties) {
-              res.body.should.have.deep.property(property).that.is.an('number');
-            }
+            res.body.rent.should.have.all.keys(['median', 'mean', 'rating']);
+            res.body.crimeData.should.have.all.keys(['robbery', 'burglary', 'violenceAndSexualOffences', 'total', 'rating']);
+            res.body.nightlife.should.have.all.keys(['rating', 'topClubs']);
+            res.body.broadband.should.have.all.keys(['speed', 'rating']);
+            res.body.wages.should.have.all.keys(['averageWage', 'rating']);
+            res.body.food.should.have.all.keys(['foodAverage', 'foodRating', 'narcoticAverage', 'narcoticRating']);
 
             res.body.rent.rating.should.be.within(0, 10);
             res.body.crimeData.rating.should.be.within(0, 10);
@@ -45,6 +45,17 @@ describe('Cities (end-to-end)', () => {
             res.body.wages.rating.should.be.within(0, 10);
             res.body.food.foodRating.should.be.within(0, 10);
 
+            done();
+        });
+  });
+
+  it('it should return a 404 if the requested city is unavailable', (done) => {
+    chai.request(server)
+        .get('/api/all-data/copenhagen')
+        .end((err, res) => {
+            res.should.have.status(404);
+            res.body.should.be.a('object');
+            res.body.should.have.all.keys(['error']);
             done();
         });
   });

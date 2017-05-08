@@ -13,12 +13,13 @@ describe('Food (end-to-end)', () => {
         .end((err, res) => {
             res.should.have.status(200);
             res.body.should.be.a('object');
-            res.body.should.have.property('city').that.is.an('string');
-            res.body.should.have.deep.property('food.foodAverage').that.is.an('number');
-            res.body.should.have.deep.property('food.foodRating').that.is.an('number');
-            res.body.should.have.deep.property('food.narcoticAverage').that.is.an('number');
-            res.body.should.have.deep.property('food.narcoticRating').that.is.an('number');
+            res.body.should.have.all.keys(['city', 'food']);
+            res.body.city.should.be.a('string');
+            const expectedKeys = ['foodAverage', 'foodRating', 'narcoticAverage', 'narcoticRating'];
+            res.body.food.should.have.all.keys(expectedKeys);
+            for (let key of expectedKeys) res.body.food[key].should.be.a('number');
             res.body.food.foodRating.should.be.within(0, 10);
+            res.body.food.narcoticRating.should.be.within(0, 10);
             done();
         });
   });
@@ -31,13 +32,25 @@ describe('Food (end-to-end)', () => {
             res.body.should.be.an('array');
             for (let element of res.body) {
               element.should.be.an('object');
-              element.should.have.property('city').that.is.an('string');
-              element.should.have.deep.property('food.foodAverage').that.is.an('number');
-              element.should.have.deep.property('food.foodRating').that.is.an('number');
-              element.should.have.deep.property('food.narcoticAverage').that.is.an('number');
-              element.should.have.deep.property('food.narcoticRating').that.is.an('number');
+              element.should.have.all.keys(['city', 'food']);
+              element.city.should.be.a('string');
+              const expectedKeys = ['foodAverage', 'foodRating', 'narcoticAverage', 'narcoticRating'];
+              element.food.should.have.all.keys(expectedKeys);
+              for (let key of expectedKeys) element.food[key].should.be.a('number');
               element.food.foodRating.should.be.within(0, 10);
+              element.food.narcoticRating.should.be.within(0, 10);
             }
+            done();
+        });
+  });
+
+  it('it should return a 404 if the requested city is unavailable', (done) => {
+    chai.request(server)
+        .get('/api/food/copenhagen')
+        .end((err, res) => {
+            res.should.have.status(404);
+            res.body.should.be.a('object');
+            res.body.should.have.all.keys(['error']);
             done();
         });
   });

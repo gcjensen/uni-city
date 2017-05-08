@@ -13,8 +13,11 @@ describe('Wages (end-to-end)', () => {
         .end((err, res) => {
             res.should.have.status(200);
             res.body.should.be.a('object');
-            res.body.should.have.property('city').that.is.an('string');
-            res.body.should.have.deep.property('wages.averageWage').that.is.an('number');
+            res.body.should.have.all.keys(['city', 'wages']);
+            res.body.city.should.be.a('string');
+            const expectedKeys = ['averageWage', 'rating'];
+            res.body.wages.should.have.all.keys(expectedKeys);
+            for (let key of expectedKeys) res.body.wages[key].should.be.a('number');
             res.body.wages.rating.should.be.within(0, 10);
             done();
         });
@@ -28,10 +31,24 @@ describe('Wages (end-to-end)', () => {
             res.body.should.be.an('array');
             for (let element of res.body) {
               element.should.be.an('object');
-              element.should.have.property('city').that.is.an('string');
-              element.should.have.deep.property('wages.averageWage').that.is.an('number');
+              element.should.have.all.keys(['city', 'wages']);
+              element.city.should.be.a('string');
+              const expectedKeys = ['averageWage', 'rating'];
+              element.wages.should.have.all.keys(expectedKeys);
+              for (let key of expectedKeys) element.wages[key].should.be.a('number');
               element.wages.rating.should.be.within(0, 10);
             }
+            done();
+        });
+  });
+
+  it('it should return a 404 if the requested city is unavailable', (done) => {
+    chai.request(server)
+        .get('/api/wages/copenhagen')
+        .end((err, res) => {
+            res.should.have.status(404);
+            res.body.should.be.a('object');
+            res.body.should.have.all.keys(['error']);
             done();
         });
   });

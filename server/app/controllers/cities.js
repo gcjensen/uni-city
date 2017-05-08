@@ -8,13 +8,13 @@ const DataSources = require('../../config/data-sources');
 router.get('/cities', (req, res) => res.send(City.getCityList()));
 router.get('/all-data/all-cities', getAllCitiesWithAllData);
 router.get('/all-data/:city', (req, res) =>
-       getCityWithAllData(req, (response) => res.send(response)));
+       getCityWithAllData(req, (response) => res.send(response), (error) => res.status(404).send(error)));
 
 module.exports = router;
 
-function getCityWithAllData(req, callback) {
+function getCityWithAllData(req, callback, error) {
   const city = req.params.city.replace(/\b\w/g, l => l.toUpperCase());
-  if (!City.doesCityExist(city)) res.send({ status: 404, message: 'Invalid city'});
+  if (!City.doesCityExist(city)) error({error: 'Invalid city'});
   else {
     const cityObj = City.getCity(city);
     const description = cityObj.description;
