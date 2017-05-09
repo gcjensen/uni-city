@@ -10,22 +10,24 @@ const getDataForCity = (city) => {
 
   return new Promise((resolve, reject) => {
 
-    // const places = new GooglePlaces(key);
-    // const params = {
-    //   query: `nightclub in ${city} uk`
-    // };
-    // places.textSearch(params, (err, response) => {
-    //   const topClubs = getTopClubs(response, 4);
-    //   const averageRating = computeAverageRating(response);
-    //   resolve({ topClubs, rating: averageRating });
-    // });
+     const places = new GooglePlaces(key);
+     const params = {
+       query: `nightclub in ${city} uk`
+     };
+     places.textSearch(params, (err, response) => {
+       const topClubs = getTopClubs(response, 4);
+       const averageRating = computeAverageRating(response);
+       resolve({ topClubs, rating: averageRating });
+     });
 
     /*
      * the above is commented out to avoid exceeding Google API Limits.
      * For testing, a random number between 6.0 and 9.0 is generated
      */
+      /*
     const topClubs = getTopClubs();
     resolve({ topClubs, rating: (Math.floor(Math.random() * 15) + 30)/ 5})
+    */
   });
 };
 
