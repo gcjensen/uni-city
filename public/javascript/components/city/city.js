@@ -117,10 +117,12 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
             dataObjs2.push( { v: parseFloat(data['violenceAndSexualOffences']) } );
             pieData.push( {c: dataObjs2 } );
 
+            /*
             var dataObjs3 = [];
             dataObjs3.push( { v: 'Others' } );
             dataObjs3.push( { v: parseFloat(data['total'])-(parseFloat(data['burglary'])+parseFloat(data['robbery'])+parseFloat(data['violenceAndSexualOffences'])) } );
             pieData.push( {c: dataObjs3 } );
+            */
 
             $scope.crimeChart.data = {'cols': [
               {id: 't', label: 'Crime', type: 'string'},
