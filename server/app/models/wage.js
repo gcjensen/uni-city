@@ -20,8 +20,8 @@ const mapConstituencyDataToCities = (constituencyWages) => {
   const citiesWithWageData = [];
   for (let city of City.getCityList()) {
     let constituencyWagesForCity = PartService.filterData(city.name, constituencyWages, "constituencies", "Description");
-    constituencyWagesForCity = constituencyWagesForCity.filter((c) => !isNaN(c.Median));
-    constituencyWagesForCity = constituencyWagesForCity.map((d) => d['Median']);
+    constituencyWagesForCity = constituencyWagesForCity.filter((c) => !isNaN(c.Mean));
+    constituencyWagesForCity = constituencyWagesForCity.map((d) => d['Mean']);
     let totalWage = constituencyWagesForCity.reduce((a, b) => (parseInt(a) + parseInt(b)), 0);
     let wage = Math.round(totalWage / constituencyWagesForCity.length);
     citiesWithWageData.push({ city: city.name, wage });
