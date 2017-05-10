@@ -79,7 +79,7 @@
         <div style="border-width: 0px; border-bottom-width: 1px; border-color: #ddd; border-style: solid; width: 100%; margin: 60px 0"></div>
 
         <span class="content-title">CRIME</span><br><br>
-        <div style="display: flex; flex-direction: horizontal; justify-content: space-between; align-items: center; margin-top: 40px">
+        <div style="display: flex; flex-direction: horizontal; justify-content: space-between; align-items: center;">
             <div style="display: flex; flex-direction: column; width: 400px; margin-right: 40px">
                 <div style="display: flex; flex-direction: horizontal; align-items: center">
                     <i class='material-icons' style="font-size: 24px; color: #3A4C81; margin-right: 6px">warning</i>
@@ -88,7 +88,7 @@
                 <span style="font-weight: 600; font-size: 48px">{{cityData.crimeData.total}}</span>
                 <p>The crime rate in {{cityName}} is <span style="color: #3A4C81; font-weight: 700; text-transform: lowercase">{{getStringRating((cityData.crimeData.rating - 10)*-1)}}</span> when compared against other UK cities.</p>
             </div>
-            <div google-chart chart="crimeChart" style="width:660px; height: 340px;"></div>
+            <div google-chart chart="crimeChart" style="width:660px; height: 400px;"></div>
         </div>
 
         <div style="border-width: 0px; border-bottom-width: 1px; border-color: #ddd; border-style: solid; width: 100%; margin: 60px 0"></div>
