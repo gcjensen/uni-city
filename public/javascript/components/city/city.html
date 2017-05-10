@@ -93,6 +93,21 @@
 
         <div style="border-width: 0px; border-bottom-width: 1px; border-color: #ddd; border-style: solid; width: 100%; margin: 60px 0"></div>
 
+        <span class="content-title">WAGES</span><br><br>
+        <div style="display: flex; flex-direction: horizontal; justify-content: space-between; align-items: center; margin-top: 40px">
+            <div style="display: flex; flex-direction: column; width: 400px; margin-right: 40px">
+                <div style="display: flex; flex-direction: horizontal; align-items: center">
+                    <i class='material-icons' style="font-size: 24px; color: #7c5a9d; margin-right: 6px">work</i>
+                    <span style="font-weight: 400; font-size: 24px; color: #7c5a9d">AVERAGE ANNUAL SALARY</span>
+                </div>
+                <span style="font-weight: 600; font-size: 48px">{{cityData.wages.averageWage | currency:"£":0}}</span>
+                <p>The annaul salary in {{cityName}} is <span class="text-highlight">{{getStringRating((cityData.rent.rating - 10)*-1)}}</span> when compared against other UK cities.</p>
+            </div>
+            <div google-chart chart="wagesChart" style="width:660px; height: 340px;"></div>
+        </div>
+
+        <div style="border-width: 0px; border-bottom-width: 1px; border-color: #ddd; border-style: solid; width: 100%; margin: 60px 0"></div>
+
         <span class="content-title">ENTERTAINMENT</span><br><br>
 
         <div class="places-container">

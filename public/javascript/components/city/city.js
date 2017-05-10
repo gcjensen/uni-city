@@ -17,7 +17,6 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
         prepareFoodChart();
         prepareChartData();
         drawCrimeChart(response.data.crimeData);
-
     });
 
     $scope.getStringRating = function (num) {
@@ -47,6 +46,7 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
         $http.get('api/all-data/all-cities/').
         then(function(response) {
             drawRentChart(response.data);
+            drawWagesChart(response.data);
         });
     }
 
@@ -198,16 +198,50 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
                 'textStyle': {color: '#555'}
             }
         };
-
     }
 
-    $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-    $scope.series = ['Series A', 'Series B'];
+    function drawWagesChart(data) {
+        $scope.wagesChart = {};
 
-    $scope.data = [
-        [65, 59, 80, 81, 56, 55, 40],
-        [28, 48, 40, 19, 86, 27, 90]
-    ];
+        $scope.wagesChart.type = 'BarChart';
+
+        let barData = [];
+
+        for (let datum of data) {
+            var city = datum['city'];
+            var dataObjs = [];
+            dataObjs.push( { v: city } );
+            dataObjs.push( { v: datum['wages']['averageWage'] } );
+
+            if( city == $scope.cityName ) {
+                dataObjs.push( { v: '#7c5a9d' } );
+            } else {
+                dataObjs.push( { v: '#b4a4c4' } );
+            }
+
+            barData.push( {c: dataObjs } );
+        }
+
+        $scope.wagesChart.data = {'cols': [
+            {id: 't', label: 'City', type: 'string'},
+            {id: 's', label: 'Annual salary', type: 'number'},
+            {role: "style", type: "string"},
+        ], 'rows': barData};
+
+        $scope.wagesChart.options = {
+            'width': '100%',
+            'height': '100%',
+            'chartArea': {left: 160, top: 20, width: '80%','height': '100%'},
+            'legend': 'none',
+            'bar': {groupWidth: "40%"},
+            'hAxis': {
+                'textStyle': {color: '#555'}
+            },
+            'vAxis': {
+                'textStyle': {color: '#555'}
+            }
+          };
+        }
 
     $scope.openMap = function (address) {
         let win = window.open('http://maps.google.com/?q=' + address, '_blank');
