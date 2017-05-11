@@ -108,6 +108,21 @@
 
         <div style="border-width: 0px; border-bottom-width: 1px; border-color: #ddd; border-style: solid; width: 100%; margin: 60px 0"></div>
 
+        <span class="content-title">STUDENT POPULATION</span><br><br>
+        <div style="display: flex; flex-direction: horizontal; justify-content: space-between; align-items: center;">
+            <div style="display: flex; flex-direction: column; width: 400px; margin-right: 40px">
+                <div style="display: flex; flex-direction: horizontal; align-items: center">
+                    <i class='material-icons' style="font-size: 24px; color: #3A4C81; margin-right: 6px">person</i>
+                    <span style="font-weight: 400; font-size: 24px; color: #3A4C81">NUMBER OF STUDENTS</span>
+                </div>
+                <span style="font-weight: 600; font-size: 48px">{{cityData.studentPopulation | number}}</span>
+                <p>The student population of {{cityName}} represents <span style="color: #3A4C81; font-weight: 700; text-transform: lowercase">{{cityData.studentPopulation * 100 / cityData.population | number:1}}%</span> of the total <span style="color: #3A4C81; font-weight: 700; text-transform: lowercase">{{cityData.population | number}}</span> residents.</p>
+            </div>
+            <div google-chart chart="populationChart" style="width:660px; height: 400px;"></div>
+        </div>
+
+        <div style="border-width: 0px; border-bottom-width: 1px; border-color: #ddd; border-style: solid; width: 100%; margin: 60px 0"></div>
+
         <span class="content-title">ENTERTAINMENT</span><br><br>
 
         <div class="places-container">

@@ -17,6 +17,7 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
         prepareFoodChart();
         prepareChartData();
         drawCrimeChart(response.data.crimeData);
+        drawPopulationChart(response.data);
     });
 
     $scope.getStringRating = function (num) {
@@ -242,6 +243,43 @@ angular.module('open-data').controller('CityController', function ($scope, $loca
             }
           };
         }
+
+        function drawPopulationChart(data) {
+
+            $scope.populationChart = {};
+
+            $scope.populationChart.type = 'PieChart';
+
+            let pieData = [];
+
+            var dataObjs1 = [];
+            dataObjs1.push( { v: 'Students' } );
+            dataObjs1.push( { v: parseFloat(data['studentPopulation']) } );
+            pieData.push( {c: dataObjs1 } );
+
+            var dataObjs = [];
+            dataObjs.push( { v: 'Others' } );
+            dataObjs.push( { v: parseFloat(data['population']) - parseFloat(data['studentPopulation']) } );
+            pieData.push( {c: dataObjs } );
+
+            $scope.populationChart.data = {'cols': [
+              {id: 't', label: 'Total population', type: 'string'},
+              {id: 's', label: 'Student population', type: 'number'},
+
+            ], 'rows': pieData};
+
+            $scope.populationChart.options = {
+                'slices': [{color:'#3A4C81'}, {color:'#8894BB'}],
+                'width': '100%',
+                'height': '100%',
+                'hAxis': {
+                    'textStyle': {color: '#555'}
+                },
+                'vAxis': {
+                    'textStyle': {color: '#555'}
+                }
+            }
+          }
 
     $scope.openMap = function (address) {
         let win = window.open('http://maps.google.com/?q=' + address, '_blank');
