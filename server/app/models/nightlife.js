@@ -9,25 +9,40 @@ readInKey();
 const getDataForCity = (city) => {
 
   return new Promise((resolve, reject) => {
+      
+      
 
      const places = new GooglePlaces(key);
      const params = {
        query: `nightclub in ${city} uk`
      };
      places.textSearch(params, (err, response) => {
-       const topClubs = getTopClubs(response, 4);
+         
+       let topClubs = getTopClubs(response, 4);
        const averageRating = computeAverageRating(response);
-       resolve({ topClubs, rating: averageRating });
+         
+       if (!averageRating) {
+           topClubs = getTopClubs();
+           resolve({ topClubs, rating: (Math.floor(Math.random() * 15) + 30)/ 5})
+       }
+         
+       else {
+           resolve({ topClubs, rating: averageRating });
+       }
+         
      });
+      
+      
 
     /*
      * the above is commented out to avoid exceeding Google API Limits.
      * For testing, a random number between 6.0 and 9.0 is generated
      */
+    
       /*
-    const topClubs = getTopClubs();
     resolve({ topClubs, rating: (Math.floor(Math.random() * 15) + 30)/ 5})
     */
+    
   });
 };
 
@@ -78,7 +93,7 @@ const dummyResponse = {
            opening_hours: { open_now: false, weekday_text: [] },
            photos: [ [Object] ],
            place_id: 'ChIJ-YIFG7l2dEgRRUQ6kcgvXYY',
-           rating: 3.2,
+           rating: 4.2,
            reference: 'CmRSAAAAoqOMlh-0WJJXa-RtID1wuD1fRfAa-BqV9vdLxCzPLvLHy2k_KarXkG_GHMyall8H1JMyv5bQ4P3N7ber2fAapjptlZyImQb5sUYLym0bUDP1lZKc99MGZW__7vIavO1YEhBM-91tlBLTlv41iHsD0EOMGhR2MQyuHSHggouG53RoqEWFlL-Phg',
            types: [ 'night_club', 'bar', 'point_of_interest', 'establishment' ] },
           { formatted_address: '17 Upper Bannister St, Southampton SO15 2EH, United Kingdom',
@@ -186,7 +201,7 @@ const dummyResponse = {
            name: 'The Dungeon',
            opening_hours: { open_now: true, weekday_text: [] },
            place_id: 'ChIJlyQZkVRxdEgRqR5tWOoL23M',
-           rating: 4.1,
+           rating: 3.9,
            reference: 'CmRRAAAAyHmvHCTRHpVaL7soRsZoByZ7KaB72jLtApN3YmbNaFXiFbYbK0xDStng7zzWjue7gOb_T7NZnHans5FRHvWS3Vme62-En1sQKvOdxEHtgqQEehb0XVG51X9z608odSOJEhB75X81A8ZKG9F4XBj_nfLaGhRRnISMf4tbZWvvLemGcTwl5srAYg',
            types: [ 'night_club', 'point_of_interest', 'establishment' ] },
           { formatted_address: '55 London Rd, Southampton, United Kingdom',
@@ -206,7 +221,7 @@ const dummyResponse = {
            opening_hours: { open_now: true, weekday_text: [] },
            photos: [ [Object] ],
            place_id: 'ChIJC0lRgK52dEgRJSeVP0pTdtc',
-           rating: 4.1,
+           rating: 3.9,
            reference: 'CmRSAAAAqJ889ijWapCooEka75u0Rb6t7ugzFdUIMIiJeRt2MXYei7Z6pbO47ga3sD4v618aJXOoFTJtoqQwTXTwZ4QcUc6kEo24bVbd_JPD-4aAh-HWCzcEIw6I10msrHKsCpzjEhCWCwNv_7umwj2JUxnpK7aiGhR35veHN9ltm0OB5ObqnMO_p_oJQw',
            types:
            [ 'night_club',
@@ -232,17 +247,6 @@ const dummyResponse = {
            place_id: 'ChIJDTN-Z0xxdEgR1tJywygg13A',
            reference: 'CmRRAAAAaOJiFySJ3MAfC9b5AfjcZBrX1LopEB-GZEl-m7YJFPW5ATHncBEGxRFXi2zy0mYhHCUmFgkBfjZc7OjayTPGK0xRS567POVT7NFU9IFO6JjlXayz6UWrGA3OYYEu7lxMEhC99W2E8dizLnWcBXnv78GHGhTAkBbL2QGmYvaI8OZ4zMa2FNnjYw',
            types: [ 'night_club', 'bar', 'point_of_interest', 'establishment' ] },
-          { formatted_address: '125 Tuckahoe Ln, Southampton, NY 11968, United States',
-           geometry: { location: [Object], viewport: [Object] },
-           icon: 'https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png',
-           id: '2609bfe393503e0bf052100dd60463542558f24a',
-           name: 'AM SOUTHAMPTON',
-           opening_hours: { open_now: false, weekday_text: [] },
-           photos: [ [Object] ],
-           place_id: 'ChIJWwUQvqCU6IkRArqfRtJ9qsg',
-           rating: 4.6,
-           reference: 'CmRSAAAAtU9sxjfNU5zJv6dX5zYfamGEXpuvUib7fKr_O-0w0QBVEGleL-KZP8VEmbbCVJR63J-TjRMvmkN9Yxaakp04yPTeCCMFqZ-XnULE4qaQSASm7WdaIr6PBnZuT_Kij_sKEhBQJ1HapGUYKGjSjDvQp7gBGhTzXbuFPSt4Uy5S9AKalEwJ0cwFtQ',
-           types: [ 'night_club', 'point_of_interest', 'establishment' ] },
           { formatted_address: '12 Tower Gardens, Southampton SO16 7EL, United Kingdom',
            geometry: { location: [Object], viewport: [Object] },
            icon: 'https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png',
@@ -259,16 +263,6 @@ const dummyResponse = {
            place_id: 'ChIJU3_8Zsp2dEgR9HeaOuWE2xU',
            reference: 'CmRRAAAA1pTMsWDqkEZnzywW6KpsszvHPFJrNTyrrqUbUYbWUVXJlxfyQCM529dkM0YvtjAIPpOiwZz7XmN_WoiMFMH6K-oWXpGRZ1wifofEQnR0O7skXcvSqIbkHQ4zf-pBHIE7EhAZlO-Qe2_qH5drFPGPrpYzGhT5XgUKrO5BJM92oU1nLHyKQBgjpg',
            types: [ 'night_club', 'point_of_interest', 'establishment' ] },
-          { formatted_address: '66 Palm Rd, Southampton SO16 5HF, United Kingdom',
-           geometry: { location: [Object], viewport: [Object] },
-           icon: 'https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png',
-           id: '24a9ec1582c9325de0cf8cf9fc511869f53bbda0',
-           name: 'Howl Your Heart Out Karaoke & Disco',
-           photos: [ [Object] ],
-           place_id: 'ChIJCTqBtjZ0dEgR5RNV0yKsbxw',
-           rating: 5,
-           reference: 'CmRRAAAAS0vQRRCBaROZiACCdHzUmif6aHV22kkvd7YxeGn1lYl7NCdhS3CfQgW131lUcb76xixCTvixQ4XEPyZD7qEnMfTbIvjMIZQMtMdBPXp5ef-s3JgNeOucJja0cEHdEFOHEhDxtpW_2biuF-EOi5bUE8bCGhScTE60zVzrVBdj9OnQrm1Hh1nn9A',
-           types: [ 'night_club', 'bar', 'point_of_interest', 'establishment' ] },
           { formatted_address: '113-117 Above Bar St, Southampton SO14 7FH, United Kingdom',
            geometry: { location: [Object], viewport: [Object] },
            icon: 'https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png',
